@@ -1,0 +1,12 @@
+extends: cadc_phase4_development.yaml
+
+runtime:
+  target: b200
+  backend: cupy
+  precision: bf16
+  batch_size: 1024
+  compile: true
+  cuda_graphs: false
+  max_device_bytes: 171798691840
+artifacts:
+  output_root: phase4_b200_development

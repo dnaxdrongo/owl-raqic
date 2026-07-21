@@ -1,0 +1,54 @@
+world:
+  height: 10
+  width: 10
+  patch_size: 5
+  max_steps: 20
+  seed: 7101
+
+recording:
+  enabled: true
+  record_every: 2
+  metrics_path: results/raqic_gpu_batch_small/metrics.parquet
+  zarr_path: runs/raqic_gpu_batch_small/run.zarr
+
+visualization:
+  enabled: false
+  backend: none
+
+debug:
+  assert_invariants: true
+  profile: true
+
+raqic:
+  enabled: true
+  decision_policy: raqic
+  mode: gpu_batch
+  epsilon_raqic: 1.0
+  epsilon_adelic: 1.0
+  beta_intention: 1.15
+  action_temperature: 0.9
+  rounds_per_tick: 1
+  shots: 2048
+  active_primes: [2, 3, 5]
+  use_qiskit_for_all: false
+  qiskit_subset_fraction: 0.0
+  fallback_on_backend_error: true
+  assert_recovery_gates: true
+  parent_intention_eta: 0.30
+  gpu_backend: cupy
+  gpu_precision: audit64
+  strict_gpu: false
+  gpu_all_cells_required: true
+  full_gpu_transfer_policy: stage_once
+  gpu_profile: true
+  full_gpu_audit_fraction: 0.0
+  gpu_audit_limit: 4
+  gpu_validate_qiskit: false
+  gpu_validate_cpu: false
+  gpu_memory_limit_mb: null
+  qiskit_gpu_method: statevector
+  qiskit_gpu_device: GPU
+  qiskit_batched_shots_gpu: false
+  qiskit_enable_cuStateVec: false
+  dense_signature_grouping: false
+  gpu_chunk_size: null

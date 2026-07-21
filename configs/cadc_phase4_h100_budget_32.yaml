@@ -1,0 +1,13 @@
+extends: cadc_phase4_h100_budget_64.yaml
+
+corpus:
+  world_height: 32
+  world_width: 32
+  patch_size: 8
+
+runtime:
+  corpus_workers: 8
+
+artifacts:
+  output_root: phase4_h100_budget_32
+

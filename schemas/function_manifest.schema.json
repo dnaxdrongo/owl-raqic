@@ -1,0 +1,138 @@
+{
+  "$defs": {
+    "FunctionContract": {
+      "additionalProperties": false,
+      "description": "Declared function contract entry.",
+      "properties": {
+        "called_by": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Called By",
+          "type": "array"
+        },
+        "calls": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Calls",
+          "type": "array"
+        },
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "layer": {
+          "title": "Layer",
+          "type": "string"
+        },
+        "module": {
+          "title": "Module",
+          "type": "string"
+        },
+        "mutates": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Mutates",
+          "type": "array"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "parameters": {
+          "items": {
+            "$ref": "#/$defs/ParameterContract"
+          },
+          "title": "Parameters",
+          "type": "array"
+        },
+        "purpose": {
+          "default": "",
+          "title": "Purpose",
+          "type": "string"
+        },
+        "returns": {
+          "default": "None",
+          "title": "Returns",
+          "type": "string"
+        },
+        "status": {
+          "default": "stub",
+          "enum": [
+            "stub",
+            "implemented",
+            "deprecated"
+          ],
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "module",
+        "name",
+        "layer"
+      ],
+      "title": "FunctionContract",
+      "type": "object"
+    },
+    "ParameterContract": {
+      "additionalProperties": false,
+      "description": "Declared input parameter for a function contract.",
+      "properties": {
+        "description": {
+          "default": "",
+          "title": "Description",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "required": {
+          "default": true,
+          "title": "Required",
+          "type": "boolean"
+        },
+        "type": {
+          "title": "Type",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "type"
+      ],
+      "title": "ParameterContract",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "Full function manifest schema.",
+  "properties": {
+    "functions": {
+      "items": {
+        "$ref": "#/$defs/FunctionContract"
+      },
+      "title": "Functions",
+      "type": "array"
+    },
+    "project": {
+      "title": "Project",
+      "type": "string"
+    },
+    "version": {
+      "title": "Version",
+      "type": "string"
+    }
+  },
+  "required": [
+    "project",
+    "version",
+    "functions"
+  ],
+  "title": "ManifestContract",
+  "type": "object"
+}

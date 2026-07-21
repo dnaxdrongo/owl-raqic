@@ -1,0 +1,6 @@
+-r requirements-gpu-cu12.txt
+pytest>=8.0
+ruff>=0.6
+mypy>=1.10
+pre-commit>=3.7
+rustworkx>=0.15

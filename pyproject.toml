@@ -1,0 +1,105 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "observer-window-life"
+version = "0.9.9"
+description = "Array-first simulation engine skeleton for Observer-Window Life."
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{ name = "Darryl Badley" }]
+dependencies = [
+  "numpy>=2.0",
+  "scipy>=1.13",
+  "numba>=0.60",
+  "pydantic>=2.8",
+  "pydantic-settings>=2.3",
+  "PyYAML>=6.0",
+  "rich>=13.7"
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest==9.0.2",
+  "ruff==0.15.21",
+  "mypy==2.3.0",
+  "pre-commit==4.5.1"
+]
+visual = ["pygame>=2.6", "matplotlib>=3.9"]
+recording = ["zarr>=2.18,<3", "numcodecs>=0.13", "polars>=1.0", "pyarrow>=15"]
+headless = ["vispy>=0.14", "PyOpenGL>=3.1"]
+accelerators = ["taichi>=1.7", "jax>=0.4", "jaxlib>=0.4", "rustworkx>=0.15"]
+raqic = ["rustworkx>=0.15"]
+qiskit = ["qiskit>=2.0", "qiskit-aer>=0.17"]
+gpu = ["cupy-cuda12x>=13.0"]
+gpu-jax = ["jax[cuda12]>=0.4.30"]
+qiskit-gpu = ["qiskit>=2.0", "qiskit-aer-gpu>=0.17"]
+gpu-full = ["cupy-cuda12x>=13.0", "qiskit>=2.0", "qiskit-aer-gpu>=0.17", "vispy>=0.14", "PyOpenGL>=3.1", "zarr>=2.18,<3", "numcodecs>=0.13", "polars>=1.0", "pyarrow>=15"]
+standalone-viewer = ["pygame>=2.6", "zarr>=2.18,<3", "numcodecs>=0.13", "pyarrow>=15", "pyinstaller>=6.0"]
+cadc = [
+  "pyarrow>=15",
+  "polars>=1.0",
+  "scikit-learn>=1.5",
+  "torch>=2.5",
+  "xgboost>=2.1"
+]
+cadc-gpu-cu12 = [
+  "cupy-cuda12x>=13.0",
+  "cudf-cu12>=24.10",
+  "cuml-cu12>=24.10",
+  "pyarrow>=15",
+  "polars>=1.0",
+  "scikit-learn>=1.5",
+  "torch>=2.5",
+  "xgboost>=2.1"
+]
+cadc-dev = ["sympy>=1.13", "hypothesis>=6.0"]
+
+[project.scripts]
+owl-run = "owl.experiments.run_single:main"
+owl-sweep = "owl.experiments.run_sweep:main"
+owl-validate-manifest = "owl.core.contracts:main"
+owl-experiment = "owl.experiments.controller:main"
+owl-replay = "owl.viz.replay_app:main"
+
+[tool.hatch.build]
+exclude = [
+  "/.mypy_cache",
+  "/.pytest_cache",
+  "/.ruff_cache",
+  "/build",
+  "/dist",
+  "/reports",
+  "/results",
+  "/runs",
+  "**/__pycache__",
+  "**/*.pyc",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/owl", "src/owl_raqic"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+src = ["src", "tests", "scripts"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "C4"]
+ignore = ["B008"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["owl", "owl_raqic"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+ignore_missing_imports = true
+mypy_path = "src"
+explicit_package_bases = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+pythonpath = ["src", "."]

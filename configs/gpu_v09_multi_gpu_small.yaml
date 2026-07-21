@@ -1,0 +1,31 @@
+world:
+  height: 20
+  width: 20
+  patch_size: 5
+  max_steps: 5
+  seed: 9008
+recording:
+  enabled: true
+  record_every: 1
+  zarr_path: runs/gpu_v09_multi_gpu_small/run.zarr
+  metrics_path: results/gpu_v09_multi_gpu_small/metrics.jsonl
+visualization:
+  enabled: false
+  backend: none
+debug:
+  assert_invariants: true
+raqic:
+  enabled: true
+  mode: gpu_full
+  decision_policy: raqic
+  fallback_on_backend_error: false
+  full_gpu_strict: true
+  full_gpu_transfer_policy: persistent_mirror
+  full_gpu_execution_tier: persistent
+  full_gpu_devices: [0, 1]
+  full_gpu_multi_gpu: true
+  full_gpu_distributed_timeout_seconds: 120
+  full_gpu_phase_mode: canonical_device
+  full_gpu_fuse_scatter: true
+  full_gpu_recording_level_v07: patch_summaries
+  full_gpu_visual_backend: none

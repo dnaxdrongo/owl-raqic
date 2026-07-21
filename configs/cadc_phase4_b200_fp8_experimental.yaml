@@ -1,0 +1,18 @@
+extends: cadc_phase4_development.yaml
+
+runtime:
+  target: b200
+  backend: cupy
+  precision: fp8
+  batch_size: 1024
+  compile: true
+  cuda_graphs: false
+  max_device_bytes: 171798691840
+certification:
+  classification: B200_FP8_EXPERIMENTAL_PARITY_REQUIRED
+  phase5_unlock_requested: false
+  require_target_gpu: true
+  require_negative_control_collapse: true
+  require_all_ensemble_members: true
+artifacts:
+  output_root: phase4_b200_fp8_experimental

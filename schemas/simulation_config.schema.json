@@ -1,0 +1,3065 @@
+{
+  "$defs": {
+    "ActionConfig": {
+      "additionalProperties": false,
+      "description": "Actualization and action-set parameters.\n\nAdvanced ecological runs default to utility-weighted stochastic actualization.\nDeterministic argmax remains available by setting ``stochastic=False`` for\ncontrolled tests, but the ordinary MVP/advanced configuration now samples\nfrom normalized survival-weighted action probabilities.",
+      "properties": {
+        "action_temperature": {
+          "default": 0.5,
+          "exclusiveMinimum": 0,
+          "title": "Action Temperature",
+          "type": "number"
+        },
+        "beta": {
+          "default": 2.0,
+          "exclusiveMinimum": 0,
+          "title": "Beta",
+          "type": "number"
+        },
+        "diagonal_movement_enabled": {
+          "default": true,
+          "title": "Diagonal Movement Enabled",
+          "type": "boolean"
+        },
+        "enabled_actions": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Enabled Actions",
+          "type": "array"
+        },
+        "epsilon": {
+          "default": 1e-08,
+          "exclusiveMinimum": 0,
+          "title": "Epsilon",
+          "type": "number"
+        },
+        "movement_crowding_weight": {
+          "default": 0.45,
+          "minimum": 0,
+          "title": "Movement Crowding Weight",
+          "type": "number"
+        },
+        "movement_food_weight": {
+          "default": 0.65,
+          "minimum": 0,
+          "title": "Movement Food Weight",
+          "type": "number"
+        },
+        "movement_hunger_target": {
+          "default": 0.35,
+          "exclusiveMinimum": 0,
+          "maximum": 1,
+          "title": "Movement Hunger Target",
+          "type": "number"
+        },
+        "movement_macro_enabled": {
+          "default": true,
+          "title": "Movement Macro Enabled",
+          "type": "boolean"
+        },
+        "movement_macro_normalization": {
+          "default": 0.75,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Movement Macro Normalization",
+          "type": "number"
+        },
+        "movement_persistence_bonus": {
+          "default": 0.18,
+          "minimum": 0,
+          "title": "Movement Persistence Bonus",
+          "type": "number"
+        },
+        "movement_reverse_penalty": {
+          "default": 0.35,
+          "minimum": 0,
+          "title": "Movement Reverse Penalty",
+          "type": "number"
+        },
+        "movement_temperature": {
+          "default": 0.65,
+          "exclusiveMinimum": 0,
+          "title": "Movement Temperature",
+          "type": "number"
+        },
+        "movement_toxin_weight": {
+          "default": 0.8,
+          "minimum": 0,
+          "title": "Movement Toxin Weight",
+          "type": "number"
+        },
+        "stochastic": {
+          "default": true,
+          "title": "Stochastic",
+          "type": "boolean"
+        },
+        "utility_weighted_sampling": {
+          "default": true,
+          "title": "Utility Weighted Sampling",
+          "type": "boolean"
+        }
+      },
+      "title": "ActionConfig",
+      "type": "object"
+    },
+    "ActionTransitionConfig": {
+      "additionalProperties": false,
+      "description": "Versioned completion contract for SENSE, FLEE, and PURSUE.\n\nThe default is the certified v0.9.9 recovery sector.  No legacy run gains\nnew observations, arrays, costs, masks, or transitions unless ``enabled``\nand the v1 contract are selected explicitly.",
+      "properties": {
+        "action_contract_version": {
+          "default": "v099_legacy_unsupported",
+          "enum": [
+            "v099_legacy_unsupported",
+            "owl.action-transitions.v1"
+          ],
+          "title": "Action Contract Version",
+          "type": "string"
+        },
+        "active_sense_cost": {
+          "default": 0.005,
+          "minimum": 0.0,
+          "title": "Active Sense Cost",
+          "type": "number"
+        },
+        "active_sense_enabled": {
+          "default": false,
+          "title": "Active Sense Enabled",
+          "type": "boolean"
+        },
+        "active_sense_memory_persistence": {
+          "default": 1,
+          "maximum": 16,
+          "minimum": 1,
+          "title": "Active Sense Memory Persistence",
+          "type": "integer"
+        },
+        "active_sense_noise_multiplier": {
+          "default": 1.0,
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Active Sense Noise Multiplier",
+          "type": "number"
+        },
+        "active_sense_ordinary_radius": {
+          "default": 1,
+          "maximum": 4,
+          "minimum": 1,
+          "title": "Active Sense Ordinary Radius",
+          "type": "integer"
+        },
+        "active_sense_radius_bonus": {
+          "default": 1,
+          "maximum": 4,
+          "minimum": 1,
+          "title": "Active Sense Radius Bonus",
+          "type": "integer"
+        },
+        "enabled": {
+          "default": false,
+          "title": "Enabled",
+          "type": "boolean"
+        },
+        "flee_execution_enabled": {
+          "default": false,
+          "title": "Flee Execution Enabled",
+          "type": "boolean"
+        },
+        "flee_score_weights": {
+          "$ref": "#/$defs/DirectionScoreWeights"
+        },
+        "flee_target_policy": {
+          "const": "highest_perceived_threat_then_nearest",
+          "default": "highest_perceived_threat_then_nearest",
+          "title": "Flee Target Policy",
+          "type": "string"
+        },
+        "high_level_movement_tie_break": {
+          "const": "immutable_direction_order",
+          "default": "immutable_direction_order",
+          "title": "High Level Movement Tie Break",
+          "type": "string"
+        },
+        "legacy_unsupported_action_recovery": {
+          "default": true,
+          "title": "Legacy Unsupported Action Recovery",
+          "type": "boolean"
+        },
+        "perceived_threat_threshold": {
+          "default": 0.1,
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Perceived Threat Threshold",
+          "type": "number"
+        },
+        "pursue_execution_enabled": {
+          "default": false,
+          "title": "Pursue Execution Enabled",
+          "type": "boolean"
+        },
+        "pursue_score_weights": {
+          "$ref": "#/$defs/DirectionScoreWeights"
+        },
+        "pursue_target_policy": {
+          "const": "nearest_visible_living_target",
+          "default": "nearest_visible_living_target",
+          "title": "Pursue Target Policy",
+          "type": "string"
+        },
+        "pursuit_trait_threshold": {
+          "default": 0.1,
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Pursuit Trait Threshold",
+          "type": "number"
+        },
+        "target_sense_radius": {
+          "default": 2,
+          "maximum": 4,
+          "minimum": 1,
+          "title": "Target Sense Radius",
+          "type": "integer"
+        }
+      },
+      "title": "ActionTransitionConfig",
+      "type": "object"
+    },
+    "CADCRecordingConfig": {
+      "additionalProperties": false,
+      "description": "Additive factual evidence recorder configuration.\n\nThe CADC recorder is observational and disabled by default.  Its limits\nare validated before any device or host buffer is allocated so an exact\nprofile cannot silently degrade to sampled evidence.",
+      "properties": {
+        "capture_agent_context": {
+          "default": true,
+          "title": "Capture Agent Context",
+          "type": "boolean"
+        },
+        "capture_candidates": {
+          "default": true,
+          "title": "Capture Candidates",
+          "type": "boolean"
+        },
+        "capture_contributions": {
+          "default": true,
+          "title": "Capture Contributions",
+          "type": "boolean"
+        },
+        "capture_events": {
+          "default": true,
+          "title": "Capture Events",
+          "type": "boolean"
+        },
+        "capture_execution": {
+          "default": true,
+          "title": "Capture Execution",
+          "type": "boolean"
+        },
+        "capture_information": {
+          "default": true,
+          "title": "Capture Information",
+          "type": "boolean"
+        },
+        "capture_oracle_context": {
+          "default": true,
+          "title": "Capture Oracle Context",
+          "type": "boolean"
+        },
+        "compression": {
+          "default": "zstd",
+          "enum": [
+            "zstd",
+            "snappy",
+            "gzip",
+            "none"
+          ],
+          "title": "Compression",
+          "type": "string"
+        },
+        "device_buffer_slots": {
+          "default": 1,
+          "maximum": 1,
+          "minimum": 1,
+          "title": "Device Buffer Slots",
+          "type": "integer"
+        },
+        "enabled": {
+          "default": false,
+          "title": "Enabled",
+          "type": "boolean"
+        },
+        "event_capacity_per_tick": {
+          "default": 262144,
+          "minimum": 1,
+          "title": "Event Capacity Per Tick",
+          "type": "integer"
+        },
+        "exact_local_radius": {
+          "default": 1,
+          "maximum": 8,
+          "minimum": 0,
+          "title": "Exact Local Radius",
+          "type": "integer"
+        },
+        "host_queue_depth": {
+          "default": 1,
+          "maximum": 1,
+          "minimum": 1,
+          "title": "Host Queue Depth",
+          "type": "integer"
+        },
+        "include_dense_context": {
+          "default": false,
+          "title": "Include Dense Context",
+          "type": "boolean"
+        },
+        "max_batch_bytes": {
+          "default": 134217728,
+          "minimum": 1048576,
+          "title": "Max Batch Bytes",
+          "type": "integer"
+        },
+        "max_batch_rows": {
+          "default": 131072,
+          "minimum": 22,
+          "title": "Max Batch Rows",
+          "type": "integer"
+        },
+        "max_device_buffer_bytes": {
+          "default": 536870912,
+          "minimum": 1048576,
+          "title": "Max Device Buffer Bytes",
+          "type": "integer"
+        },
+        "max_pending_bytes": {
+          "default": 536870912,
+          "minimum": 1048576,
+          "title": "Max Pending Bytes",
+          "type": "integer"
+        },
+        "parquet_row_group_rows": {
+          "default": 131072,
+          "minimum": 1,
+          "title": "Parquet Row Group Rows",
+          "type": "integer"
+        },
+        "profile": {
+          "default": "compact",
+          "enum": [
+            "compact",
+            "exact"
+          ],
+          "title": "Profile",
+          "type": "string"
+        },
+        "strict_overflow": {
+          "default": true,
+          "title": "Strict Overflow",
+          "type": "boolean"
+        },
+        "table_flush_ticks": {
+          "default": 1,
+          "minimum": 1,
+          "title": "Table Flush Ticks",
+          "type": "integer"
+        },
+        "validation": {
+          "default": "full",
+          "enum": [
+            "minimal",
+            "full"
+          ],
+          "title": "Validation",
+          "type": "string"
+        }
+      },
+      "title": "CADCRecordingConfig",
+      "type": "object"
+    },
+    "CommunicationConfig": {
+      "additionalProperties": false,
+      "description": "Universal communication-channel parameters.\n\nEvery observer window can signal. These coefficients define the physical\nchannel substrate, not a dedicated signaler species.",
+      "properties": {
+        "base_emit_cost": {
+          "default": 0.005,
+          "minimum": 0,
+          "title": "Base Emit Cost",
+          "type": "number"
+        },
+        "decay": {
+          "items": {
+            "type": "number"
+          },
+          "title": "Decay",
+          "type": "array"
+        },
+        "deception_penalty": {
+          "default": 0.1,
+          "minimum": 0,
+          "title": "Deception Penalty",
+          "type": "number"
+        },
+        "diffusion": {
+          "items": {
+            "type": "number"
+          },
+          "title": "Diffusion",
+          "type": "array"
+        },
+        "enabled": {
+          "default": true,
+          "title": "Enabled",
+          "type": "boolean"
+        },
+        "intentional_mix": {
+          "default": 0.35,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Intentional Mix",
+          "type": "number"
+        },
+        "neighbor_trust_decay": {
+          "default": 0.005,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Neighbor Trust Decay",
+          "type": "number"
+        },
+        "num_channels": {
+          "default": 8,
+          "minimum": 1,
+          "title": "Num Channels",
+          "type": "integer"
+        },
+        "receptivity_lr": {
+          "default": 0.01,
+          "minimum": 0,
+          "title": "Receptivity Lr",
+          "type": "number"
+        },
+        "relation_lr": {
+          "default": 0.02,
+          "minimum": 0,
+          "title": "Relation Lr",
+          "type": "number"
+        },
+        "source_tracking_enabled": {
+          "default": false,
+          "title": "Source Tracking Enabled",
+          "type": "boolean"
+        },
+        "source_trust_lr": {
+          "default": 0.03,
+          "minimum": 0,
+          "title": "Source Trust Lr",
+          "type": "number"
+        },
+        "trust_lr": {
+          "default": 0.03,
+          "minimum": 0,
+          "title": "Trust Lr",
+          "type": "number"
+        }
+      },
+      "title": "CommunicationConfig",
+      "type": "object"
+    },
+    "CounterfactualConfig": {
+      "additionalProperties": false,
+      "description": "Bounded Phase 3 counterfactual rollout configuration.\n\nThe default is inert so loading an historical configuration cannot create\na source observer, allocate branch state, or change factual execution.\nActive execution is intentionally limited to the certified segmented,\nsingle-device action-transition contract.",
+      "properties": {
+        "allow_per_ow_qiskit": {
+          "default": false,
+          "title": "Allow Per Ow Qiskit",
+          "type": "boolean"
+        },
+        "backend": {
+          "default": "auto",
+          "enum": [
+            "auto",
+            "numpy",
+            "cupy"
+          ],
+          "title": "Backend",
+          "type": "string"
+        },
+        "branch_execution_mode": {
+          "default": "segmented",
+          "enum": [
+            "segmented",
+            "target_gpu_required"
+          ],
+          "title": "Branch Execution Mode",
+          "type": "string"
+        },
+        "branch_seed_derivation_version": {
+          "const": "owl.branch-seed-sha256.v1",
+          "default": "owl.branch-seed-sha256.v1",
+          "title": "Branch Seed Derivation Version",
+          "type": "string"
+        },
+        "emit_nonexecutable_candidates": {
+          "default": true,
+          "title": "Emit Nonexecutable Candidates",
+          "type": "boolean"
+        },
+        "enabled": {
+          "default": false,
+          "title": "Enabled",
+          "type": "boolean"
+        },
+        "event_capacity_per_branch_tick": {
+          "default": 4096,
+          "minimum": 1,
+          "title": "Event Capacity Per Branch Tick",
+          "type": "integer"
+        },
+        "event_mode": {
+          "default": "exact",
+          "enum": [
+            "exact",
+            "summary"
+          ],
+          "title": "Event Mode",
+          "type": "string"
+        },
+        "executable_only": {
+          "default": true,
+          "title": "Executable Only",
+          "type": "boolean"
+        },
+        "explicit_source_decision_ids": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Explicit Source Decision Ids",
+          "type": "array"
+        },
+        "fail_on_alias": {
+          "default": true,
+          "title": "Fail On Alias",
+          "type": "boolean"
+        },
+        "fail_on_factual_mutation": {
+          "default": true,
+          "title": "Fail On Factual Mutation",
+          "type": "boolean"
+        },
+        "family_horizons": {
+          "additionalProperties": {
+            "items": {
+              "type": "integer"
+            },
+            "type": "array"
+          },
+          "title": "Family Horizons",
+          "type": "object"
+        },
+        "horizons": {
+          "default": [
+            1,
+            3,
+            5,
+            10
+          ],
+          "items": {
+            "type": "integer"
+          },
+          "title": "Horizons",
+          "type": "array"
+        },
+        "include_selected_anchor": {
+          "default": true,
+          "title": "Include Selected Anchor",
+          "type": "boolean"
+        },
+        "max_active_branches": {
+          "default": 8,
+          "minimum": 1,
+          "title": "Max Active Branches",
+          "type": "integer"
+        },
+        "max_device_bytes": {
+          "default": 8589934592,
+          "minimum": 1,
+          "title": "Max Device Bytes",
+          "type": "integer"
+        },
+        "max_packet_bytes": {
+          "default": 67108864,
+          "minimum": 1,
+          "title": "Max Packet Bytes",
+          "type": "integer"
+        },
+        "max_pending_bytes": {
+          "default": 134217728,
+          "minimum": 1,
+          "title": "Max Pending Bytes",
+          "type": "integer"
+        },
+        "max_source_decisions": {
+          "default": 32,
+          "minimum": 1,
+          "title": "Max Source Decisions",
+          "type": "integer"
+        },
+        "max_source_ticks": {
+          "default": 1,
+          "minimum": 1,
+          "title": "Max Source Ticks",
+          "type": "integer"
+        },
+        "memory_safety_fraction": {
+          "default": 0.7,
+          "exclusiveMinimum": 0.0,
+          "maximum": 0.95,
+          "title": "Memory Safety Fraction",
+          "type": "number"
+        },
+        "parquet_row_group_rows": {
+          "default": 65536,
+          "minimum": 1,
+          "title": "Parquet Row Group Rows",
+          "type": "integer"
+        },
+        "repeats": {
+          "default": 1,
+          "minimum": 1,
+          "title": "Repeats",
+          "type": "integer"
+        },
+        "require_anchor_equivalence": {
+          "default": true,
+          "title": "Require Anchor Equivalence",
+          "type": "boolean"
+        },
+        "rng_registry_version": {
+          "const": "owl.counterfactual-rng-registry.v1",
+          "default": "owl.counterfactual-rng-registry.v1",
+          "title": "Rng Registry Version",
+          "type": "string"
+        },
+        "source_boundary": {
+          "const": "post_selection_pre_actions",
+          "default": "post_selection_pre_actions",
+          "title": "Source Boundary",
+          "type": "string"
+        },
+        "source_pool_capacity": {
+          "default": 2,
+          "minimum": 1,
+          "title": "Source Pool Capacity",
+          "type": "integer"
+        },
+        "source_selection_mode": {
+          "default": "deterministic_hash",
+          "enum": [
+            "explicit",
+            "deterministic_hash",
+            "action_family_stratified"
+          ],
+          "title": "Source Selection Mode",
+          "type": "string"
+        },
+        "state_hash_algorithm": {
+          "const": "owl.device-state-merkle-sha256.v1",
+          "default": "owl.device-state-merkle-sha256.v1",
+          "title": "State Hash Algorithm",
+          "type": "string"
+        },
+        "stream_lanes": {
+          "default": 2,
+          "minimum": 1,
+          "title": "Stream Lanes",
+          "type": "integer"
+        },
+        "strict_overflow": {
+          "default": true,
+          "title": "Strict Overflow",
+          "type": "boolean"
+        },
+        "writer_queue_depth": {
+          "default": 2,
+          "minimum": 1,
+          "title": "Writer Queue Depth",
+          "type": "integer"
+        }
+      },
+      "title": "CounterfactualConfig",
+      "type": "object"
+    },
+    "CrossScaleHomeostasisConfig": {
+      "additionalProperties": false,
+      "description": "Patch/apex responsiveness to lower-level viability and carrying pressure.",
+      "properties": {
+        "apex_smoothing": {
+          "default": 0.8,
+          "maximum": 0.999,
+          "minimum": 0.0,
+          "title": "Apex Smoothing",
+          "type": "number"
+        },
+        "carrying_capacity_enabled": {
+          "default": true,
+          "title": "Carrying Capacity Enabled",
+          "type": "boolean"
+        },
+        "crisis_threshold": {
+          "default": 0.35,
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Crisis Threshold",
+          "type": "number"
+        },
+        "crowding_pressure_weight": {
+          "default": 1.25,
+          "minimum": 0.0,
+          "title": "Crowding Pressure Weight",
+          "type": "number"
+        },
+        "enabled": {
+          "default": false,
+          "title": "Enabled",
+          "type": "boolean"
+        },
+        "food_deficit_weight": {
+          "default": 1.5,
+          "minimum": 0.0,
+          "title": "Food Deficit Weight",
+          "type": "number"
+        },
+        "max_reproduction_suppression": {
+          "default": 0.95,
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Max Reproduction Suppression",
+          "type": "number"
+        },
+        "patch_crisis_threshold": {
+          "default": 0.35,
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Patch Crisis Threshold",
+          "type": "number"
+        },
+        "reproduction_pressure_weight": {
+          "default": 1.25,
+          "minimum": 0.0,
+          "title": "Reproduction Pressure Weight",
+          "type": "number"
+        },
+        "starvation_pressure_weight": {
+          "default": 1.75,
+          "minimum": 0.0,
+          "title": "Starvation Pressure Weight",
+          "type": "number"
+        }
+      },
+      "title": "CrossScaleHomeostasisConfig",
+      "type": "object"
+    },
+    "DebugConfig": {
+      "additionalProperties": false,
+      "description": "Debugging and development switches.",
+      "properties": {
+        "assert_invariants": {
+          "default": false,
+          "title": "Assert Invariants",
+          "type": "boolean"
+        },
+        "profile": {
+          "default": false,
+          "title": "Profile",
+          "type": "boolean"
+        }
+      },
+      "title": "DebugConfig",
+      "type": "object"
+    },
+    "DecisionHomeostasisConfig": {
+      "additionalProperties": false,
+      "description": "Survival-weighted stochastic decision policy coefficients.\n\nThis layer keeps action selection stochastic, but raises precision and\noptimal-action mass under homeostatic urgency while respecting authority.",
+      "properties": {
+        "authority_floor": {
+          "default": 1e-06,
+          "exclusiveMinimum": 0.0,
+          "title": "Authority Floor",
+          "type": "number"
+        },
+        "emergency_precision_max": {
+          "default": 9.0,
+          "exclusiveMinimum": 0.0,
+          "title": "Emergency Precision Max",
+          "type": "number"
+        },
+        "emergency_precision_min": {
+          "default": 2.0,
+          "exclusiveMinimum": 0.0,
+          "title": "Emergency Precision Min",
+          "type": "number"
+        },
+        "enabled": {
+          "default": false,
+          "title": "Enabled",
+          "type": "boolean"
+        },
+        "epistemic_weight_emergency": {
+          "default": 0.03,
+          "minimum": 0.0,
+          "title": "Epistemic Weight Emergency",
+          "type": "number"
+        },
+        "epistemic_weight_safe": {
+          "default": 0.25,
+          "minimum": 0.0,
+          "title": "Epistemic Weight Safe",
+          "type": "number"
+        },
+        "forced_optimal_probability": {
+          "default": 0.8,
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Forced Optimal Probability",
+          "type": "number"
+        },
+        "noetic_bias_scale": {
+          "default": 0.3,
+          "minimum": 0.0,
+          "title": "Noetic Bias Scale",
+          "type": "number"
+        },
+        "optimality_margin": {
+          "default": 0.2,
+          "minimum": 0.0,
+          "title": "Optimality Margin",
+          "type": "number"
+        },
+        "safe_precision": {
+          "default": 1.5,
+          "exclusiveMinimum": 0.0,
+          "title": "Safe Precision",
+          "type": "number"
+        },
+        "survival_weight": {
+          "default": 2.0,
+          "minimum": 0.0,
+          "title": "Survival Weight",
+          "type": "number"
+        },
+        "urgent_threshold": {
+          "default": 0.35,
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Urgent Threshold",
+          "type": "number"
+        },
+        "viability_weight": {
+          "default": 1.25,
+          "minimum": 0.0,
+          "title": "Viability Weight",
+          "type": "number"
+        }
+      },
+      "title": "DecisionHomeostasisConfig",
+      "type": "object"
+    },
+    "DirectionScoreWeights": {
+      "additionalProperties": false,
+      "description": "Explicit coefficients for a high-level movement compiler.",
+      "properties": {
+        "cost": {
+          "default": 0.25,
+          "minimum": 0.0,
+          "title": "Cost",
+          "type": "number"
+        },
+        "distance": {
+          "default": 1.0,
+          "minimum": 0.0,
+          "title": "Distance",
+          "type": "number"
+        },
+        "hazard": {
+          "default": 0.75,
+          "minimum": 0.0,
+          "title": "Hazard",
+          "type": "number"
+        },
+        "opportunity": {
+          "default": 0.2,
+          "minimum": 0.0,
+          "title": "Opportunity",
+          "type": "number"
+        }
+      },
+      "title": "DirectionScoreWeights",
+      "type": "object"
+    },
+    "EcologyConfig": {
+      "additionalProperties": false,
+      "description": "Advanced ecological dynamics coefficients.\n\nDisabled by default to preserve the Pass 14 recovery sector. When enabled,\nfeeding uses Monod saturation, digested mass enters a resource buffer, waste\ncan recycle into food, and toxin/starvation damage are nonlinear.",
+      "properties": {
+        "advanced_enabled": {
+          "default": false,
+          "title": "Advanced Enabled",
+          "type": "boolean"
+        },
+        "age_stress_scale": {
+          "default": 1000.0,
+          "exclusiveMinimum": 0,
+          "title": "Age Stress Scale",
+          "type": "number"
+        },
+        "digestion_decay": {
+          "default": 0.35,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Digestion Decay",
+          "type": "number"
+        },
+        "digestion_efficiency": {
+          "default": 0.75,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Digestion Efficiency",
+          "type": "number"
+        },
+        "food_carrying_capacity": {
+          "default": 1.0,
+          "exclusiveMinimum": 0,
+          "title": "Food Carrying Capacity",
+          "type": "number"
+        },
+        "food_regrowth_rate": {
+          "default": 0.012,
+          "minimum": 0,
+          "title": "Food Regrowth Rate",
+          "type": "number"
+        },
+        "ingestion_handling_time": {
+          "default": 0.75,
+          "minimum": 0,
+          "title": "Ingestion Handling Time",
+          "type": "number"
+        },
+        "monod_half_saturation": {
+          "default": 0.2,
+          "exclusiveMinimum": 0,
+          "title": "Monod Half Saturation",
+          "type": "number"
+        },
+        "repair_half_saturation": {
+          "default": 0.2,
+          "exclusiveMinimum": 0,
+          "title": "Repair Half Saturation",
+          "type": "number"
+        },
+        "starvation_threshold": {
+          "default": 0.05,
+          "minimum": 0,
+          "title": "Starvation Threshold",
+          "type": "number"
+        },
+        "toxin_damage_exponent": {
+          "default": 1.35,
+          "minimum": 0.25,
+          "title": "Toxin Damage Exponent",
+          "type": "number"
+        },
+        "waste_decay": {
+          "default": 0.05,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Waste Decay",
+          "type": "number"
+        },
+        "waste_recycle_rate": {
+          "default": 0.15,
+          "minimum": 0,
+          "title": "Waste Recycle Rate",
+          "type": "number"
+        }
+      },
+      "title": "EcologyConfig",
+      "type": "object"
+    },
+    "HierarchyConfig": {
+      "additionalProperties": false,
+      "description": "Advanced dynamic patch/fractal hierarchy parameters.",
+      "properties": {
+        "centroid_smoothing": {
+          "default": 0.35,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Centroid Smoothing",
+          "type": "number"
+        },
+        "dynamic_patches": {
+          "default": false,
+          "title": "Dynamic Patches",
+          "type": "boolean"
+        },
+        "phase_lag_default": {
+          "default": 0.0,
+          "title": "Phase Lag Default",
+          "type": "number"
+        },
+        "prediction_error_weight": {
+          "default": 0.2,
+          "minimum": 0,
+          "title": "Prediction Error Weight",
+          "type": "number"
+        },
+        "predictive_topdown": {
+          "default": false,
+          "title": "Predictive Topdown",
+          "type": "boolean"
+        }
+      },
+      "title": "HierarchyConfig",
+      "type": "object"
+    },
+    "IdentityConfig": {
+      "additionalProperties": false,
+      "description": "Globally unique OW identity allocation.",
+      "properties": {
+        "enabled": {
+          "default": false,
+          "title": "Enabled",
+          "type": "boolean"
+        },
+        "start_id": {
+          "default": 1,
+          "minimum": 1,
+          "title": "Start Id",
+          "type": "integer"
+        }
+      },
+      "title": "IdentityConfig",
+      "type": "object"
+    },
+    "InitializationConfig": {
+      "additionalProperties": false,
+      "description": "Initial-condition parameters for deterministic world construction.\n\nThese values are deliberately separated from runtime engine coefficients.\nLater experiments can alter starting conditions without changing the update\nequations.",
+      "properties": {
+        "background_food": {
+          "default": 0.02,
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Background Food",
+          "type": "number"
+        },
+        "food_patch_count": {
+          "default": 8,
+          "minimum": 0,
+          "title": "Food Patch Count",
+          "type": "integer"
+        },
+        "food_patch_intensity": {
+          "default": 0.75,
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Food Patch Intensity",
+          "type": "number"
+        },
+        "food_patch_radius": {
+          "default": 5,
+          "minimum": 1,
+          "title": "Food Patch Radius",
+          "type": "integer"
+        },
+        "initial_activation_mean": {
+          "default": 0.1,
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Initial Activation Mean",
+          "type": "number"
+        },
+        "initial_activation_sigma": {
+          "default": 0.03,
+          "minimum": 0.0,
+          "title": "Initial Activation Sigma",
+          "type": "number"
+        },
+        "initial_boundary_mean": {
+          "default": 0.8,
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Initial Boundary Mean",
+          "type": "number"
+        },
+        "initial_boundary_sigma": {
+          "default": 0.05,
+          "minimum": 0.0,
+          "title": "Initial Boundary Sigma",
+          "type": "number"
+        },
+        "initial_health_mean": {
+          "default": 0.9,
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Initial Health Mean",
+          "type": "number"
+        },
+        "initial_health_sigma": {
+          "default": 0.05,
+          "minimum": 0.0,
+          "title": "Initial Health Sigma",
+          "type": "number"
+        },
+        "initial_integration_mean": {
+          "default": 0.1,
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Initial Integration Mean",
+          "type": "number"
+        },
+        "initial_integration_sigma": {
+          "default": 0.03,
+          "minimum": 0.0,
+          "title": "Initial Integration Sigma",
+          "type": "number"
+        },
+        "initial_memory_mean": {
+          "default": 0.05,
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Initial Memory Mean",
+          "type": "number"
+        },
+        "initial_memory_sigma": {
+          "default": 0.02,
+          "minimum": 0.0,
+          "title": "Initial Memory Sigma",
+          "type": "number"
+        },
+        "initial_resource_mean": {
+          "default": 0.55,
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Initial Resource Mean",
+          "type": "number"
+        },
+        "initial_resource_sigma": {
+          "default": 0.1,
+          "minimum": 0.0,
+          "title": "Initial Resource Sigma",
+          "type": "number"
+        },
+        "initial_threshold_mean": {
+          "default": 0.5,
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Initial Threshold Mean",
+          "type": "number"
+        },
+        "initial_threshold_sigma": {
+          "default": 0.05,
+          "minimum": 0.0,
+          "title": "Initial Threshold Sigma",
+          "type": "number"
+        },
+        "initial_trust": {
+          "default": 1.0,
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Initial Trust",
+          "type": "number"
+        },
+        "obstacle_density": {
+          "default": 0.0,
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Obstacle Density",
+          "type": "number"
+        },
+        "population_density": {
+          "default": 0.35,
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Population Density",
+          "type": "number"
+        },
+        "toxin_patch_count": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Toxin Patch Count",
+          "type": "integer"
+        },
+        "toxin_patch_intensity": {
+          "default": 0.25,
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Toxin Patch Intensity",
+          "type": "number"
+        },
+        "toxin_patch_radius": {
+          "default": 4,
+          "minimum": 1,
+          "title": "Toxin Patch Radius",
+          "type": "integer"
+        },
+        "trait_noise_sigma": {
+          "default": 0.025,
+          "minimum": 0.0,
+          "title": "Trait Noise Sigma",
+          "type": "number"
+        },
+        "type_weights": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "title": "Type Weights",
+          "type": "object"
+        }
+      },
+      "title": "InitializationConfig",
+      "type": "object"
+    },
+    "IntegrationConfig": {
+      "additionalProperties": false,
+      "description": "Coefficients for the bounded observer-window integration functional.",
+      "properties": {
+        "entropy_sigma": {
+          "default": 0.22,
+          "exclusiveMinimum": 0,
+          "title": "Entropy Sigma",
+          "type": "number"
+        },
+        "entropy_target": {
+          "default": 0.55,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Entropy Target",
+          "type": "number"
+        },
+        "weight_boundary": {
+          "default": 0.7,
+          "title": "Weight Boundary",
+          "type": "number"
+        },
+        "weight_coherence": {
+          "default": 1.0,
+          "title": "Weight Coherence",
+          "type": "number"
+        },
+        "weight_conflict": {
+          "default": 1.5,
+          "title": "Weight Conflict",
+          "type": "number"
+        },
+        "weight_cross_scale": {
+          "default": 1.0,
+          "title": "Weight Cross Scale",
+          "type": "number"
+        },
+        "weight_flexibility": {
+          "default": 0.8,
+          "title": "Weight Flexibility",
+          "type": "number"
+        },
+        "weight_memory": {
+          "default": 1.0,
+          "title": "Weight Memory",
+          "type": "number"
+        },
+        "weight_resource": {
+          "default": 0.6,
+          "title": "Weight Resource",
+          "type": "number"
+        },
+        "weight_synchrony": {
+          "default": 1.2,
+          "title": "Weight Synchrony",
+          "type": "number"
+        }
+      },
+      "title": "IntegrationConfig",
+      "type": "object"
+    },
+    "PhaseConfig": {
+      "additionalProperties": false,
+      "description": "Phase and cross-scale oscillator parameters.",
+      "properties": {
+        "base_omega": {
+          "default": 0.08,
+          "title": "Base Omega",
+          "type": "number"
+        },
+        "parent_coupling": {
+          "default": 0.03,
+          "title": "Parent Coupling",
+          "type": "number"
+        },
+        "patch_resultant_support_epsilon": {
+          "default": 1e-07,
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Patch Resultant Support Epsilon",
+          "type": "number"
+        },
+        "phase_noise_sigma": {
+          "default": 0.005,
+          "minimum": 0,
+          "title": "Phase Noise Sigma",
+          "type": "number"
+        },
+        "same_scale_coupling": {
+          "default": 0.05,
+          "title": "Same Scale Coupling",
+          "type": "number"
+        }
+      },
+      "title": "PhaseConfig",
+      "type": "object"
+    },
+    "PossibilityConfig": {
+      "additionalProperties": false,
+      "description": "Advanced possibility/actualization parameters.",
+      "properties": {
+        "advanced_enabled": {
+          "default": false,
+          "title": "Advanced Enabled",
+          "type": "boolean"
+        },
+        "amplitude_diagnostics": {
+          "default": false,
+          "title": "Amplitude Diagnostics",
+          "type": "boolean"
+        },
+        "cooldown_weight": {
+          "default": 0.4,
+          "minimum": 0,
+          "title": "Cooldown Weight",
+          "type": "number"
+        },
+        "effort_weight": {
+          "default": 0.3,
+          "minimum": 0,
+          "title": "Effort Weight",
+          "type": "number"
+        },
+        "entropy_temperature_max": {
+          "default": 5.0,
+          "exclusiveMinimum": 0,
+          "title": "Entropy Temperature Max",
+          "type": "number"
+        },
+        "entropy_temperature_min": {
+          "default": 0.25,
+          "exclusiveMinimum": 0,
+          "title": "Entropy Temperature Min",
+          "type": "number"
+        },
+        "epistemic_weight": {
+          "default": 0.2,
+          "minimum": 0,
+          "title": "Epistemic Weight",
+          "type": "number"
+        },
+        "risk_weight": {
+          "default": 0.5,
+          "minimum": 0,
+          "title": "Risk Weight",
+          "type": "number"
+        }
+      },
+      "title": "PossibilityConfig",
+      "type": "object"
+    },
+    "PredationConfig": {
+      "additionalProperties": false,
+      "description": "Predation and ingestion coefficients.",
+      "properties": {
+        "enabled": {
+          "default": true,
+          "title": "Enabled",
+          "type": "boolean"
+        },
+        "memory_transfer": {
+          "default": 0.05,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Memory Transfer",
+          "type": "number"
+        },
+        "min_predation_trait": {
+          "default": 0.6,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Min Predation Trait",
+          "type": "number"
+        },
+        "resistance_weight": {
+          "default": 1.0,
+          "minimum": 0,
+          "title": "Resistance Weight",
+          "type": "number"
+        },
+        "resource_transfer": {
+          "default": 0.7,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Resource Transfer",
+          "type": "number"
+        }
+      },
+      "title": "PredationConfig",
+      "type": "object"
+    },
+    "RAQICConfig": {
+      "additionalProperties": false,
+      "description": "Configuration for the RAQIC decision substrate.\n\nDisabled by default so legacy OWL remains the recovery path. When enabled\nwith ``decision_policy='raqic'``, RAQIC replaces the probability/readout\ndecision substrate while OWL still applies physical consequences.",
+      "properties": {
+        "action_temperature": {
+          "default": 1.0,
+          "exclusiveMinimum": 0.0,
+          "title": "Action Temperature",
+          "type": "number"
+        },
+        "active_primes": {
+          "default": [
+            2,
+            3,
+            5
+          ],
+          "items": {
+            "type": "integer"
+          },
+          "title": "Active Primes",
+          "type": "array"
+        },
+        "actualization_variant": {
+          "default": "stable_baseline",
+          "enum": [
+            "stable_baseline",
+            "utility_innovation",
+            "fractal_resonance",
+            "phase_interference"
+          ],
+          "title": "Actualization Variant",
+          "type": "string"
+        },
+        "assert_recovery_gates": {
+          "default": true,
+          "title": "Assert Recovery Gates",
+          "type": "boolean"
+        },
+        "batch_by_feature_signature": {
+          "default": true,
+          "title": "Batch By Feature Signature",
+          "type": "boolean"
+        },
+        "beta_intention": {
+          "default": 1.0,
+          "minimum": 0.0,
+          "title": "Beta Intention",
+          "type": "number"
+        },
+        "cache_templates": {
+          "default": true,
+          "title": "Cache Templates",
+          "type": "boolean"
+        },
+        "debug_store_full_records": {
+          "default": false,
+          "title": "Debug Store Full Records",
+          "type": "boolean"
+        },
+        "decision_policy": {
+          "default": "legacy",
+          "enum": [
+            "legacy",
+            "raqic",
+            "hybrid_compare"
+          ],
+          "title": "Decision Policy",
+          "type": "string"
+        },
+        "dense_signature_grouping": {
+          "default": false,
+          "title": "Dense Signature Grouping",
+          "type": "boolean"
+        },
+        "enabled": {
+          "default": false,
+          "title": "Enabled",
+          "type": "boolean"
+        },
+        "epsilon_adelic": {
+          "default": 1.0,
+          "minimum": 0.0,
+          "title": "Epsilon Adelic",
+          "type": "number"
+        },
+        "epsilon_raqic": {
+          "default": 1.0,
+          "minimum": 0.0,
+          "title": "Epsilon Raqic",
+          "type": "number"
+        },
+        "experimental_shadow_only": {
+          "default": false,
+          "title": "Experimental Shadow Only",
+          "type": "boolean"
+        },
+        "fallback_on_backend_error": {
+          "default": true,
+          "title": "Fallback On Backend Error",
+          "type": "boolean"
+        },
+        "full_gpu_audit_fraction": {
+          "default": 0.0,
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Full Gpu Audit Fraction",
+          "type": "number"
+        },
+        "full_gpu_backend": {
+          "const": "cupy",
+          "default": "cupy",
+          "title": "Full Gpu Backend",
+          "type": "string"
+        },
+        "full_gpu_benchmark_label": {
+          "default": "v0.8",
+          "title": "Full Gpu Benchmark Label",
+          "type": "string"
+        },
+        "full_gpu_certification_dir": {
+          "default": "certifications",
+          "title": "Full Gpu Certification Dir",
+          "type": "string"
+        },
+        "full_gpu_certification_required": {
+          "default": false,
+          "title": "Full Gpu Certification Required",
+          "type": "boolean"
+        },
+        "full_gpu_checkpoint_every": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Full Gpu Checkpoint Every",
+          "type": "integer"
+        },
+        "full_gpu_command_capacity": {
+          "default": 1024,
+          "minimum": 1,
+          "title": "Full Gpu Command Capacity",
+          "type": "integer"
+        },
+        "full_gpu_cpu_shadow_ticks": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Full Gpu Cpu Shadow Ticks",
+          "type": "integer"
+        },
+        "full_gpu_devices": {
+          "default": [],
+          "items": {
+            "type": "integer"
+          },
+          "title": "Full Gpu Devices",
+          "type": "array"
+        },
+        "full_gpu_distributed_timeout_seconds": {
+          "default": 120.0,
+          "exclusiveMinimum": 0.0,
+          "title": "Full Gpu Distributed Timeout Seconds",
+          "type": "number"
+        },
+        "full_gpu_enable_numerical_ledger": {
+          "default": true,
+          "title": "Full Gpu Enable Numerical Ledger",
+          "type": "boolean"
+        },
+        "full_gpu_enabled": {
+          "default": false,
+          "title": "Full Gpu Enabled",
+          "type": "boolean"
+        },
+        "full_gpu_execution_tier": {
+          "default": "reference",
+          "enum": [
+            "reference",
+            "persistent",
+            "graph"
+          ],
+          "title": "Full Gpu Execution Tier",
+          "type": "string"
+        },
+        "full_gpu_fuse_biology": {
+          "default": false,
+          "title": "Full Gpu Fuse Biology",
+          "type": "boolean"
+        },
+        "full_gpu_fuse_scatter": {
+          "default": false,
+          "title": "Full Gpu Fuse Scatter",
+          "type": "boolean"
+        },
+        "full_gpu_graph_allow_fallback": {
+          "default": false,
+          "title": "Full Gpu Graph Allow Fallback",
+          "type": "boolean"
+        },
+        "full_gpu_graph_mode": {
+          "default": "off",
+          "enum": [
+            "off",
+            "segments",
+            "full_tick"
+          ],
+          "title": "Full Gpu Graph Mode",
+          "type": "string"
+        },
+        "full_gpu_graph_requirement": {
+          "default": "allow_partial",
+          "enum": [
+            "allow_partial",
+            "full_tick"
+          ],
+          "title": "Full Gpu Graph Requirement",
+          "type": "string"
+        },
+        "full_gpu_graph_warmup_ticks": {
+          "default": 2,
+          "minimum": 0,
+          "title": "Full Gpu Graph Warmup Ticks",
+          "type": "integer"
+        },
+        "full_gpu_implementation_shadow_required": {
+          "default": false,
+          "title": "Full Gpu Implementation Shadow Required",
+          "type": "boolean"
+        },
+        "full_gpu_memory_policy": {
+          "default": "elastic",
+          "enum": [
+            "preallocate",
+            "elastic",
+            "conservative"
+          ],
+          "title": "Full Gpu Memory Policy",
+          "type": "string"
+        },
+        "full_gpu_memory_preflight": {
+          "default": true,
+          "title": "Full Gpu Memory Preflight",
+          "type": "boolean"
+        },
+        "full_gpu_memory_safety_fraction": {
+          "default": 0.85,
+          "exclusiveMinimum": 0.0,
+          "maximum": 1.0,
+          "title": "Full Gpu Memory Safety Fraction",
+          "type": "number"
+        },
+        "full_gpu_metric_every": {
+          "default": 1,
+          "minimum": 1,
+          "title": "Full Gpu Metric Every",
+          "type": "integer"
+        },
+        "full_gpu_movement_conflict_policy": {
+          "const": "sort_priority",
+          "default": "sort_priority",
+          "title": "Full Gpu Movement Conflict Policy",
+          "type": "string"
+        },
+        "full_gpu_multi_gpu": {
+          "default": false,
+          "title": "Full Gpu Multi Gpu",
+          "type": "boolean"
+        },
+        "full_gpu_no_silent_fallback": {
+          "default": true,
+          "title": "Full Gpu No Silent Fallback",
+          "type": "boolean"
+        },
+        "full_gpu_phase_mode": {
+          "default": "scalar_reference",
+          "enum": [
+            "scalar_reference",
+            "canonical_device"
+          ],
+          "title": "Full Gpu Phase Mode",
+          "type": "string"
+        },
+        "full_gpu_phase_policy": {
+          "default": "audit_or_visual",
+          "enum": [
+            "always",
+            "audit_or_visual",
+            "skip"
+          ],
+          "title": "Full Gpu Phase Policy",
+          "type": "string"
+        },
+        "full_gpu_physical_modules": {
+          "default": [
+            "environment",
+            "sensing",
+            "utility",
+            "authority",
+            "movement",
+            "collision",
+            "feeding",
+            "health",
+            "communication",
+            "memory",
+            "phase",
+            "integration",
+            "aggregation",
+            "topdown",
+            "reproduction",
+            "death",
+            "topology",
+            "recording",
+            "visualization"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "title": "Full Gpu Physical Modules",
+          "type": "array"
+        },
+        "full_gpu_policy_backend": {
+          "default": "stable",
+          "enum": [
+            "stable",
+            "legacy"
+          ],
+          "title": "Full Gpu Policy Backend",
+          "type": "string"
+        },
+        "full_gpu_precision": {
+          "default": "audit64",
+          "enum": [
+            "audit64",
+            "mixed",
+            "balanced32",
+            "fast32"
+          ],
+          "title": "Full Gpu Precision",
+          "type": "string"
+        },
+        "full_gpu_production_marker": {
+          "default": "READY_FOR_PRODUCTION",
+          "title": "Full Gpu Production Marker",
+          "type": "string"
+        },
+        "full_gpu_profile": {
+          "default": true,
+          "title": "Full Gpu Profile",
+          "type": "boolean"
+        },
+        "full_gpu_qiskit_allow_cpu_fallback": {
+          "default": false,
+          "title": "Full Gpu Qiskit Allow Cpu Fallback",
+          "type": "boolean"
+        },
+        "full_gpu_qiskit_strict": {
+          "default": true,
+          "title": "Full Gpu Qiskit Strict",
+          "type": "boolean"
+        },
+        "full_gpu_record_every": {
+          "default": 1,
+          "minimum": 1,
+          "title": "Full Gpu Record Every",
+          "type": "integer"
+        },
+        "full_gpu_recording_level": {
+          "default": "summary_gpu",
+          "enum": [
+            "summary_gpu",
+            "sampled_gpu",
+            "full_gpu_snapshot"
+          ],
+          "title": "Full Gpu Recording Level",
+          "type": "string"
+        },
+        "full_gpu_recording_level_v07": {
+          "default": "metrics_plus_events",
+          "enum": [
+            "metrics_only",
+            "metrics_plus_events",
+            "sampled_cells",
+            "patch_summaries",
+            "full_snapshot_decimated",
+            "debug_full_every_tick"
+          ],
+          "title": "Full Gpu Recording Level V07",
+          "type": "string"
+        },
+        "full_gpu_render_every": {
+          "default": 10,
+          "minimum": 1,
+          "title": "Full Gpu Render Every",
+          "type": "integer"
+        },
+        "full_gpu_reproduction_conflict_policy": {
+          "const": "sort_priority",
+          "default": "sort_priority",
+          "title": "Full Gpu Reproduction Conflict Policy",
+          "type": "string"
+        },
+        "full_gpu_run_class": {
+          "default": "validation",
+          "enum": [
+            "validation",
+            "production",
+            "exploratory",
+            "stress"
+          ],
+          "title": "Full Gpu Run Class",
+          "type": "string"
+        },
+        "full_gpu_shadow_reference": {
+          "default": "scientific_cpu",
+          "enum": [
+            "implementation_numpy",
+            "scientific_cpu",
+            "dense_numpy_exact",
+            "legacy_cpu_semantic"
+          ],
+          "title": "Full Gpu Shadow Reference",
+          "type": "string"
+        },
+        "full_gpu_shadow_strict": {
+          "default": true,
+          "title": "Full Gpu Shadow Strict",
+          "type": "boolean"
+        },
+        "full_gpu_shadow_tolerance": {
+          "default": 1e-08,
+          "exclusiveMinimum": 0.0,
+          "title": "Full Gpu Shadow Tolerance",
+          "type": "number"
+        },
+        "full_gpu_sparse_event_capacity": {
+          "default": 4096,
+          "minimum": 1,
+          "title": "Full Gpu Sparse Event Capacity",
+          "type": "integer"
+        },
+        "full_gpu_sprite_theme": {
+          "default": "owl_dark_neon",
+          "title": "Full Gpu Sprite Theme",
+          "type": "string"
+        },
+        "full_gpu_stencil_backend": {
+          "default": "vectorized",
+          "enum": [
+            "vectorized",
+            "raw_toroidal",
+            "auto"
+          ],
+          "title": "Full Gpu Stencil Backend",
+          "type": "string"
+        },
+        "full_gpu_strict": {
+          "default": true,
+          "title": "Full Gpu Strict",
+          "type": "boolean"
+        },
+        "full_gpu_transfer_policy": {
+          "default": "stage_once",
+          "enum": [
+            "stage_once",
+            "persistent_mirror",
+            "hybrid_shadow"
+          ],
+          "title": "Full Gpu Transfer Policy",
+          "type": "string"
+        },
+        "full_gpu_validation_every": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Full Gpu Validation Every",
+          "type": "integer"
+        },
+        "full_gpu_visual_adaptive_lod": {
+          "default": true,
+          "title": "Full Gpu Visual Adaptive Lod",
+          "type": "boolean"
+        },
+        "full_gpu_visual_backend": {
+          "default": "none",
+          "enum": [
+            "none",
+            "pygame_copy",
+            "vispy_gpu",
+            "headless_export"
+          ],
+          "title": "Full Gpu Visual Backend",
+          "type": "string"
+        },
+        "full_gpu_visual_clutter_budget": {
+          "default": 2048,
+          "minimum": 1,
+          "title": "Full Gpu Visual Clutter Budget",
+          "type": "integer"
+        },
+        "full_gpu_visual_event_capacity": {
+          "default": 16384,
+          "minimum": 1,
+          "title": "Full Gpu Visual Event Capacity",
+          "type": "integer"
+        },
+        "full_gpu_visual_max_slowdown_fraction": {
+          "default": 0.15,
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Full Gpu Visual Max Slowdown Fraction",
+          "type": "number"
+        },
+        "full_gpu_writer_overflow_policy": {
+          "default": "block",
+          "enum": [
+            "block",
+            "raise"
+          ],
+          "title": "Full Gpu Writer Overflow Policy",
+          "type": "string"
+        },
+        "full_gpu_writer_queue_capacity": {
+          "default": 1024,
+          "minimum": 1,
+          "title": "Full Gpu Writer Queue Capacity",
+          "type": "integer"
+        },
+        "gpu_all_cells_required": {
+          "default": true,
+          "title": "Gpu All Cells Required",
+          "type": "boolean"
+        },
+        "gpu_audit_fraction": {
+          "default": 0.0,
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Gpu Audit Fraction",
+          "type": "number"
+        },
+        "gpu_audit_limit": {
+          "default": 32,
+          "minimum": 0,
+          "title": "Gpu Audit Limit",
+          "type": "integer"
+        },
+        "gpu_backend": {
+          "const": "cupy",
+          "default": "cupy",
+          "title": "Gpu Backend",
+          "type": "string"
+        },
+        "gpu_chunk_size": {
+          "anyOf": [
+            {
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Gpu Chunk Size"
+        },
+        "gpu_kl_tolerance": {
+          "default": 1e-07,
+          "exclusiveMinimum": 0.0,
+          "title": "Gpu Kl Tolerance",
+          "type": "number"
+        },
+        "gpu_memory_limit_mb": {
+          "anyOf": [
+            {
+              "minimum": 1,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Gpu Memory Limit Mb"
+        },
+        "gpu_precision": {
+          "default": "audit64",
+          "enum": [
+            "audit64",
+            "mixed",
+            "balanced32",
+            "fast32"
+          ],
+          "title": "Gpu Precision",
+          "type": "string"
+        },
+        "gpu_probability_tolerance": {
+          "default": 1e-08,
+          "exclusiveMinimum": 0.0,
+          "title": "Gpu Probability Tolerance",
+          "type": "number"
+        },
+        "gpu_profile": {
+          "default": true,
+          "title": "Gpu Profile",
+          "type": "boolean"
+        },
+        "gpu_transfer_policy": {
+          "default": "stage_once",
+          "enum": [
+            "stage_once",
+            "persistent_mirror"
+          ],
+          "title": "Gpu Transfer Policy",
+          "type": "string"
+        },
+        "gpu_validate_cpu": {
+          "default": false,
+          "title": "Gpu Validate Cpu",
+          "type": "boolean"
+        },
+        "gpu_validate_qiskit": {
+          "default": false,
+          "title": "Gpu Validate Qiskit",
+          "type": "boolean"
+        },
+        "interference_action_graph": {
+          "const": "semantic_families_v1",
+          "default": "semantic_families_v1",
+          "title": "Interference Action Graph",
+          "type": "string"
+        },
+        "interference_mixer_strength": {
+          "default": 0.0,
+          "minimum": 0.0,
+          "title": "Interference Mixer Strength",
+          "type": "number"
+        },
+        "interference_trotter_steps": {
+          "default": 1,
+          "minimum": 1,
+          "title": "Interference Trotter Steps",
+          "type": "integer"
+        },
+        "max_cells_per_tick": {
+          "anyOf": [
+            {
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Max Cells Per Tick"
+        },
+        "mode": {
+          "default": "cpu_audit",
+          "enum": [
+            "cpu_audit",
+            "cpu_qiskit",
+            "dynamic",
+            "deferred",
+            "hybrid",
+            "walk",
+            "gpu_batch",
+            "gpu_hybrid_audit",
+            "gpu_full",
+            "gpu_full_hybrid_audit"
+          ],
+          "title": "Mode",
+          "type": "string"
+        },
+        "parent_intention_eta": {
+          "default": 0.25,
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Parent Intention Eta",
+          "type": "number"
+        },
+        "persist_quantum_state": {
+          "default": true,
+          "title": "Persist Quantum State",
+          "type": "boolean"
+        },
+        "phase_resonance_coupling": {
+          "default": 0.0,
+          "minimum": 0.0,
+          "title": "Phase Resonance Coupling",
+          "type": "number"
+        },
+        "phase_resonance_global_weight": {
+          "default": 0.25,
+          "minimum": 0.0,
+          "title": "Phase Resonance Global Weight",
+          "type": "number"
+        },
+        "phase_resonance_patch_weight": {
+          "default": 0.75,
+          "minimum": 0.0,
+          "title": "Phase Resonance Patch Weight",
+          "type": "number"
+        },
+        "phase_resonance_support_epsilon": {
+          "default": 1e-10,
+          "exclusiveMinimum": 0.0,
+          "title": "Phase Resonance Support Epsilon",
+          "type": "number"
+        },
+        "prime_weights": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "title": "Prime Weights",
+          "type": "object"
+        },
+        "qiskit_allow_automatic_execution_fallback": {
+          "default": false,
+          "title": "Qiskit Allow Automatic Execution Fallback",
+          "type": "boolean"
+        },
+        "qiskit_authoritative_family": {
+          "default": "static",
+          "enum": [
+            "static",
+            "deferred",
+            "dynamic_recursive",
+            "walk",
+            "density_noise",
+            "interference"
+          ],
+          "title": "Qiskit Authoritative Family",
+          "type": "string"
+        },
+        "qiskit_batched_shots_gpu": {
+          "default": false,
+          "title": "Qiskit Batched Shots Gpu",
+          "type": "boolean"
+        },
+        "qiskit_chunk_size": {
+          "default": 64,
+          "minimum": 1,
+          "title": "Qiskit Chunk Size",
+          "type": "integer"
+        },
+        "qiskit_circuit_families": {
+          "default": [
+            "static"
+          ],
+          "items": {
+            "enum": [
+              "static",
+              "deferred",
+              "dynamic_recursive",
+              "walk",
+              "density_noise",
+              "interference"
+            ],
+            "type": "string"
+          },
+          "title": "Qiskit Circuit Families",
+          "type": "array"
+        },
+        "qiskit_confirm_expensive": {
+          "default": false,
+          "title": "Qiskit Confirm Expensive",
+          "type": "boolean"
+        },
+        "qiskit_debug_ow_limit": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Qiskit Debug Ow Limit",
+          "type": "integer"
+        },
+        "qiskit_decision_mode": {
+          "default": "off",
+          "enum": [
+            "off",
+            "validation_sample",
+            "every_ow_static_exact",
+            "every_ow_dynamic_shots",
+            "every_ow_circuit_family"
+          ],
+          "title": "Qiskit Decision Mode",
+          "type": "string"
+        },
+        "qiskit_enable_cuStateVec": {
+          "default": false,
+          "title": "Qiskit Enable Custatevec",
+          "type": "boolean"
+        },
+        "qiskit_gpu_device": {
+          "default": "GPU",
+          "enum": [
+            "GPU",
+            "CPU"
+          ],
+          "title": "Qiskit Gpu Device",
+          "type": "string"
+        },
+        "qiskit_gpu_method": {
+          "default": "statevector",
+          "enum": [
+            "statevector",
+            "density_matrix",
+            "tensor_network"
+          ],
+          "title": "Qiskit Gpu Method",
+          "type": "string"
+        },
+        "qiskit_job_queue_depth": {
+          "default": 2,
+          "minimum": 1,
+          "title": "Qiskit Job Queue Depth",
+          "type": "integer"
+        },
+        "qiskit_preflight_batch_size": {
+          "default": 8,
+          "maximum": 64,
+          "minimum": 1,
+          "title": "Qiskit Preflight Batch Size",
+          "type": "integer"
+        },
+        "qiskit_preflight_cache": {
+          "default": true,
+          "title": "Qiskit Preflight Cache",
+          "type": "boolean"
+        },
+        "qiskit_preflight_required": {
+          "default": true,
+          "title": "Qiskit Preflight Required",
+          "type": "boolean"
+        },
+        "qiskit_preflight_tolerance": {
+          "default": 1e-10,
+          "exclusiveMinimum": 0.0,
+          "title": "Qiskit Preflight Tolerance",
+          "type": "number"
+        },
+        "qiskit_readout_policy": {
+          "default": "deterministic_sample",
+          "enum": [
+            "deterministic_sample",
+            "argmax",
+            "first_shot"
+          ],
+          "title": "Qiskit Readout Policy",
+          "type": "string"
+        },
+        "qiskit_require_transpiled_native_instructions": {
+          "default": true,
+          "title": "Qiskit Require Transpiled Native Instructions",
+          "type": "boolean"
+        },
+        "qiskit_runtime_binding_policy": {
+          "default": "required_native",
+          "enum": [
+            "required_native",
+            "concrete_reference",
+            "disabled"
+          ],
+          "title": "Qiskit Runtime Binding Policy",
+          "type": "string"
+        },
+        "qiskit_runtime_parameter_bind_enable": {
+          "default": false,
+          "title": "Qiskit Runtime Parameter Bind Enable",
+          "type": "boolean"
+        },
+        "qiskit_shot_branching_enable": {
+          "default": false,
+          "title": "Qiskit Shot Branching Enable",
+          "type": "boolean"
+        },
+        "qiskit_state_preparation_strategy": {
+          "const": "exact_native_rotation_tree",
+          "default": "exact_native_rotation_tree",
+          "title": "Qiskit State Preparation Strategy",
+          "type": "string"
+        },
+        "qiskit_subset_fraction": {
+          "default": 0.0,
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Qiskit Subset Fraction",
+          "type": "number"
+        },
+        "qiskit_target_gpus": {
+          "default": [],
+          "items": {
+            "type": "integer"
+          },
+          "title": "Qiskit Target Gpus",
+          "type": "array"
+        },
+        "qiskit_validation_max_qubits": {
+          "default": 28,
+          "minimum": 1,
+          "title": "Qiskit Validation Max Qubits",
+          "type": "integer"
+        },
+        "qiskit_validation_shots": {
+          "default": 4096,
+          "minimum": 1,
+          "title": "Qiskit Validation Shots",
+          "type": "integer"
+        },
+        "record_action_probabilities": {
+          "default": true,
+          "title": "Record Action Probabilities",
+          "type": "boolean"
+        },
+        "record_actualization_diagnostics": {
+          "default": false,
+          "title": "Record Actualization Diagnostics",
+          "type": "boolean"
+        },
+        "record_measurement_records": {
+          "default": true,
+          "title": "Record Measurement Records",
+          "type": "boolean"
+        },
+        "rounds_per_tick": {
+          "default": 1,
+          "minimum": 0,
+          "title": "Rounds Per Tick",
+          "type": "integer"
+        },
+        "shots": {
+          "default": 1024,
+          "minimum": 1,
+          "title": "Shots",
+          "type": "integer"
+        },
+        "store_density_diagnostics": {
+          "default": false,
+          "title": "Store Density Diagnostics",
+          "type": "boolean"
+        },
+        "strict_gpu": {
+          "default": true,
+          "title": "Strict Gpu",
+          "type": "boolean"
+        },
+        "use_qiskit_for_all": {
+          "default": false,
+          "title": "Use Qiskit For All",
+          "type": "boolean"
+        },
+        "utility_bound_floor": {
+          "default": 1.0,
+          "exclusiveMinimum": 0.0,
+          "title": "Utility Bound Floor",
+          "type": "number"
+        },
+        "utility_coupling": {
+          "default": 0.0,
+          "minimum": 0.0,
+          "title": "Utility Coupling",
+          "type": "number"
+        },
+        "utility_projection_epsilon": {
+          "default": 1e-08,
+          "exclusiveMinimum": 0.0,
+          "title": "Utility Projection Epsilon",
+          "type": "number"
+        }
+      },
+      "title": "RAQICConfig",
+      "type": "object"
+    },
+    "RecordingConfig": {
+      "additionalProperties": false,
+      "description": "Output and recording parameters.",
+      "properties": {
+        "cadc": {
+          "$ref": "#/$defs/CADCRecordingConfig"
+        },
+        "enabled": {
+          "default": true,
+          "title": "Enabled",
+          "type": "boolean"
+        },
+        "metrics_path": {
+          "default": "results/metrics.parquet",
+          "title": "Metrics Path",
+          "type": "string"
+        },
+        "record_every": {
+          "default": 5,
+          "minimum": 1,
+          "title": "Record Every",
+          "type": "integer"
+        },
+        "save_fields": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Save Fields",
+          "type": "array"
+        },
+        "zarr_path": {
+          "default": "runs/run_001.zarr",
+          "title": "Zarr Path",
+          "type": "string"
+        }
+      },
+      "title": "RecordingConfig",
+      "type": "object"
+    },
+    "ReproductionConfig": {
+      "additionalProperties": false,
+      "description": "Reproduction, inheritance, and mutation coefficients.",
+      "properties": {
+        "advanced_enabled": {
+          "default": false,
+          "title": "Advanced Enabled",
+          "type": "boolean"
+        },
+        "channel_mutation_sigma": {
+          "default": 0.04,
+          "minimum": 0,
+          "title": "Channel Mutation Sigma",
+          "type": "number"
+        },
+        "child_resource_fraction": {
+          "default": 0.35,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Child Resource Fraction",
+          "type": "number"
+        },
+        "enabled": {
+          "default": true,
+          "title": "Enabled",
+          "type": "boolean"
+        },
+        "genome_length": {
+          "default": 8,
+          "maximum": 64,
+          "minimum": 1,
+          "title": "Genome Length",
+          "type": "integer"
+        },
+        "genotype_mutation_sigma": {
+          "default": 0.04,
+          "minimum": 0,
+          "title": "Genotype Mutation Sigma",
+          "type": "number"
+        },
+        "initial_child_boundary": {
+          "default": 0.6,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Initial Child Boundary",
+          "type": "number"
+        },
+        "initial_child_health": {
+          "default": 0.8,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Initial Child Health",
+          "type": "number"
+        },
+        "mate_radius": {
+          "default": 1,
+          "maximum": 5,
+          "minimum": 1,
+          "title": "Mate Radius",
+          "type": "integer"
+        },
+        "memory_inheritance": {
+          "default": 0.25,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Memory Inheritance",
+          "type": "number"
+        },
+        "min_boundary": {
+          "default": 0.6,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Min Boundary",
+          "type": "number"
+        },
+        "min_health": {
+          "default": 0.7,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Min Health",
+          "type": "number"
+        },
+        "min_integration": {
+          "default": 0.5,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Min Integration",
+          "type": "number"
+        },
+        "min_resource": {
+          "default": 0.75,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Min Resource",
+          "type": "number"
+        },
+        "mutation_sigma": {
+          "default": 0.03,
+          "minimum": 0,
+          "title": "Mutation Sigma",
+          "type": "number"
+        },
+        "recombination_enabled": {
+          "default": true,
+          "title": "Recombination Enabled",
+          "type": "boolean"
+        },
+        "symbiosis_enabled": {
+          "default": false,
+          "title": "Symbiosis Enabled",
+          "type": "boolean"
+        }
+      },
+      "title": "ReproductionConfig",
+      "type": "object"
+    },
+    "ResourceConfig": {
+      "additionalProperties": false,
+      "description": "Physical resource, food, toxin, and metabolic parameters.",
+      "properties": {
+        "emergency_feed_boost": {
+          "default": 0.8,
+          "minimum": 0,
+          "title": "Emergency Feed Boost",
+          "type": "number"
+        },
+        "emergency_feed_threshold": {
+          "default": 0.18,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Emergency Feed Threshold",
+          "type": "number"
+        },
+        "feed_efficiency": {
+          "default": 0.4,
+          "minimum": 0,
+          "title": "Feed Efficiency",
+          "type": "number"
+        },
+        "feeding_immediate_fraction": {
+          "default": 0.3,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Feeding Immediate Fraction",
+          "type": "number"
+        },
+        "food_decay": {
+          "default": 0.002,
+          "minimum": 0,
+          "title": "Food Decay",
+          "type": "number"
+        },
+        "food_diffusion": {
+          "default": 0.05,
+          "minimum": 0,
+          "title": "Food Diffusion",
+          "type": "number"
+        },
+        "food_growth": {
+          "default": 0.01,
+          "minimum": 0,
+          "title": "Food Growth",
+          "type": "number"
+        },
+        "max_resource": {
+          "default": 1.0,
+          "exclusiveMinimum": 0,
+          "title": "Max Resource",
+          "type": "number"
+        },
+        "metabolism_base": {
+          "default": 0.003,
+          "minimum": 0,
+          "title": "Metabolism Base",
+          "type": "number"
+        },
+        "movement_cost": {
+          "default": 0.01,
+          "minimum": 0,
+          "title": "Movement Cost",
+          "type": "number"
+        },
+        "starvation_debt_gain": {
+          "default": 0.06,
+          "minimum": 0,
+          "title": "Starvation Debt Gain",
+          "type": "number"
+        },
+        "starvation_debt_recovery": {
+          "default": 0.09,
+          "minimum": 0,
+          "title": "Starvation Debt Recovery",
+          "type": "number"
+        },
+        "starvation_grace_ticks": {
+          "default": 18.0,
+          "exclusiveMinimum": 0,
+          "title": "Starvation Grace Ticks",
+          "type": "number"
+        },
+        "starvation_health_damage": {
+          "default": 0.035,
+          "minimum": 0,
+          "title": "Starvation Health Damage",
+          "type": "number"
+        },
+        "toxin_decay": {
+          "default": 0.01,
+          "minimum": 0,
+          "title": "Toxin Decay",
+          "type": "number"
+        },
+        "toxin_diffusion": {
+          "default": 0.02,
+          "minimum": 0,
+          "title": "Toxin Diffusion",
+          "type": "number"
+        }
+      },
+      "title": "ResourceConfig",
+      "type": "object"
+    },
+    "TopDownConfig": {
+      "additionalProperties": false,
+      "description": "Bounded parent/apex modulation parameters.",
+      "properties": {
+        "apex_update_every": {
+          "default": 10,
+          "minimum": 1,
+          "title": "Apex Update Every",
+          "type": "integer"
+        },
+        "lambda_action_bias": {
+          "default": 0.2,
+          "minimum": 0,
+          "title": "Lambda Action Bias",
+          "type": "number"
+        },
+        "lambda_threshold": {
+          "default": 0.1,
+          "minimum": 0,
+          "title": "Lambda Threshold",
+          "type": "number"
+        },
+        "max_parent_control": {
+          "default": 0.25,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Max Parent Control",
+          "type": "number"
+        }
+      },
+      "title": "TopDownConfig",
+      "type": "object"
+    },
+    "VisualizationConfig": {
+      "additionalProperties": false,
+      "properties": {
+        "accessibility_mode": {
+          "default": "standard",
+          "enum": [
+            "standard",
+            "high_contrast",
+            "deuteranopia",
+            "protanopia",
+            "tritanopia",
+            "monochrome"
+          ],
+          "title": "Accessibility Mode",
+          "type": "string"
+        },
+        "adaptive_lod": {
+          "default": true,
+          "title": "Adaptive Lod",
+          "type": "boolean"
+        },
+        "atlas_max_entries": {
+          "default": 8192,
+          "minimum": 128,
+          "title": "Atlas Max Entries",
+          "type": "integer"
+        },
+        "backend": {
+          "default": "pygame",
+          "enum": [
+            "pygame",
+            "none"
+          ],
+          "title": "Backend",
+          "type": "string"
+        },
+        "camera_mode": {
+          "default": "fit",
+          "enum": [
+            "fit",
+            "free",
+            "follow",
+            "cinematic"
+          ],
+          "title": "Camera Mode",
+          "type": "string"
+        },
+        "color_by": {
+          "default": "integration",
+          "title": "Color By",
+          "type": "string"
+        },
+        "enabled": {
+          "default": true,
+          "title": "Enabled",
+          "type": "boolean"
+        },
+        "event_every": {
+          "default": 1,
+          "minimum": 1,
+          "title": "Event Every",
+          "type": "integer"
+        },
+        "fail_on_dropped_recording_frame": {
+          "default": true,
+          "title": "Fail On Dropped Recording Frame",
+          "type": "boolean"
+        },
+        "fixed_tick_stride": {
+          "default": 1,
+          "minimum": 1,
+          "title": "Fixed Tick Stride",
+          "type": "integer"
+        },
+        "fps": {
+          "default": 30,
+          "minimum": 1,
+          "title": "Fps",
+          "type": "integer"
+        },
+        "frame_transfer_policy": {
+          "default": "double_buffered",
+          "enum": [
+            "synchronous",
+            "double_buffered",
+            "triple_buffered"
+          ],
+          "title": "Frame Transfer Policy",
+          "type": "string"
+        },
+        "frames_per_tick": {
+          "default": 8,
+          "maximum": 60,
+          "minimum": 1,
+          "title": "Frames Per Tick",
+          "type": "integer"
+        },
+        "lod_mode": {
+          "default": "automatic",
+          "enum": [
+            "automatic",
+            "heatmap",
+            "dots",
+            "glyphs",
+            "full"
+          ],
+          "title": "Lod Mode",
+          "type": "string"
+        },
+        "max_events": {
+          "default": 4096,
+          "minimum": 0,
+          "title": "Max Events",
+          "type": "integer"
+        },
+        "max_high_detail_effects": {
+          "default": 4096,
+          "minimum": 0,
+          "title": "Max High Detail Effects",
+          "type": "integer"
+        },
+        "max_history_frames": {
+          "default": 2000,
+          "minimum": 1,
+          "title": "Max History Frames",
+          "type": "integer"
+        },
+        "max_slowdown_fraction": {
+          "default": 0.15,
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Max Slowdown Fraction",
+          "type": "number"
+        },
+        "max_zoom": {
+          "default": 64.0,
+          "exclusiveMinimum": 0.0,
+          "title": "Max Zoom",
+          "type": "number"
+        },
+        "min_zoom": {
+          "default": 0.5,
+          "exclusiveMinimum": 0.0,
+          "title": "Min Zoom",
+          "type": "number"
+        },
+        "output_resolution": {
+          "anyOf": [
+            {
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "integer"
+                }
+              ],
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Output Resolution"
+        },
+        "overlay": {
+          "default": "life",
+          "title": "Overlay",
+          "type": "string"
+        },
+        "record_frames": {
+          "default": false,
+          "title": "Record Frames",
+          "type": "boolean"
+        },
+        "render_every": {
+          "default": 1,
+          "minimum": 1,
+          "title": "Render Every",
+          "type": "integer"
+        },
+        "renderer_mode": {
+          "default": "interpretability",
+          "enum": [
+            "legacy",
+            "interpretability"
+          ],
+          "title": "Renderer Mode",
+          "type": "string"
+        },
+        "resizable": {
+          "default": true,
+          "title": "Resizable",
+          "type": "boolean"
+        },
+        "scale": {
+          "default": 6,
+          "minimum": 1,
+          "title": "Scale",
+          "type": "integer"
+        },
+        "schedule_mode": {
+          "default": "live_adaptive",
+          "enum": [
+            "live_adaptive",
+            "record_fixed",
+            "record_keyframes"
+          ],
+          "title": "Schedule Mode",
+          "type": "string"
+        },
+        "show_action_effects": {
+          "default": true,
+          "title": "Show Action Effects",
+          "type": "boolean"
+        },
+        "show_advanced_overlays": {
+          "default": true,
+          "title": "Show Advanced Overlays",
+          "type": "boolean"
+        },
+        "show_environment_sprites": {
+          "default": true,
+          "title": "Show Environment Sprites",
+          "type": "boolean"
+        },
+        "show_patch_overlay": {
+          "default": true,
+          "title": "Show Patch Overlay",
+          "type": "boolean"
+        },
+        "snapshot_backed_replay": {
+          "default": false,
+          "title": "Snapshot Backed Replay",
+          "type": "boolean"
+        },
+        "trait_color_mode": {
+          "default": "raw_hex",
+          "enum": [
+            "raw_hex",
+            "perceptual"
+          ],
+          "title": "Trait Color Mode",
+          "type": "string"
+        },
+        "viewport_sidebar_width": {
+          "default": 320,
+          "minimum": 0,
+          "title": "Viewport Sidebar Width",
+          "type": "integer"
+        },
+        "visual_theme_seed": {
+          "default": 0,
+          "title": "Visual Theme Seed",
+          "type": "integer"
+        },
+        "window_height": {
+          "default": 1080,
+          "minimum": 480,
+          "title": "Window Height",
+          "type": "integer"
+        },
+        "window_width": {
+          "default": 1920,
+          "minimum": 640,
+          "title": "Window Width",
+          "type": "integer"
+        }
+      },
+      "title": "VisualizationConfig",
+      "type": "object"
+    },
+    "WorldConfig": {
+      "additionalProperties": false,
+      "description": "Spatial and scheduling parameters for the simulated world.",
+      "properties": {
+        "boundary_mode": {
+          "default": "toroidal",
+          "enum": [
+            "toroidal",
+            "reflective",
+            "absorbing",
+            "obstacle"
+          ],
+          "title": "Boundary Mode",
+          "type": "string"
+        },
+        "height": {
+          "default": 100,
+          "minimum": 10,
+          "title": "Height",
+          "type": "integer"
+        },
+        "max_steps": {
+          "default": 1000,
+          "minimum": 1,
+          "title": "Max Steps",
+          "type": "integer"
+        },
+        "patch_size": {
+          "default": 5,
+          "minimum": 1,
+          "title": "Patch Size",
+          "type": "integer"
+        },
+        "seed": {
+          "default": 42,
+          "title": "Seed",
+          "type": "integer"
+        },
+        "width": {
+          "default": 100,
+          "minimum": 10,
+          "title": "Width",
+          "type": "integer"
+        }
+      },
+      "title": "WorldConfig",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "Top-level validated configuration for a simulation run.",
+  "properties": {
+    "action_transitions": {
+      "$ref": "#/$defs/ActionTransitionConfig"
+    },
+    "actions": {
+      "$ref": "#/$defs/ActionConfig"
+    },
+    "communication": {
+      "$ref": "#/$defs/CommunicationConfig"
+    },
+    "counterfactual": {
+      "$ref": "#/$defs/CounterfactualConfig"
+    },
+    "cross_scale_homeostasis": {
+      "$ref": "#/$defs/CrossScaleHomeostasisConfig"
+    },
+    "debug": {
+      "$ref": "#/$defs/DebugConfig"
+    },
+    "decision_homeostasis": {
+      "$ref": "#/$defs/DecisionHomeostasisConfig"
+    },
+    "ecology": {
+      "$ref": "#/$defs/EcologyConfig"
+    },
+    "hierarchy": {
+      "$ref": "#/$defs/HierarchyConfig"
+    },
+    "identity": {
+      "$ref": "#/$defs/IdentityConfig"
+    },
+    "initialization": {
+      "$ref": "#/$defs/InitializationConfig"
+    },
+    "integration": {
+      "$ref": "#/$defs/IntegrationConfig"
+    },
+    "phase": {
+      "$ref": "#/$defs/PhaseConfig"
+    },
+    "possibility": {
+      "$ref": "#/$defs/PossibilityConfig"
+    },
+    "predation": {
+      "$ref": "#/$defs/PredationConfig"
+    },
+    "raqic": {
+      "$ref": "#/$defs/RAQICConfig"
+    },
+    "recording": {
+      "$ref": "#/$defs/RecordingConfig"
+    },
+    "reproduction": {
+      "$ref": "#/$defs/ReproductionConfig"
+    },
+    "resources": {
+      "$ref": "#/$defs/ResourceConfig"
+    },
+    "topdown": {
+      "$ref": "#/$defs/TopDownConfig"
+    },
+    "visualization": {
+      "$ref": "#/$defs/VisualizationConfig"
+    },
+    "world": {
+      "$ref": "#/$defs/WorldConfig"
+    }
+  },
+  "title": "SimulationConfig",
+  "type": "object"
+}

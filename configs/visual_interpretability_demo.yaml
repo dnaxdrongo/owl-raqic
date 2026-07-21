@@ -1,0 +1,48 @@
+world:
+  height: 100
+  width: 100
+  patch_size: 5
+  max_steps: 120
+  seed: 7703
+recording:
+  enabled: false
+  metrics_path: reports/visual_overhaul/metrics.jsonl
+visualization:
+  enabled: true
+  backend: none
+  fps: 30
+  scale: 1
+  renderer_mode: interpretability
+  schedule_mode: record_fixed
+  frames_per_tick: 8
+  fixed_tick_stride: 1
+  fail_on_dropped_recording_frame: true
+  adaptive_lod: false
+  window_width: 1920
+  window_height: 1080
+  output_resolution: [1920, 1080]
+  viewport_sidebar_width: 320
+  camera_mode: fit
+  min_zoom: 0.5
+  max_zoom: 64.0
+  trait_color_mode: raw_hex
+  accessibility_mode: standard
+  show_environment_sprites: true
+  show_action_effects: true
+  show_patch_overlay: true
+  max_high_detail_effects: 4096
+  atlas_max_entries: 8192
+  visual_theme_seed: 7703
+raqic:
+  enabled: true
+  mode: gpu_full
+  decision_policy: raqic
+  fallback_on_backend_error: true
+  full_gpu_strict: false
+  full_gpu_transfer_policy: persistent_mirror
+  full_gpu_execution_tier: persistent
+  full_gpu_precision: mixed
+  full_gpu_visual_backend: headless_export
+  full_gpu_sprite_theme: owl_dark_neon
+  full_gpu_render_every: 1
+  full_gpu_visual_adaptive_lod: false

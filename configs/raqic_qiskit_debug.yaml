@@ -1,0 +1,27 @@
+world:
+  height: 10
+  width: 10
+  patch_size: 5
+  max_steps: 5
+  seed: 44
+recording:
+  enabled: false
+  metrics_path: results/raqic_qiskit_debug_metrics.parquet
+  zarr_path: runs/raqic_qiskit_debug.zarr
+visualization:
+  enabled: false
+  backend: none
+debug:
+  assert_invariants: true
+raqic:
+  enabled: true
+  mode: cpu_qiskit
+  decision_policy: hybrid_compare
+  qiskit_subset_fraction: 0.05
+  gpu_audit_limit: 4
+  epsilon_raqic: 1.0
+  epsilon_adelic: 1.0
+  rounds_per_tick: 1
+  shots: 256
+  active_primes: [2, 3, 5]
+  max_cells_per_tick: 8

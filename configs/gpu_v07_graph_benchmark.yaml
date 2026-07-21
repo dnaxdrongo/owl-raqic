@@ -1,0 +1,30 @@
+world:
+  height: 50
+  width: 50
+  patch_size: 5
+  max_steps: 50
+  seed: 7072
+recording:
+  enabled: false
+visualization:
+  enabled: false
+  backend: none
+debug:
+  assert_invariants: false
+raqic:
+  enabled: true
+  mode: gpu_full
+  decision_policy: raqic
+  fallback_on_backend_error: false
+  full_gpu_strict: true
+  full_gpu_transfer_policy: persistent_mirror
+  full_gpu_execution_tier: graph
+  full_gpu_precision: mixed
+  full_gpu_memory_policy: preallocate
+  full_gpu_graph_mode: segments
+  full_gpu_graph_warmup_ticks: 3
+  full_gpu_stencil_backend: auto
+  full_gpu_fuse_scatter: true
+  full_gpu_phase_mode: canonical_device
+  full_gpu_visual_backend: none
+  full_gpu_recording_level_v07: metrics_plus_events

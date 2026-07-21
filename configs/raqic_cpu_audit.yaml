@@ -1,0 +1,27 @@
+world:
+  height: 10
+  width: 10
+  patch_size: 5
+  max_steps: 20
+  seed: 42
+recording:
+  enabled: false
+  metrics_path: results/raqic_cpu_audit_metrics.parquet
+  zarr_path: runs/raqic_cpu_audit.zarr
+visualization:
+  enabled: false
+  backend: none
+debug:
+  assert_invariants: true
+raqic:
+  enabled: true
+  mode: cpu_audit
+  decision_policy: raqic
+  epsilon_raqic: 1.0
+  epsilon_adelic: 1.0
+  beta_intention: 1.0
+  action_temperature: 1.0
+  rounds_per_tick: 1
+  shots: 256
+  active_primes: [2, 3, 5]
+  max_cells_per_tick: 25

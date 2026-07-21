@@ -1,0 +1,11 @@
+extends: cadc_phase4_h100_budget_64.yaml
+
+runtime:
+  target: h200
+  batch_size: 3072
+  max_device_bytes: 120259084288
+  corpus_workers: 8
+
+artifacts:
+  output_root: phase4_h200_budget_64
+

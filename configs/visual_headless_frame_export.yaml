@@ -1,0 +1,40 @@
+world:
+  height: 50
+  width: 50
+  patch_size: 5
+  max_steps: 100
+  seed: 7702
+recording:
+  enabled: false
+  metrics_path: reports/visual_frames/metrics.jsonl
+visualization:
+  enabled: true
+  backend: none
+  fps: 30
+  renderer_mode: interpretability
+  schedule_mode: record_fixed
+  frames_per_tick: 8
+  fixed_tick_stride: 1
+  fail_on_dropped_recording_frame: true
+  adaptive_lod: false
+  output_resolution: [1920, 1080]
+  window_width: 1920
+  window_height: 1080
+  viewport_sidebar_width: 320
+  camera_mode: fit
+  show_environment_sprites: true
+  show_action_effects: true
+  show_patch_overlay: true
+  visual_theme_seed: 7702
+raqic:
+  enabled: true
+  mode: gpu_full
+  decision_policy: raqic
+  fallback_on_backend_error: true
+  full_gpu_strict: false
+  full_gpu_transfer_policy: persistent_mirror
+  full_gpu_execution_tier: persistent
+  full_gpu_visual_backend: headless_export
+  full_gpu_sprite_theme: owl_dark_neon
+  full_gpu_render_every: 1
+  full_gpu_visual_adaptive_lod: false

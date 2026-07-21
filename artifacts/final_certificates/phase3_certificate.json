@@ -1,0 +1,147 @@
+{
+  "action_coverage": {
+    "COMMUNICATE": 2,
+    "FEED": 2,
+    "FLEE": 2,
+    "INGEST": 2,
+    "INHIBIT": 2,
+    "INTEGRATE": 2,
+    "MOVE_E": 2,
+    "MOVE_NE": 2,
+    "MOVE_NW": 2,
+    "MOVE_S": 2,
+    "MOVE_SE": 2,
+    "MOVE_SW": 2,
+    "MOVE_W": 2,
+    "PURSUE": 2,
+    "REPAIR": 2,
+    "REPRODUCE": 2,
+    "REST": 2,
+    "SENSE": 2
+  },
+  "classification": "H100_PHASE3_TARGET_CERTIFIED",
+  "counterfactual_schema_digest": "c00db34ad9cbaaa0fa589261a9b6718860bbe1a9f01fe7549f0ba9f90c2da4f1",
+  "factual_v2_digest": "14beff051fc94f6069444355d109ef77a82f092d00e98f25fe3fcefa782edec5",
+  "failures": [],
+  "gates": {
+    "acceptance_manifest": {
+      "detail": "acceptance passed while retaining the Phase 4 lock",
+      "passed": true
+    },
+    "action_coverage": {
+      "detail": "{\"COMMUNICATE\": 2, \"FEED\": 2, \"FLEE\": 2, \"INGEST\": 2, \"INHIBIT\": 2, \"INTEGRATE\": 2, \"MOVE_E\": 2, \"MOVE_NE\": 2, \"MOVE_NW\": 2, \"MOVE_S\": 2, \"MOVE_SE\": 2, \"MOVE_SW\": 2, \"MOVE_W\": 2, \"PURSUE\": 2, \"REPAIR\": 2, \"REPRODUCE\": 2, \"REST\": 2, \"SENSE\": 2}",
+      "passed": true
+    },
+    "action_order": {
+      "detail": "immutable 22-action axis",
+      "passed": true
+    },
+    "attempt_grain": {
+      "detail": "nonanchor=44 expected=44",
+      "passed": true
+    },
+    "command_status": {
+      "detail": "{\"acceptance_runner\": 0, \"gpu_preflight\": 0, \"hotpath_audit\": 0, \"mypy\": 0, \"pip_check\": 0, \"profile\": 0, \"pytest\": 0, \"repair_regressions\": 0, \"ruff\": 0}",
+      "passed": true
+    },
+    "common_random_numbers": {
+      "detail": "paired_groups=2",
+      "passed": true
+    },
+    "event_contribution_joins": {
+      "detail": "events=4780 contributions=14108",
+      "passed": true
+    },
+    "factual_isolation": {
+      "detail": "observer no-op, branch nonmutation, and disjoint pointers",
+      "passed": true
+    },
+    "forcing_validation": {
+      "detail": "complete target validation and registered high-level force leaves",
+      "passed": true
+    },
+    "gpu_preflight": {
+      "detail": "{\"array_bytes\": 28, \"branch_smoke\": {\"branches\": [{\"anchor_matches\": {\"1\": true, \"2\": true}, \"branch_id\": \"13027122d99b781146840faa865fc35448bef390f5c04012216048bd48941313\", \"forced_action\": 15, \"forced_action_name\": \"REPRODUCE\", \"horizons\": [1, 2], \"selected_anchor\": true}, {\"anchor_matches\": {}, \"branch_id\": \"621d106992f83b52bb5c8c6aedff2e8e7ea294189d486dca1afbf04f5e2b40d5\", \"forced_action\": 1, \"forced_action_name\": \"SENSE\", \"horizons\": [1, 2], \"selected_anchor\": false}, {\"anchor_matches\": {}, \"branch_id\": \"935bcdbb465e214f86c3790416834daac9d6cb2c936187746e003dc3098ebb8b\", \"forced_action\": 20, \"forced_action_name\": \"FLEE\", \"horizons\": [1, 2], \"selected_anchor\": false}, {\"anchor_matches\": {}, \"branch_id\": \"ccade4fa33f6f417b41570854ce7613b57d058d23662516d9391a5c5409c7e97\", \"forced_action\": 21, \"forced_action_name\": \"PURSUE\", \"horizons\": [1, 2], \"selected_anchor\": false}], \"defer_host_metrics\": true, \"factual_root\": \"c465219f460358e63135be244ea6f13ece5de9ab4f6ca96c9e7c7d5de318681a\", \"passed\": true, \"source_decision_id\": \"9ade6a6cb347f944a27562ab46ab5ca6893d10852011b312f75f1526585da938\", \"source_state_id\": \"5c9cd47c9afb1372e58033172008a23f93274ffac7f105dc7ca479c4d3473fc9\"}, \"checks\": {\"backend_invariant_hash\": true, \"branch_deferred_device_scalars\": true, \"branch_factual_nonmutation\": true, \"categorical_mismatch_detection\": true, \"cupy_metadata_hash\": true, \"cupy_science_comparison\": true, \"floating_tolerance_detection\": true, \"mixed_backend_science_comparison\": true, \"nan_infinity_mask_comparison\": true, \"real_branch_postdecision_execution\": true, \"selected_anchor_horizon_one\": true}, \"classification\": \"H100_PHASE3_GPU_PREFLIGHT_PASSED\", \"device\": {\"cupy_version\": \"14.1.1\", \"device_count\": 1, \"device_id\": 0, \"driver_version\": 13000, \"name\": \"NVIDIA H100 80GB HBM3\", \"runtime_version\": 12090, \"total_global_memory_bytes\": 85017493504}, \"device_to_host_bytes\": 36, \"failures\": [], \"passed\": true, \"schema_version\": \"owl.cadc.phase3-gpu-preflight.v1\", \"source_sha256\": \"d17ef58692c7663eb0cc87ab4cdf7e74ca9b529091fcab4f15b6fe28e2a607a3\", \"state_root\": \"775de9b408665738d426f3b5db3a95540dbe0bb73be5d0cd2312ee6cc81d5554\"}",
+      "passed": true
+    },
+    "memory_bounds": {
+      "detail": "Bmax=64",
+      "passed": true
+    },
+    "multi_horizon_outcomes": {
+      "detail": "outcome_rows=159",
+      "passed": true
+    },
+    "nonexecutable_joins": {
+      "detail": "nonexecutable=8",
+      "passed": true
+    },
+    "observed_memory_bounds": {
+      "detail": "{\"allowed_bytes\": 51539607552, \"baseline_used_mib\": 0, \"peak_delta_bytes\": 1030750208, \"peak_process_rss_kib\": 1036980, \"peak_used_mib\": 983, \"samples\": 141}",
+      "passed": true
+    },
+    "overflow": {
+      "detail": "event_overflow=0",
+      "passed": true
+    },
+    "pair_joins": {
+      "detail": "pairs=1244",
+      "passed": true
+    },
+    "parquet_receipts": {
+      "detail": "verified 9 checksum-receipted parts",
+      "passed": true
+    },
+    "part_manifest": {
+      "detail": "tables=['branch_attempts', 'branch_contributions', 'branch_event_summaries', 'branch_events', 'candidate_pairs', 'counterfactual_micro_rollouts', 'nonexecutable_candidates', 'source_decisions', 'source_states']",
+      "passed": true
+    },
+    "phase25_gate": {
+      "detail": "12/12 Phase 2.5 identity checks",
+      "passed": true
+    },
+    "schema_identity": {
+      "detail": "counterfactual and factual-v2 schema identities",
+      "passed": true
+    },
+    "selected_anchor": {
+      "detail": "anchors=1",
+      "passed": true
+    },
+    "source_decisions": {
+      "detail": "decisions=1",
+      "passed": true
+    },
+    "source_scope": {
+      "detail": "expected=d17ef58692c7663eb0cc87ab4cdf7e74ca9b529091fcab4f15b6fe28e2a607a3 actual=d17ef58692c7663eb0cc87ab4cdf7e74ca9b529091fcab4f15b6fe28e2a607a3",
+      "passed": true
+    },
+    "target_gpu": {
+      "detail": "{\"compute_capability\": \"9.0\", \"cupy_version\": \"14.1.1\", \"device_id\": 0, \"driver_version\": 13000, \"multiprocessor_count\": 132, \"name\": \"NVIDIA H100 80GB HBM3\", \"runtime_version\": 12090, \"total_global_memory_bytes\": 85017493504}",
+      "passed": true
+    },
+    "transfer_contract": {
+      "detail": "d2d=12985816 d2h=135531511",
+      "passed": true
+    }
+  },
+  "passed": true,
+  "phase25_certificate_sha256": "59ac1ea607863a8b9457273006dcda53e9141eea1bead1eedc1bb1f1d21a5aba",
+  "phase25_source_sha256": "c48b19939583e8c63033f96a7bd147f6f11e7a67cb1a2e957d91922bdc55a15a",
+  "phase3_source_sha256": "d17ef58692c7663eb0cc87ab4cdf7e74ca9b529091fcab4f15b6fe28e2a607a3",
+  "phase4_unlocked": true,
+  "rng_registry_digest": "4ce20f4ce0500206d8e93c73db0006f58defa2c2ac3543d2aa8246585509a00a",
+  "row_counts": {
+    "branch_attempts": 45,
+    "branch_contributions": 14108,
+    "branch_event_summaries": 386,
+    "branch_events": 4780,
+    "candidate_pairs": 1244,
+    "counterfactual_micro_rollouts": 159,
+    "nonexecutable_candidates": 8,
+    "source_decisions": 1,
+    "source_states": 1
+  },
+  "schema_version": "owl.cadc.phase3-target-certificate.v1",
+  "target_requested": "H100"
+}

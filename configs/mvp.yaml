@@ -1,0 +1,186 @@
+world:
+  height: 50
+  width: 50
+  seed: 42
+  boundary_mode: toroidal
+  patch_size: 5
+  max_steps: 1000
+actions:
+  beta: 2.0
+  stochastic: true
+  epsilon: 1e-08
+  enabled_actions:
+  - REST
+  - SENSE
+  - MOVE_N
+  - MOVE_S
+  - MOVE_E
+  - MOVE_W
+  - MOVE_NE
+  - MOVE_NW
+  - MOVE_SE
+  - MOVE_SW
+  - FEED
+  - COMMUNICATE
+  - INHIBIT
+  - INTEGRATE
+  - REPAIR
+  - REPRODUCE
+  - INGEST
+  movement_macro_enabled: true
+  diagonal_movement_enabled: true
+  utility_weighted_sampling: true
+  action_temperature: 0.5
+  movement_temperature: 0.65
+  movement_persistence_bonus: 0.18
+  movement_reverse_penalty: 0.35
+  movement_food_weight: 0.65
+  movement_toxin_weight: 0.8
+  movement_crowding_weight: 0.45
+  movement_hunger_target: 0.35
+  movement_macro_normalization: 0.75
+resources:
+  food_growth: 0.01
+  food_decay: 0.002
+  food_diffusion: 0.05
+  toxin_diffusion: 0.02
+  toxin_decay: 0.01
+  metabolism_base: 0.002
+  movement_cost: 0.003
+  feed_efficiency: 0.4
+  max_resource: 1.0
+  starvation_grace_ticks: 18.0
+  starvation_debt_gain: 0.06
+  starvation_debt_recovery: 0.09
+  starvation_health_damage: 0.035
+  feeding_immediate_fraction: 0.5
+  emergency_feed_threshold: 0.18
+  emergency_feed_boost: 1.25
+integration:
+  weight_memory: 1.0
+  weight_flexibility: 0.8
+  weight_synchrony: 1.2
+  weight_coherence: 1.0
+  weight_cross_scale: 1.0
+  weight_resource: 0.6
+  weight_boundary: 0.7
+  weight_conflict: 1.5
+  entropy_target: 0.55
+  entropy_sigma: 0.22
+phase:
+  base_omega: 0.08
+  same_scale_coupling: 0.05
+  parent_coupling: 0.03
+  phase_noise_sigma: 0.005
+communication:
+  enabled: true
+  num_channels: 8
+  diffusion:
+  - 0.08
+  - 0.12
+  - 0.03
+  - 0.05
+  - 0.1
+  - 0.04
+  - 0.02
+  - 0.03
+  decay:
+  - 0.02
+  - 0.06
+  - 0.08
+  - 0.04
+  - 0.05
+  - 0.03
+  - 0.01
+  - 0.04
+  base_emit_cost: 0.005
+  trust_lr: 0.03
+  receptivity_lr: 0.01
+  relation_lr: 0.02
+  deception_penalty: 0.1
+topdown:
+  lambda_threshold: 0.1
+  lambda_action_bias: 0.2
+  max_parent_control: 0.25
+  apex_update_every: 10
+predation:
+  enabled: true
+  min_predation_trait: 0.6
+  resource_transfer: 0.7
+  resistance_weight: 1.0
+  memory_transfer: 0.05
+reproduction:
+  enabled: true
+  min_resource: 0.75
+  min_health: 0.7
+  min_boundary: 0.6
+  min_integration: 0.5
+  mutation_sigma: 0.03
+  channel_mutation_sigma: 0.04
+recording:
+  enabled: true
+  zarr_path: runs/run_001.zarr
+  metrics_path: results/metrics.parquet
+  record_every: 5
+  save_fields:
+  - integration
+  - resource
+  - health
+  - readout
+  - ow_type
+  - food
+  - signal
+visualization:
+  enabled: true
+  backend: pygame
+  fps: 30
+  scale: 6
+  color_by: integration
+debug:
+  assert_invariants: false
+  profile: false
+initialization:
+  population_density: 0.3
+  background_food: 0.1
+  food_patch_count: 12
+  food_patch_radius: 4
+  food_patch_intensity: 0.7
+  obstacle_density: 0.0
+  toxin_patch_count: 0
+  toxin_patch_radius: 4
+  toxin_patch_intensity: 0.25
+  initial_activation_mean: 0.1
+  initial_activation_sigma: 0.03
+  initial_memory_mean: 0.05
+  initial_memory_sigma: 0.02
+  initial_integration_mean: 0.1
+  initial_integration_sigma: 0.03
+  initial_resource_mean: 0.55
+  initial_resource_sigma: 0.1
+  initial_health_mean: 0.9
+  initial_health_sigma: 0.05
+  initial_boundary_mean: 0.8
+  initial_boundary_sigma: 0.05
+  initial_threshold_mean: 0.5
+  initial_threshold_sigma: 0.05
+  initial_trust: 1.0
+  trait_noise_sigma: 0.025
+  type_weights:
+    grazer: 0.72
+    cooperator: 0.16
+    proto_carnivore: 0.08
+    scavenger: 0.04
+ecology:
+  advanced_enabled: false
+  monod_half_saturation: 0.2
+  digestion_decay: 0.35
+  digestion_efficiency: 0.75
+  waste_decay: 0.05
+  waste_recycle_rate: 0.15
+  food_regrowth_rate: 0.02
+  food_carrying_capacity: 1.0
+  starvation_threshold: 0.05
+  toxin_damage_exponent: 1.35
+  age_stress_scale: 1000.0
+  repair_half_saturation: 0.2
+  ingestion_handling_time: 0.75

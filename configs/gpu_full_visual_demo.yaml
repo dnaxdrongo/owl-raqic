@@ -1,0 +1,19 @@
+world:
+  height: 50
+  width: 50
+  patch_size: 5
+  max_steps: 1000
+  seed: 6065
+raqic:
+  enabled: true
+  mode: gpu_full
+  decision_policy: raqic
+  fallback_on_backend_error: true
+  full_gpu_strict: false
+  full_gpu_visual_backend: pygame_copy
+recording:
+  enabled: false
+visualization:
+  enabled: true
+debug:
+  assert_invariants: false

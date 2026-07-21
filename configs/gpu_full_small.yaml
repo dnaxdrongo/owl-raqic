@@ -1,0 +1,22 @@
+world:
+  height: 10
+  width: 10
+  patch_size: 5
+  max_steps: 5
+  seed: 6061
+raqic:
+  enabled: true
+  mode: gpu_full
+  decision_policy: raqic
+  fallback_on_backend_error: true
+  full_gpu_strict: false
+  full_gpu_no_silent_fallback: false
+  gpu_precision: audit64
+  strict_gpu: false
+  gpu_all_cells_required: true
+recording:
+  enabled: false
+visualization:
+  enabled: false
+debug:
+  assert_invariants: true

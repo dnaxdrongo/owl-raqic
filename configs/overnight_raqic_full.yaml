@@ -1,0 +1,37 @@
+world: 
+  height: 100 
+  width: 100 
+  patch_size: 5 
+  max_steps: 5000 
+  seed: 20260710 
+recording: 
+  enabled: true 
+  record_every: 25 
+  metrics_path: results/overnight_raqic_full_20260710_220056/metrics.parquet 
+  zarr_path: runs/overnight_raqic_full_20260710_220056/run.zarr 
+visualization: 
+  enabled: false 
+  backend: none 
+debug: 
+  assert_invariants: true 
+raqic: 
+  enabled: true 
+  mode: cpu_audit 
+  decision_policy: raqic 
+  epsilon_raqic: 1.0 
+  epsilon_adelic: 1.0 
+  beta_intention: 1.0 
+  action_temperature: 1.0 
+  rounds_per_tick: 1 
+  shots: 1024 
+  active_primes: [2, 3, 5] 
+  use_qiskit_for_all: false 
+  qiskit_subset_fraction: 0.0 
+  batch_by_feature_signature: true 
+  cache_templates: true 
+  persist_quantum_state: true 
+  record_measurement_records: true 
+  record_action_probabilities: true 
+  fallback_on_backend_error: true 
+  assert_recovery_gates: true 
+  parent_intention_eta: 0.25 

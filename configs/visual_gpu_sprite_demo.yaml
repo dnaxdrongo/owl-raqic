@@ -1,0 +1,41 @@
+world:
+  height: 100
+  width: 100
+  patch_size: 5
+  max_steps: 300
+  seed: 7701
+recording:
+  enabled: false
+visualization:
+  enabled: true
+  backend: pygame
+  fps: 30
+  renderer_mode: interpretability
+  schedule_mode: live_adaptive
+  frames_per_tick: 4
+  fixed_tick_stride: 1
+  adaptive_lod: true
+  window_width: 1920
+  window_height: 1080
+  viewport_sidebar_width: 320
+  camera_mode: fit
+  show_environment_sprites: true
+  show_action_effects: true
+  show_patch_overlay: true
+  max_high_detail_effects: 4096
+  atlas_max_entries: 8192
+  visual_theme_seed: 7701
+debug:
+  assert_invariants: false
+raqic:
+  enabled: true
+  mode: gpu_full
+  decision_policy: raqic
+  fallback_on_backend_error: true
+  full_gpu_strict: false
+  full_gpu_transfer_policy: persistent_mirror
+  full_gpu_execution_tier: persistent
+  full_gpu_precision: mixed
+  full_gpu_visual_backend: pygame_copy
+  full_gpu_sprite_theme: owl_dark_neon
+  full_gpu_visual_clutter_budget: 4096

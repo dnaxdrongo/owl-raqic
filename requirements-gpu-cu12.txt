@@ -1,0 +1,19 @@
+# GPU runtime lock baseline for Linux CUDA 12 hosts.
+# Do not install qiskit-aer alongside qiskit-aer-gpu in the same environment.
+numpy>=2.0
+scipy>=1.13
+numba>=0.60
+pydantic>=2.8
+pydantic-settings>=2.3
+PyYAML>=6.0
+zarr>=2.18
+numcodecs>=0.13
+polars>=1.0
+matplotlib>=3.9
+rich>=13.7
+pygame>=2.6
+cupy-cuda12x>=13.0
+qiskit>=2.0
+qiskit-aer
+vispy>=0.14
+PyOpenGL>=3.1

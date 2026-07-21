@@ -1,0 +1,12 @@
+extends: cadc_phase4_h100_budget_64.yaml
+
+runtime:
+  target: b200
+  precision: bf16
+  batch_size: 4096
+  max_device_bytes: 171798691840
+  corpus_workers: 10
+
+artifacts:
+  output_root: phase4_b200_budget_64
+

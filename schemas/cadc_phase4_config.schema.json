@@ -1,0 +1,918 @@
+{
+  "$defs": {
+    "ArtifactConfig": {
+      "additionalProperties": false,
+      "description": "Output-root, overwrite, and compact-export bounds.",
+      "properties": {
+        "local_export_max_bytes": {
+          "default": 2147483648,
+          "minimum": 1,
+          "title": "Local Export Max Bytes",
+          "type": "integer"
+        },
+        "output_root": {
+          "default": "phase4_output",
+          "title": "Output Root",
+          "type": "string"
+        },
+        "overwrite": {
+          "default": false,
+          "title": "Overwrite",
+          "type": "boolean"
+        }
+      },
+      "title": "ArtifactConfig",
+      "type": "object"
+    },
+    "CalibrationConfig": {
+      "additionalProperties": false,
+      "description": "Conformal and isotonic calibration support requirements.",
+      "properties": {
+        "interval_level": {
+          "default": 0.9,
+          "exclusiveMaximum": 1.0,
+          "exclusiveMinimum": 0.5,
+          "title": "Interval Level",
+          "type": "number"
+        },
+        "isotonic_minimum": {
+          "default": 500,
+          "minimum": 20,
+          "title": "Isotonic Minimum",
+          "type": "integer"
+        },
+        "mondrian_minimum": {
+          "default": 100,
+          "minimum": 10,
+          "title": "Mondrian Minimum",
+          "type": "integer"
+        }
+      },
+      "title": "CalibrationConfig",
+      "type": "object"
+    },
+    "CertificationConfig": {
+      "additionalProperties": false,
+      "description": "Fail-closed development certificate policy with Phase 5 locked.",
+      "properties": {
+        "classification": {
+          "default": "PHASE4_DEVELOPMENT_CANDIDATE",
+          "title": "Classification",
+          "type": "string"
+        },
+        "phase5_unlock_requested": {
+          "default": false,
+          "title": "Phase5 Unlock Requested",
+          "type": "boolean"
+        },
+        "require_all_ensemble_members": {
+          "default": true,
+          "title": "Require All Ensemble Members",
+          "type": "boolean"
+        },
+        "require_negative_control_collapse": {
+          "default": true,
+          "title": "Require Negative Control Collapse",
+          "type": "boolean"
+        },
+        "require_target_gpu": {
+          "default": true,
+          "title": "Require Target Gpu",
+          "type": "boolean"
+        }
+      },
+      "title": "CertificationConfig",
+      "type": "object"
+    },
+    "CorpusConfig": {
+      "additionalProperties": false,
+      "description": "Stratified development-corpus and confirmatory seed-seal contract.",
+      "properties": {
+        "calibration_seeds": {
+          "default": [],
+          "items": {
+            "type": "integer"
+          },
+          "title": "Calibration Seeds",
+          "type": "array"
+        },
+        "context_families": {
+          "default": [
+            "balanced",
+            "resource_scarce",
+            "toxin_stress",
+            "social_dense",
+            "boundary_stress"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "title": "Context Families",
+          "type": "array"
+        },
+        "development_seeds": {
+          "default": [],
+          "items": {
+            "type": "integer"
+          },
+          "title": "Development Seeds",
+          "type": "array"
+        },
+        "family_horizons": {
+          "additionalProperties": {
+            "items": {
+              "type": "integer"
+            },
+            "type": "array"
+          },
+          "title": "Family Horizons",
+          "type": "object"
+        },
+        "horizons": {
+          "default": [
+            1,
+            3,
+            5,
+            10
+          ],
+          "items": {
+            "type": "integer"
+          },
+          "title": "Horizons",
+          "type": "array"
+        },
+        "max_source_decisions_per_seed": {
+          "default": 32,
+          "minimum": 1,
+          "title": "Max Source Decisions Per Seed",
+          "type": "integer"
+        },
+        "max_source_ticks_per_seed": {
+          "default": 4,
+          "minimum": 1,
+          "title": "Max Source Ticks Per Seed",
+          "type": "integer"
+        },
+        "minimum_independent_seeds": {
+          "default": 3,
+          "minimum": 2,
+          "title": "Minimum Independent Seeds",
+          "type": "integer"
+        },
+        "minimum_source_decisions": {
+          "default": 100,
+          "minimum": 2,
+          "title": "Minimum Source Decisions",
+          "type": "integer"
+        },
+        "patch_size": {
+          "anyOf": [
+            {
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Patch Size"
+        },
+        "repeat_pilot": {
+          "default": [
+            2,
+            4,
+            8,
+            16
+          ],
+          "items": {
+            "type": "integer"
+          },
+          "title": "Repeat Pilot",
+          "type": "array"
+        },
+        "repeat_policy": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "const": "pilot_derived",
+              "type": "string"
+            }
+          ],
+          "default": "pilot_derived",
+          "title": "Repeat Policy"
+        },
+        "reserved_phase5_seeds": {
+          "default": [],
+          "items": {
+            "type": "integer"
+          },
+          "title": "Reserved Phase5 Seeds",
+          "type": "array"
+        },
+        "reserved_phase6_seeds": {
+          "default": [],
+          "items": {
+            "type": "integer"
+          },
+          "title": "Reserved Phase6 Seeds",
+          "type": "array"
+        },
+        "source_sampling_profile": {
+          "default": "stratified_v1",
+          "enum": [
+            "stratified_v1",
+            "deterministic_hash"
+          ],
+          "title": "Source Sampling Profile",
+          "type": "string"
+        },
+        "source_ticks": {
+          "default": [
+            2,
+            5,
+            10,
+            15
+          ],
+          "items": {
+            "type": "integer"
+          },
+          "title": "Source Ticks",
+          "type": "array"
+        },
+        "validation_seeds": {
+          "default": [],
+          "items": {
+            "type": "integer"
+          },
+          "title": "Validation Seeds",
+          "type": "array"
+        },
+        "world_height": {
+          "anyOf": [
+            {
+              "minimum": 16,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "World Height"
+        },
+        "world_width": {
+          "anyOf": [
+            {
+              "minimum": 16,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "World Width"
+        }
+      },
+      "title": "CorpusConfig",
+      "type": "object"
+    },
+    "EvaluationConfig": {
+      "additionalProperties": false,
+      "description": "Development metric and subgroup-export policy.",
+      "properties": {
+        "export_all_row_metrics": {
+          "default": true,
+          "title": "Export All Row Metrics",
+          "type": "boolean"
+        },
+        "export_supported_row_metrics": {
+          "default": true,
+          "title": "Export Supported Row Metrics",
+          "type": "boolean"
+        },
+        "subgroup_minimum": {
+          "default": 50,
+          "minimum": 1,
+          "title": "Subgroup Minimum",
+          "type": "integer"
+        },
+        "tie_tolerance": {
+          "default": 1e-06,
+          "minimum": 0.0,
+          "title": "Tie Tolerance",
+          "type": "number"
+        }
+      },
+      "title": "EvaluationConfig",
+      "type": "object"
+    },
+    "FeatureConfig": {
+      "additionalProperties": false,
+      "description": "Perspective isolation and causal-history length policy.",
+      "properties": {
+        "execution_postchoice_enabled": {
+          "default": true,
+          "title": "Execution Postchoice Enabled",
+          "type": "boolean"
+        },
+        "history_length": {
+          "default": 8,
+          "maximum": 256,
+          "minimum": 0,
+          "title": "History Length",
+          "type": "integer"
+        },
+        "mechanism_mediation_enabled": {
+          "default": true,
+          "title": "Mechanism Mediation Enabled",
+          "type": "boolean"
+        },
+        "oracle_diagnostic_enabled": {
+          "default": true,
+          "title": "Oracle Diagnostic Enabled",
+          "type": "boolean"
+        },
+        "primary_view": {
+          "const": "agent_primary",
+          "default": "agent_primary",
+          "title": "Primary View",
+          "type": "string"
+        }
+      },
+      "title": "FeatureConfig",
+      "type": "object"
+    },
+    "HardwareTarget": {
+      "description": "Supported CPU and target-GPU certification profiles.",
+      "enum": [
+        "cpu",
+        "h100",
+        "h200",
+        "b200"
+      ],
+      "title": "HardwareTarget",
+      "type": "string"
+    },
+    "ModelConfig": {
+      "additionalProperties": false,
+      "description": "Complete CADC-MORE 2 architecture and comparator switches.",
+      "properties": {
+        "depth": {
+          "default": 3,
+          "maximum": 16,
+          "minimum": 1,
+          "title": "Depth",
+          "type": "integer"
+        },
+        "dropout": {
+          "default": 0.1,
+          "exclusiveMaximum": 1.0,
+          "minimum": 0.0,
+          "title": "Dropout",
+          "type": "number"
+        },
+        "ensemble_members": {
+          "default": 5,
+          "maximum": 20,
+          "minimum": 1,
+          "title": "Ensemble Members",
+          "type": "integer"
+        },
+        "epistemic_enabled": {
+          "default": true,
+          "title": "Epistemic Enabled",
+          "type": "boolean"
+        },
+        "externality_enabled": {
+          "default": true,
+          "title": "Externality Enabled",
+          "type": "boolean"
+        },
+        "hidden_width": {
+          "default": 192,
+          "maximum": 4096,
+          "minimum": 16,
+          "title": "Hidden Width",
+          "type": "integer"
+        },
+        "listwise_enabled": {
+          "default": true,
+          "title": "Listwise Enabled",
+          "type": "boolean"
+        },
+        "ranker_enabled": {
+          "default": true,
+          "title": "Ranker Enabled",
+          "type": "boolean"
+        },
+        "survival_enabled": {
+          "default": true,
+          "title": "Survival Enabled",
+          "type": "boolean"
+        },
+        "xgboost_enabled": {
+          "default": true,
+          "title": "Xgboost Enabled",
+          "type": "boolean"
+        }
+      },
+      "title": "ModelConfig",
+      "type": "object"
+    },
+    "NegativeControlConfig": {
+      "additionalProperties": false,
+      "description": "Required leakage and label-perturbation control switches.",
+      "properties": {
+        "action_shuffle": {
+          "default": true,
+          "title": "Action Shuffle",
+          "type": "boolean"
+        },
+        "mechanism_only": {
+          "default": true,
+          "title": "Mechanism Only",
+          "type": "boolean"
+        },
+        "oracle_leakage_guard": {
+          "default": true,
+          "title": "Oracle Leakage Guard",
+          "type": "boolean"
+        },
+        "random_seed": {
+          "default": 4404,
+          "title": "Random Seed",
+          "type": "integer"
+        },
+        "repeat_mismatch": {
+          "default": true,
+          "title": "Repeat Mismatch",
+          "type": "boolean"
+        },
+        "target_shuffle": {
+          "default": true,
+          "title": "Target Shuffle",
+          "type": "boolean"
+        },
+        "temporal_break": {
+          "default": true,
+          "title": "Temporal Break",
+          "type": "boolean"
+        }
+      },
+      "title": "NegativeControlConfig",
+      "type": "object"
+    },
+    "Phase3InputConfig": {
+      "additionalProperties": false,
+      "description": "Exact immutable Phase 3 engine, certificate, and schema identities.",
+      "properties": {
+        "base_phase3_config": {
+          "default": "configs/cadc_phase3_phase25_h100_acceptance.yaml",
+          "title": "Base Phase3 Config",
+          "type": "string"
+        },
+        "counterfactual_schema_digest": {
+          "default": "c00db34ad9cbaaa0fa589261a9b6718860bbe1a9f01fe7549f0ba9f90c2da4f1",
+          "title": "Counterfactual Schema Digest",
+          "type": "string"
+        },
+        "factual_roots": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Factual Roots",
+          "type": "array"
+        },
+        "factual_v2_digest": {
+          "default": "14beff051fc94f6069444355d109ef77a82f092d00e98f25fe3fcefa782edec5",
+          "title": "Factual V2 Digest",
+          "type": "string"
+        },
+        "immutable_engine_root": {
+          "default": "",
+          "title": "Immutable Engine Root",
+          "type": "string"
+        },
+        "phase25_certificate": {
+          "default": "",
+          "title": "Phase25 Certificate",
+          "type": "string"
+        },
+        "phase25_hardening_receipt": {
+          "default": "",
+          "title": "Phase25 Hardening Receipt",
+          "type": "string"
+        },
+        "phase3_certificate": {
+          "default": "",
+          "title": "Phase3 Certificate",
+          "type": "string"
+        },
+        "required_certificate_classification": {
+          "default": "H100_PHASE3_TARGET_CERTIFIED",
+          "title": "Required Certificate Classification",
+          "type": "string"
+        },
+        "required_source_sha256": {
+          "default": "d17ef58692c7663eb0cc87ab4cdf7e74ca9b529091fcab4f15b6fe28e2a607a3",
+          "title": "Required Source Sha256",
+          "type": "string"
+        },
+        "rng_registry_digest": {
+          "default": "4ce20f4ce0500206d8e93c73db0006f58defa2c2ac3543d2aa8246585509a00a",
+          "title": "Rng Registry Digest",
+          "type": "string"
+        },
+        "roots": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Roots",
+          "type": "array"
+        }
+      },
+      "title": "Phase3InputConfig",
+      "type": "object"
+    },
+    "RuntimeConfig": {
+      "additionalProperties": false,
+      "description": "CPU or H100/H200/B200 backend, precision, and memory policy.",
+      "properties": {
+        "backend": {
+          "default": "numpy",
+          "enum": [
+            "numpy",
+            "cupy"
+          ],
+          "title": "Backend",
+          "type": "string"
+        },
+        "batch_size": {
+          "default": 256,
+          "minimum": 1,
+          "title": "Batch Size",
+          "type": "integer"
+        },
+        "compile": {
+          "default": false,
+          "title": "Compile",
+          "type": "boolean"
+        },
+        "corpus_target_seconds": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Corpus Target Seconds",
+          "type": "integer"
+        },
+        "corpus_transfer_mode": {
+          "default": "immediate_reference",
+          "enum": [
+            "immediate_reference",
+            "deferred_bounded"
+          ],
+          "title": "Corpus Transfer Mode",
+          "type": "string"
+        },
+        "corpus_workers": {
+          "default": 1,
+          "maximum": 32,
+          "minimum": 1,
+          "title": "Corpus Workers",
+          "type": "integer"
+        },
+        "cuda_graphs": {
+          "default": false,
+          "title": "Cuda Graphs",
+          "type": "boolean"
+        },
+        "deterministic": {
+          "default": true,
+          "title": "Deterministic",
+          "type": "boolean"
+        },
+        "gradient_accumulation": {
+          "default": 1,
+          "minimum": 1,
+          "title": "Gradient Accumulation",
+          "type": "integer"
+        },
+        "max_device_bytes": {
+          "default": 51539607552,
+          "minimum": 1,
+          "title": "Max Device Bytes",
+          "type": "integer"
+        },
+        "precision": {
+          "default": "fp32",
+          "enum": [
+            "fp32",
+            "bf16",
+            "fp8"
+          ],
+          "title": "Precision",
+          "type": "string"
+        },
+        "prefetch": {
+          "default": 2,
+          "maximum": 64,
+          "minimum": 1,
+          "title": "Prefetch",
+          "type": "integer"
+        },
+        "require_runtime_decision": {
+          "default": false,
+          "title": "Require Runtime Decision",
+          "type": "boolean"
+        },
+        "runtime_calibration_units": {
+          "default": 6,
+          "maximum": 64,
+          "minimum": 2,
+          "title": "Runtime Calibration Units",
+          "type": "integer"
+        },
+        "target": {
+          "$ref": "#/$defs/HardwareTarget",
+          "default": "cpu"
+        },
+        "total_target_seconds": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Total Target Seconds",
+          "type": "integer"
+        },
+        "training_checkpoint_interval": {
+          "default": 1,
+          "maximum": 1000,
+          "minimum": 1,
+          "title": "Training Checkpoint Interval",
+          "type": "integer"
+        },
+        "training_horizon_batching": {
+          "default": "sequential",
+          "enum": [
+            "sequential",
+            "flattened"
+          ],
+          "title": "Training Horizon Batching",
+          "type": "string"
+        },
+        "workers": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Workers",
+          "type": "integer"
+        }
+      },
+      "title": "RuntimeConfig",
+      "type": "object"
+    },
+    "ScalarizationConfig": {
+      "additionalProperties": false,
+      "description": "Frozen scalar profiles, urgency, quantile, and lower-tail policy.",
+      "properties": {
+        "cvar_alpha": {
+          "default": 0.1,
+          "exclusiveMinimum": 0.0,
+          "maximum": 0.5,
+          "title": "Cvar Alpha",
+          "type": "number"
+        },
+        "profiles": {
+          "default": [
+            "agent_risk_neutral",
+            "agent_risk_averse",
+            "oracle_diagnostic",
+            "collective_balanced"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "title": "Profiles",
+          "type": "array"
+        },
+        "quantiles": {
+          "default": [
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            0.75,
+            0.9,
+            0.95
+          ],
+          "items": {
+            "type": "number"
+          },
+          "title": "Quantiles",
+          "type": "array"
+        },
+        "urgency_beta": {
+          "default": 2.0,
+          "maximum": 100.0,
+          "minimum": 0.0,
+          "title": "Urgency Beta",
+          "type": "number"
+        }
+      },
+      "title": "ScalarizationConfig",
+      "type": "object"
+    },
+    "SplitConfig": {
+      "additionalProperties": false,
+      "description": "Grouped nested-cross-fit fold counts and world grouping fields.",
+      "properties": {
+        "group_fields": {
+          "default": [
+            "seed",
+            "run_id"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "title": "Group Fields",
+          "type": "array"
+        },
+        "inner_folds": {
+          "default": 3,
+          "minimum": 2,
+          "title": "Inner Folds",
+          "type": "integer"
+        },
+        "outer_folds": {
+          "default": 5,
+          "minimum": 2,
+          "title": "Outer Folds",
+          "type": "integer"
+        },
+        "time_block_diagnostic": {
+          "default": true,
+          "title": "Time Block Diagnostic",
+          "type": "boolean"
+        }
+      },
+      "title": "SplitConfig",
+      "type": "object"
+    },
+    "SupportConfig": {
+      "additionalProperties": false,
+      "description": "kNN/OOD/uncertainty thresholds for mandatory abstention.",
+      "properties": {
+        "abstain": {
+          "default": true,
+          "title": "Abstain",
+          "type": "boolean"
+        },
+        "knn_k": {
+          "default": 32,
+          "minimum": 1,
+          "title": "Knn K",
+          "type": "integer"
+        },
+        "maximum_conformal_width": {
+          "default": 10.0,
+          "exclusiveMinimum": 0.0,
+          "title": "Maximum Conformal Width",
+          "type": "number"
+        },
+        "maximum_ensemble_disagreement": {
+          "default": 1.0,
+          "exclusiveMinimum": 0.0,
+          "title": "Maximum Ensemble Disagreement",
+          "type": "number"
+        },
+        "minimum_decisions": {
+          "default": 100,
+          "minimum": 1,
+          "title": "Minimum Decisions",
+          "type": "integer"
+        },
+        "minimum_repeats": {
+          "default": 4,
+          "minimum": 1,
+          "title": "Minimum Repeats",
+          "type": "integer"
+        },
+        "minimum_seeds": {
+          "default": 3,
+          "minimum": 2,
+          "title": "Minimum Seeds",
+          "type": "integer"
+        }
+      },
+      "title": "SupportConfig",
+      "type": "object"
+    },
+    "TrainingConfig": {
+      "additionalProperties": false,
+      "description": "Finite optimization, checkpoint, and ensemble-member policy.",
+      "properties": {
+        "early_stopping_patience": {
+          "default": 12,
+          "minimum": 1,
+          "title": "Early Stopping Patience",
+          "type": "integer"
+        },
+        "epochs": {
+          "default": 100,
+          "minimum": 1,
+          "title": "Epochs",
+          "type": "integer"
+        },
+        "gradient_clip": {
+          "default": 5.0,
+          "exclusiveMinimum": 0.0,
+          "title": "Gradient Clip",
+          "type": "number"
+        },
+        "learning_rate": {
+          "default": 0.0003,
+          "exclusiveMinimum": 0.0,
+          "title": "Learning Rate",
+          "type": "number"
+        },
+        "member_seeds": {
+          "default": [
+            4101,
+            4102,
+            4103,
+            4104,
+            4105
+          ],
+          "items": {
+            "type": "integer"
+          },
+          "title": "Member Seeds",
+          "type": "array"
+        },
+        "weight_decay": {
+          "default": 0.0001,
+          "minimum": 0.0,
+          "title": "Weight Decay",
+          "type": "number"
+        }
+      },
+      "title": "TrainingConfig",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "Top-level source, science, model, runtime, and lock configuration.",
+  "properties": {
+    "artifacts": {
+      "$ref": "#/$defs/ArtifactConfig"
+    },
+    "calibration": {
+      "$ref": "#/$defs/CalibrationConfig"
+    },
+    "certification": {
+      "$ref": "#/$defs/CertificationConfig"
+    },
+    "corpus": {
+      "$ref": "#/$defs/CorpusConfig"
+    },
+    "evaluation": {
+      "$ref": "#/$defs/EvaluationConfig"
+    },
+    "features": {
+      "$ref": "#/$defs/FeatureConfig"
+    },
+    "master_seed": {
+      "default": 20260719,
+      "title": "Master Seed",
+      "type": "integer"
+    },
+    "models": {
+      "$ref": "#/$defs/ModelConfig"
+    },
+    "negative_controls": {
+      "$ref": "#/$defs/NegativeControlConfig"
+    },
+    "phase3_input": {
+      "$ref": "#/$defs/Phase3InputConfig"
+    },
+    "runtime": {
+      "$ref": "#/$defs/RuntimeConfig"
+    },
+    "scalarization": {
+      "$ref": "#/$defs/ScalarizationConfig"
+    },
+    "splits": {
+      "$ref": "#/$defs/SplitConfig"
+    },
+    "support": {
+      "$ref": "#/$defs/SupportConfig"
+    },
+    "training": {
+      "$ref": "#/$defs/TrainingConfig"
+    }
+  },
+  "title": "CADCPhase4Config",
+  "type": "object"
+}

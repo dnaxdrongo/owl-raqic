@@ -1,0 +1,78 @@
+world:
+  height: 10
+  width: 10
+  patch_size: 5
+  max_steps: 25
+  seed: 190725
+action_transitions:
+  enabled: true
+  action_contract_version: owl.action-transitions.v1
+  legacy_unsupported_action_recovery: false
+  active_sense_enabled: true
+  active_sense_cost: 0.005
+  flee_execution_enabled: true
+  pursue_execution_enabled: true
+  target_sense_radius: 3
+counterfactual:
+  enabled: true
+  source_boundary: post_selection_pre_actions
+  source_selection_mode: explicit
+  explicit_source_decision_ids: ["sequence:155"]
+  max_source_ticks: 1
+  max_source_decisions: 1
+  repeats: 2
+  horizons: [1, 3, 5, 10]
+  family_horizons:
+    SENSE: [25]
+    COMMUNICATE: [25]
+    FLEE: [25]
+    PURSUE: [25]
+    REPRODUCE: [25]
+  include_selected_anchor: true
+  executable_only: true
+  emit_nonexecutable_candidates: true
+  backend: cupy
+  branch_execution_mode: target_gpu_required
+  max_active_branches: 64
+  stream_lanes: 4
+  source_pool_capacity: 2
+  max_device_bytes: 51539607552
+  memory_safety_fraction: 0.70
+  event_mode: exact
+  event_capacity_per_branch_tick: 4096
+  strict_overflow: true
+  writer_queue_depth: 2
+  max_packet_bytes: 268435456
+  max_pending_bytes: 536870912
+  parquet_row_group_rows: 65536
+recording:
+  enabled: true
+  record_every: 1
+  cadc:
+    enabled: true
+    profile: compact
+    include_dense_context: false
+    event_capacity_per_tick: 262144
+    max_device_buffer_bytes: 536870912
+    max_pending_bytes: 536870912
+visualization:
+  enabled: false
+  backend: none
+debug:
+  assert_invariants: false
+raqic:
+  enabled: true
+  mode: gpu_full
+  decision_policy: raqic
+  fallback_on_backend_error: false
+  full_gpu_strict: true
+  full_gpu_transfer_policy: persistent_mirror
+  full_gpu_execution_tier: persistent
+  full_gpu_precision: audit64
+  full_gpu_memory_policy: preallocate
+  full_gpu_graph_mode: "off"
+  full_gpu_stencil_backend: vectorized
+  full_gpu_fuse_scatter: false
+  full_gpu_phase_mode: canonical_device
+  full_gpu_visual_backend: none
+  full_gpu_recording_level_v07: metrics_plus_events

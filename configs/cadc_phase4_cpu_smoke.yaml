@@ -1,0 +1,53 @@
+phase3_input:
+  immutable_engine_root: /workspace/owl_phase3_immutable_d17ef586
+  phase3_certificate: phase3_gate/phase3_certificate.json
+  phase25_certificate: phase3_gate/phase25_target_gpu_certificate.json
+  phase25_hardening_receipt: phase3_gate/phase25_hardening_receipt.json
+corpus:
+  development_seeds: [41001, 41002, 41003]
+  validation_seeds: [41101, 41102]
+  calibration_seeds: [41201, 41202]
+  reserved_phase5_seeds: [45001, 45002]
+  reserved_phase6_seeds: [46001, 46002, 46003, 46004]
+  source_ticks: [2]
+  context_families: [balanced, resource_scarce, toxin_stress]
+  max_source_ticks_per_seed: 1
+  max_source_decisions_per_seed: 2
+  repeat_pilot: [1, 2]
+  repeat_policy: 2
+  horizons: [1, 3]
+  family_horizons: {}
+  minimum_independent_seeds: 3
+  minimum_source_decisions: 3
+splits:
+  outer_folds: 3
+  inner_folds: 2
+models:
+  ensemble_members: 1
+  hidden_width: 32
+  depth: 2
+  dropout: 0.0
+training:
+  epochs: 2
+  learning_rate: 0.001
+  early_stopping_patience: 1
+  member_seeds: [44001]
+calibration:
+  interval_level: 0.9
+  mondrian_minimum: 10
+  isotonic_minimum: 20
+support:
+  minimum_seeds: 2
+  minimum_decisions: 1
+  minimum_repeats: 1
+  knn_k: 1
+runtime:
+  target: cpu
+  backend: numpy
+  precision: fp32
+  batch_size: 8
+  max_device_bytes: 4294967296
+certification:
+  require_target_gpu: false
+artifacts:
+  output_root: phase4_cpu_smoke

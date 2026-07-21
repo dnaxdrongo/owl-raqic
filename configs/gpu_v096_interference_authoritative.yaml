@@ -1,0 +1,66 @@
+world:
+  height: 200
+  width: 200
+  patch_size: 5
+  max_steps: 1000
+  seed: 9303
+recording:
+  enabled: true
+  record_every: 25
+  zarr_path: runs/v096_phase_interference/run.zarr
+  metrics_path: runs/v096_phase_interference/metrics.jsonl
+visualization:
+  enabled: false
+  backend: none
+debug:
+  assert_invariants: true
+raqic:
+  enabled: true
+  mode: gpu_full_hybrid_audit
+  decision_policy: raqic
+  strict_gpu: true
+  fallback_on_backend_error: false
+  full_gpu_strict: true
+  full_gpu_no_silent_fallback: true
+  full_gpu_transfer_policy: persistent_mirror
+  full_gpu_execution_tier: persistent
+  full_gpu_graph_mode: 'off'
+  full_gpu_graph_requirement: allow_partial
+  full_gpu_precision: audit64
+  gpu_precision: audit64
+  full_gpu_run_class: production
+  full_gpu_memory_policy: preallocate
+  full_gpu_memory_safety_fraction: 0.8
+  full_gpu_fuse_scatter: true
+  full_gpu_phase_mode: canonical_device
+  full_gpu_metric_every: 5
+  full_gpu_checkpoint_every: 500
+  full_gpu_validation_every: 250
+  full_gpu_cpu_shadow_ticks: 250
+  full_gpu_shadow_reference: scientific_cpu
+  full_gpu_shadow_strict: true
+  gpu_validate_qiskit: true
+  full_gpu_qiskit_strict: true
+  full_gpu_qiskit_allow_cpu_fallback: false
+  qiskit_gpu_method: statevector
+  qiskit_gpu_device: GPU
+  qiskit_runtime_parameter_bind_enable: true
+  qiskit_validation_max_qubits: 28
+  gpu_audit_limit: 16
+  gpu_all_cells_required: true
+  max_cells_per_tick: null
+  record_action_probabilities: false
+  record_measurement_records: true
+  full_gpu_certification_required: true
+  actualization_variant: phase_interference
+  utility_coupling: 0.15
+  phase_resonance_coupling: 0.2
+  interference_mixer_strength: 0.12
+  interference_trotter_steps: 2
+  experimental_shadow_only: false
+  record_actualization_diagnostics: true
+  full_gpu_phase_policy: always
+  qiskit_circuit_families:
+  - static
+  - interference
+  qiskit_authoritative_family: interference

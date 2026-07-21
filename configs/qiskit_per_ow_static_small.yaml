@@ -1,0 +1,36 @@
+world:
+  height: 10
+  width: 10
+  patch_size: 5
+  max_steps: 2
+  seed: 9004
+recording:
+  enabled: true
+  record_every: 1
+  zarr_path: runs/qiskit_per_ow_static_small/run.zarr
+  metrics_path: results/qiskit_per_ow_static_small/metrics.jsonl
+visualization:
+  enabled: false
+  backend: none
+debug:
+  assert_invariants: true
+raqic:
+  enabled: true
+  mode: gpu_full
+  decision_policy: raqic
+  fallback_on_backend_error: false
+  full_gpu_strict: true
+  full_gpu_transfer_policy: persistent_mirror
+  full_gpu_execution_tier: persistent
+  qiskit_decision_mode: every_ow_static_exact
+  qiskit_circuit_families: [static]
+  qiskit_authoritative_family: static
+  qiskit_confirm_expensive: true
+  qiskit_chunk_size: 16
+  qiskit_job_queue_depth: 2
+  qiskit_gpu_device: GPU
+  qiskit_runtime_parameter_bind_enable: true
+  full_gpu_qiskit_strict: true
+  full_gpu_qiskit_allow_cpu_fallback: false
+  full_gpu_phase_mode: canonical_device
+  full_gpu_fuse_scatter: true

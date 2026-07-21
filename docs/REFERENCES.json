@@ -1,0 +1,1643 @@
+{
+  "schema_version": "owl.raqic.report-reference-library.v1",
+  "generated_for": "CS6795 final report and presentation",
+  "generated_at": "2026-07-19T23:59:00+00:00",
+  "private_source_policy": "The private Fractal-Mosaic manuscript is excluded from the bibliography and may be described only as the project design ontology.",
+  "selection_policy": "Prefer original peer-reviewed papers, scholarly monographs, and authoritative conference proceedings; use official software documentation only in reproducibility appendices.",
+  "references": [
+    {
+      "id": "R01",
+      "citation_key": "riddle2024now",
+      "priority": "core",
+      "domain": "nested_observer_windows",
+      "source_status": "peer_reviewed_or_standard_scholarly_source",
+      "type": "article-journal",
+      "authors": [
+        "J. Riddle",
+        "J. W. Schooler"
+      ],
+      "year": 2024,
+      "title": "Hierarchical consciousness: the Nested Observer Windows model",
+      "container": "Neuroscience of Consciousness",
+      "volume": "2024",
+      "issue": "1",
+      "pages": "niae010",
+      "doi": "10.1093/nc/niae010",
+      "url": "https://doi.org/10.1093/nc/niae010",
+      "publisher": "",
+      "ieee": "J. Riddle, J. W. Schooler, “Hierarchical consciousness: the Nested Observer Windows model,” Neuroscience of Consciousness, vol. 2024, no. 1, pp. niae010, 2024. doi: 10.1093/nc/niae010.",
+      "report_sections": [
+        "Abstract",
+        "Introduction",
+        "Design",
+        "Discussion"
+      ],
+      "claims_supported": [
+        "Nested processing domains can be discussed across spatiotemporal scales.",
+        "Internal synchrony, inter-window coherence, and cross-frequency coupling motivate measurable multiscale variables."
+      ],
+      "claims_not_supported": [
+        "Does not validate the private Fractal-Mosaic ontology or establish that OW entities are conscious."
+      ]
+    },
+    {
+      "id": "R02",
+      "citation_key": "dehaene2011conscious",
+      "priority": "core",
+      "domain": "global_workspace",
+      "source_status": "peer_reviewed_or_standard_scholarly_source",
+      "type": "article-journal",
+      "authors": [
+        "S. Dehaene",
+        "J.-P. Changeux"
+      ],
+      "year": 2011,
+      "title": "Experimental and theoretical approaches to conscious processing",
+      "container": "Neuron",
+      "volume": "70",
+      "issue": "2",
+      "pages": "200–227",
+      "doi": "10.1016/j.neuron.2011.03.018",
+      "url": "https://doi.org/10.1016/j.neuron.2011.03.018",
+      "publisher": "",
+      "ieee": "S. Dehaene, J.-P. Changeux, “Experimental and theoretical approaches to conscious processing,” Neuron, vol. 70, no. 2, pp. 200–227, 2011. doi: 10.1016/j.neuron.2011.03.018.",
+      "report_sections": [
+        "Introduction",
+        "Design",
+        "Discussion"
+      ],
+      "claims_supported": [
+        "Large-scale availability and ignition are useful comparison concepts for global readout."
+      ],
+      "claims_not_supported": [
+        "OWL global variables are not empirical neuronal workspace measurements."
+      ]
+    },
+    {
+      "id": "R03",
+      "citation_key": "tononi2004iit",
+      "priority": "core",
+      "domain": "integrated_information",
+      "source_status": "peer_reviewed_or_standard_scholarly_source",
+      "type": "article-journal",
+      "authors": [
+        "G. Tononi"
+      ],
+      "year": 2004,
+      "title": "An information integration theory of consciousness",
+      "container": "BMC Neuroscience",
+      "volume": "5",
+      "issue": "",
+      "pages": "42",
+      "doi": "10.1186/1471-2202-5-42",
+      "url": "https://doi.org/10.1186/1471-2202-5-42",
+      "publisher": "",
+      "ieee": "G. Tononi, “An information integration theory of consciousness,” BMC Neuroscience, vol. 5, pp. 42, 2004. doi: 10.1186/1471-2202-5-42.",
+      "report_sections": [
+        "Introduction",
+        "Design",
+        "Discussion"
+      ],
+      "claims_supported": [
+        "Structured integration and differentiation provide a comparison framework."
+      ],
+      "claims_not_supported": [
+        "OWL integration is not IIT Phi."
+      ]
+    },
+    {
+      "id": "R04",
+      "citation_key": "oizumi2014iit3",
+      "priority": "supplementary",
+      "domain": "integrated_information",
+      "source_status": "peer_reviewed_or_standard_scholarly_source",
+      "type": "article-journal",
+      "authors": [
+        "M. Oizumi",
+        "L. Albantakis",
+        "G. Tononi"
+      ],
+      "year": 2014,
+      "title": "From the phenomenology to the mechanisms of consciousness: Integrated Information Theory 3.0",
+      "container": "PLOS Computational Biology",
+      "volume": "10",
+      "issue": "5",
+      "pages": "e1003588",
+      "doi": "10.1371/journal.pcbi.1003588",
+      "url": "https://doi.org/10.1371/journal.pcbi.1003588",
+      "publisher": "",
+      "ieee": "M. Oizumi, L. Albantakis, G. Tononi, “From the phenomenology to the mechanisms of consciousness: Integrated Information Theory 3.0,” PLOS Computational Biology, vol. 10, no. 5, pp. e1003588, 2014. doi: 10.1371/journal.pcbi.1003588.",
+      "report_sections": [
+        "Appendix C"
+      ],
+      "claims_supported": [
+        "Formal consciousness theories can be translated into explicit mechanisms and causal structures."
+      ],
+      "claims_not_supported": [
+        "OWL does not implement IIT 3.0."
+      ]
+    },
+    {
+      "id": "R05",
+      "citation_key": "friston2010freeenergy",
+      "priority": "core",
+      "domain": "predictive_processing",
+      "source_status": "peer_reviewed_or_standard_scholarly_source",
+      "type": "article-journal",
+      "authors": [
+        "K. Friston"
+      ],
+      "year": 2010,
+      "title": "The free-energy principle: a unified brain theory?",
+      "container": "Nature Reviews Neuroscience",
+      "volume": "11",
+      "issue": "2",
+      "pages": "127–138",
+      "doi": "10.1038/nrn2787",
+      "url": "https://doi.org/10.1038/nrn2787",
+      "publisher": "",
+      "ieee": "K. Friston, “The free-energy principle: a unified brain theory?,” Nature Reviews Neuroscience, vol. 11, no. 2, pp. 127–138, 2010. doi: 10.1038/nrn2787.",
+      "report_sections": [
+        "Introduction",
+        "Design",
+        "Discussion"
+      ],
+      "claims_supported": [
+        "Prediction error, uncertainty, and homeostatic regulation motivate internal-state and action variables."
+      ],
+      "claims_not_supported": [
+        "CADC is not variational free energy."
+      ]
+    },
+    {
+      "id": "R06",
+      "citation_key": "friston2017activeinference",
+      "priority": "supplementary",
+      "domain": "active_inference",
+      "source_status": "peer_reviewed_or_standard_scholarly_source",
+      "type": "article-journal",
+      "authors": [
+        "K. Friston",
+        "T. FitzGerald",
+        "F. Rigoli",
+        "P. Schwartenbeck",
+        "G. Pezzulo"
+      ],
+      "year": 2017,
+      "title": "Active inference: A process theory",
+      "container": "Neural Computation",
+      "volume": "29",
+      "issue": "1",
+      "pages": "1–49",
+      "doi": "10.1162/NECO_a_00912",
+      "url": "https://doi.org/10.1162/NECO_a_00912",
+      "publisher": "",
+      "ieee": "K. Friston, T. FitzGerald, F. Rigoli, P. Schwartenbeck, G. Pezzulo, “Active inference: A process theory,” Neural Computation, vol. 29, no. 1, pp. 1–49, 2017. doi: 10.1162/NECO_a_00912.",
+      "report_sections": [
+        "Design",
+        "Discussion"
+      ],
+      "claims_supported": [
+        "Perception and action may be modeled jointly under uncertainty."
+      ],
+      "claims_not_supported": [
+        "RAQIC is not an implementation of active inference."
+      ]
+    },
+    {
+      "id": "R07",
+      "citation_key": "friston2017curiosity",
+      "priority": "supplementary",
+      "domain": "epistemic_value",
+      "source_status": "peer_reviewed_or_standard_scholarly_source",
+      "type": "article-journal",
+      "authors": [
+        "K. Friston",
+        "T. FitzGerald",
+        "F. Rigoli",
+        "P. Schwartenbeck",
+        "J. O’Doherty",
+        "G. Pezzulo"
+      ],
+      "year": 2017,
+      "title": "Active inference, curiosity and insight",
+      "container": "Neural Computation",
+      "volume": "29",
+      "issue": "10",
+      "pages": "2633–2683",
+      "doi": "10.1162/neco_a_00999",
+      "url": "https://doi.org/10.1162/neco_a_00999",
+      "publisher": "",
+      "ieee": "K. Friston, T. FitzGerald, F. Rigoli, P. Schwartenbeck, J. O’Doherty, G. Pezzulo, “Active inference, curiosity and insight,” Neural Computation, vol. 29, no. 10, pp. 2633–2683, 2017. doi: 10.1162/neco_a_00999.",
+      "report_sections": [
+        "CADC method",
+        "Discussion"
+      ],
+      "claims_supported": [
+        "Information-seeking actions may have control-relevant value."
+      ],
+      "claims_not_supported": [
+        "The Phase 4 epistemic head is a project-specific estimator."
+      ]
+    },
+    {
+      "id": "R08",
+      "citation_key": "fries2005coherence",
+      "priority": "core",
+      "domain": "communication_through_coherence",
+      "source_status": "peer_reviewed_or_standard_scholarly_source",
+      "type": "article-journal",
+      "authors": [
+        "P. Fries"
+      ],
+      "year": 2005,
+      "title": "A mechanism for cognitive dynamics: neuronal communication through neuronal coherence",
+      "container": "Trends in Cognitive Sciences",
+      "volume": "9",
+      "issue": "10",
+      "pages": "474–480",
+      "doi": "10.1016/j.tics.2005.08.011",
+      "url": "https://doi.org/10.1016/j.tics.2005.08.011",
+      "publisher": "",
+      "ieee": "P. Fries, “A mechanism for cognitive dynamics: neuronal communication through neuronal coherence,” Trends in Cognitive Sciences, vol. 9, no. 10, pp. 474–480, 2005. doi: 10.1016/j.tics.2005.08.011.",
+      "report_sections": [
+        "Introduction",
+        "Design",
+        "Discussion"
+      ],
+      "claims_supported": [
+        "Phase relationships and coherence can motivate selective communication variables."
+      ],
+      "claims_not_supported": [
+        "Simulation phase is not measured neural coherence."
+      ]
+    },
+    {
+      "id": "R09",
+      "citation_key": "canolty2010cfc",
+      "priority": "core",
+      "domain": "cross_frequency_coupling",
+      "source_status": "peer_reviewed_or_standard_scholarly_source",
+      "type": "article-journal",
+      "authors": [
+        "R. T. Canolty",
+        "R. T. Knight"
+      ],
+      "year": 2010,
+      "title": "The functional role of cross-frequency coupling",
+      "container": "Trends in Cognitive Sciences",
+      "volume": "14",
+      "issue": "11",
+      "pages": "506–515",
+      "doi": "10.1016/j.tics.2010.09.001",
+      "url": "https://doi.org/10.1016/j.tics.2010.09.001",
+      "publisher": "",
+      "ieee": "R. T. Canolty, R. T. Knight, “The functional role of cross-frequency coupling,” Trends in Cognitive Sciences, vol. 14, no. 11, pp. 506–515, 2010. doi: 10.1016/j.tics.2010.09.001.",
+      "report_sections": [
+        "Introduction",
+        "Design"
+      ],
+      "claims_supported": [
+        "Cross-frequency coupling motivates cross-scale coordination."
+      ],
+      "claims_not_supported": [
+        "OWL does not reproduce biological oscillatory bands."
+      ]
+    },
+    {
+      "id": "R10",
+      "citation_key": "langley2009architectures",
+      "priority": "core",
+      "domain": "cognitive_architectures",
+      "source_status": "peer_reviewed_or_standard_scholarly_source",
+      "type": "article-journal",
+      "authors": [
+        "P. Langley",
+        "J. E. Laird",
+        "S. Rogers"
+      ],
+      "year": 2009,
+      "title": "Cognitive architectures: Research issues and challenges",
+      "container": "Cognitive Systems Research",
+      "volume": "10",
+      "issue": "2",
+      "pages": "141–160",
+      "doi": "10.1016/j.cogsys.2006.07.004",
+      "url": "https://doi.org/10.1016/j.cogsys.2006.07.004",
+      "publisher": "",
+      "ieee": "P. Langley, J. E. Laird, S. Rogers, “Cognitive architectures: Research issues and challenges,” Cognitive Systems Research, vol. 10, no. 2, pp. 141–160, 2009. doi: 10.1016/j.cogsys.2006.07.004.",
+      "report_sections": [
+        "Introduction",
+        "Design",
+        "Discussion"
+      ],
+      "claims_supported": [
+        "Interacting memory, perception, action, and control modules are a standard cognitive-modeling concern."
+      ],
+      "claims_not_supported": [
+        "OWL is not a general cognitive architecture."
+      ]
+    },
+    {
+      "id": "R11",
+      "citation_key": "gardner1970life",
+      "priority": "core",
+      "domain": "cellular_automata",
+      "source_status": "peer_reviewed_or_standard_scholarly_source",
+      "type": "article-journal",
+      "authors": [
+        "M. Gardner"
+      ],
+      "year": 1970,
+      "title": "Mathematical games: The fantastic combinations of John Conway’s new solitaire game “Life”",
+      "container": "Scientific American",
+      "volume": "223",
+      "issue": "4",
+      "pages": "120–123",
+      "doi": "",
+      "url": "",
+      "publisher": "",
+      "ieee": "M. Gardner, “Mathematical games: The fantastic combinations of John Conway’s new solitaire game “Life”,” Scientific American, vol. 223, no. 4, pp. 120–123, 1970.",
+      "report_sections": [
+        "Introduction",
+        "Design"
+      ],
+      "claims_supported": [
+        "Simple local rules can generate complex emergent structures."
+      ],
+      "claims_not_supported": [
+        "OWL extends rather than reproduces Conway Life."
+      ]
+    },
+    {
+      "id": "R12",
+      "citation_key": "kaelbling1998pomdp",
+      "priority": "core",
+      "domain": "partial_observability",
+      "source_status": "peer_reviewed_or_standard_scholarly_source",
+      "type": "article-journal",
+      "authors": [
+        "L. P. Kaelbling",
+        "M. L. Littman",
+        "A. R. Cassandra"
+      ],
+      "year": 1998,
+      "title": "Planning and acting in partially observable stochastic domains",
+      "container": "Artificial Intelligence",
+      "volume": "101",
+      "issue": "1–2",
+      "pages": "99–134",
+      "doi": "10.1016/S0004-3702(98)00023-X",
+      "url": "https://doi.org/10.1016/S0004-3702(98)00023-X",
+      "publisher": "",
+      "ieee": "L. P. Kaelbling, M. L. Littman, A. R. Cassandra, “Planning and acting in partially observable stochastic domains,” Artificial Intelligence, vol. 101, no. 1–2, pp. 99–134, 1998. doi: 10.1016/S0004-3702(98)00023-X.",
+      "report_sections": [
+        "Design",
+        "CADC method"
+      ],
+      "claims_supported": [
+        "Separating latent state from an agent’s observation is central to decision evaluation under partial observability."
+      ],
+      "claims_not_supported": [
+        "OWL is not solved as a conventional POMDP."
+      ]
+    },
+    {
+      "id": "R13",
+      "citation_key": "gouvea1997padic",
+      "priority": "core",
+      "domain": "p_adic_foundations",
+      "source_status": "peer_reviewed_or_standard_scholarly_source",
+      "type": "book",
+      "authors": [
+        "F. Q. Gouvêa"
+      ],
+      "year": 1997,
+      "title": "p-adic Numbers: An Introduction",
+      "container": "",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "doi": "",
+      "url": "",
+      "publisher": "Springer",
+      "ieee": "F. Q. Gouvêa, p-adic Numbers: An Introduction. Springer, 1997.",
+      "report_sections": [
+        "Finite adelic design",
+        "Appendix C"
+      ],
+      "claims_supported": [
+        "Defines p-adic valuation, norm, completion, and basic number-field structure."
+      ],
+      "claims_not_supported": [
+        "Does not motivate the project’s cognitive interpretation."
+      ]
+    },
+    {
+      "id": "R14",
+      "citation_key": "dragovich1994adelicoscillator",
+      "priority": "supplementary",
+      "domain": "adelic_mathematical_physics",
+      "source_status": "peer_reviewed_or_standard_scholarly_source",
+      "type": "article-journal",
+      "authors": [
+        "B. Dragovich"
+      ],
+      "year": 1994,
+      "title": "Adelic model of harmonic oscillator",
+      "container": "Theoretical and Mathematical Physics",
+      "volume": "101",
+      "issue": "3",
+      "pages": "1404–1412",
+      "doi": "10.1007/BF01035460",
+      "url": "https://doi.org/10.1007/BF01035460",
+      "publisher": "",
+      "ieee": "B. Dragovich, “Adelic model of harmonic oscillator,” Theoretical and Mathematical Physics, vol. 101, no. 3, pp. 1404–1412, 1994. doi: 10.1007/BF01035460.",
+      "report_sections": [
+        "Finite adelic design",
+        "Appendix C"
+      ],
+      "claims_supported": [
+        "Provides precedent for combining real and p-adic places in an adelic mathematical model."
+      ],
+      "claims_not_supported": [
+        "Does not establish adelic cognition or biology."
+      ]
+    },
+    {
+      "id": "R15",
+      "citation_key": "dragovich2017thirtyyears",
+      "priority": "core",
+      "domain": "p_adic_mathematical_physics",
+      "source_status": "peer_reviewed_or_standard_scholarly_source",
+      "type": "article-journal",
+      "authors": [
+        "B. Dragovich",
+        "A. Yu. Khrennikov",
+        "S. V. Kozyrev",
+        "I. V. Volovich",
+        "E. I. Zelenov"
+      ],
+      "year": 2017,
+      "title": "p-Adic mathematical physics: The first 30 years",
+      "container": "p-Adic Numbers, Ultrametric Analysis and Applications",
+      "volume": "9",
+      "issue": "2",
+      "pages": "87–121",
+      "doi": "10.1134/S2070046617020017",
+      "url": "https://doi.org/10.1134/S2070046617020017",
+      "publisher": "",
+      "ieee": "B. Dragovich, A. Yu. Khrennikov, S. V. Kozyrev, I. V. Volovich, E. I. Zelenov, “p-Adic mathematical physics: The first 30 years,” p-Adic Numbers, Ultrametric Analysis and Applications, vol. 9, no. 2, pp. 87–121, 2017. doi: 10.1134/S2070046617020017.",
+      "report_sections": [
+        "Finite adelic design",
+        "Appendix C"
+      ],
+      "claims_supported": [
+        "Surveys p-adic and adelic constructions used in mathematical physics."
+      ],
+      "claims_not_supported": [
+        "Survey precedent is not empirical support for the project ontology."
+      ]
+    },
+    {
+      "id": "R16",
+      "citation_key": "vladimirov1994padicphysics",
+      "priority": "supplementary",
+      "domain": "p_adic_mathematical_physics",
+      "source_status": "peer_reviewed_or_standard_scholarly_source",
+      "type": "book",
+      "authors": [
+        "V. S. Vladimirov",
+        "I. V. Volovich",
+        "E. I. Zelenov"
+      ],
+      "year": 1994,
+      "title": "p-Adic Analysis and Mathematical Physics",
+      "container": "",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "doi": "",
+      "url": "",
+      "publisher": "World Scientific",
+      "ieee": "V. S. Vladimirov, I. V. Volovich, E. I. Zelenov, p-Adic Analysis and Mathematical Physics. World Scientific, 1994.",
+      "report_sections": [
+        "Appendix C"
+      ],
+      "claims_supported": [
+        "Standard reference for p-adic analysis and mathematical-physics operators."
+      ],
+      "claims_not_supported": [
+        "Not evidence of biological implementation."
+      ]
+    },
+    {
+      "id": "R17",
+      "citation_key": "lapidus2013fractalgeometry",
+      "priority": "core",
+      "domain": "fractal_geometry",
+      "source_status": "peer_reviewed_or_standard_scholarly_source",
+      "type": "book",
+      "authors": [
+        "M. L. Lapidus",
+        "M. van Frankenhuijsen"
+      ],
+      "year": 2013,
+      "title": "Fractal Geometry, Complex Dimensions and Zeta Functions, 2nd ed.",
+      "container": "",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "doi": "",
+      "url": "",
+      "publisher": "Springer",
+      "ieee": "M. L. Lapidus, M. van Frankenhuijsen, Fractal Geometry, Complex Dimensions and Zeta Functions, 2nd ed.. Springer, 2013.",
+      "report_sections": [
+        "Design",
+        "Appendix C"
+      ],
+      "claims_supported": [
+        "Fractal strings and complex dimensions provide rigorous multiscale mathematical precedent."
+      ],
+      "claims_not_supported": [
+        "OWL does not claim to implement the full fractal-string theory."
+      ]
+    },
+    {
+      "id": "R18",
+      "citation_key": "lapidus2011padicstrings",
+      "priority": "supplementary",
+      "domain": "p_adic_fractal_strings",
+      "source_status": "peer_reviewed_or_standard_scholarly_source",
+      "type": "article-journal",
+      "authors": [
+        "M. L. Lapidus",
+        "H. Lu"
+      ],
+      "year": 2011,
+      "title": "The geometry of p-adic fractal strings: A comparative survey",
+      "container": "Contemporary Mathematics",
+      "volume": "551",
+      "issue": "",
+      "pages": "163–206",
+      "doi": "10.1090/conm/551/10893",
+      "url": "https://doi.org/10.1090/conm/551/10893",
+      "publisher": "",
+      "ieee": "M. L. Lapidus, H. Lu, “The geometry of p-adic fractal strings: A comparative survey,” Contemporary Mathematics, vol. 551, pp. 163–206, 2011. doi: 10.1090/conm/551/10893.",
+      "report_sections": [
+        "Appendix C"
+      ],
+      "claims_supported": [
+        "Connects p-adic geometry with fractal-string structure and complex dimensions."
+      ],
+      "claims_not_supported": [
+        "Used as mathematical background, not a cognitive model."
+      ]
+    },
+    {
+      "id": "R19",
+      "citation_key": "brekke1993padicphysics",
+      "priority": "core",
+      "domain": "p_adic_physics_review",
+      "source_status": "peer_reviewed_or_standard_scholarly_source",
+      "type": "article-journal",
+      "authors": [
+        "L. Brekke",
+        "P. G. O. Freund"
+      ],
+      "year": 1993,
+      "title": "p-Adic numbers in physics",
+      "container": "Physics Reports",
+      "volume": "233",
+      "issue": "1",
+      "pages": "1–66",
+      "doi": "10.1016/0370-1573(93)90043-D",
+      "url": "https://doi.org/10.1016/0370-1573(93)90043-D",
+      "publisher": "",
+      "ieee": "L. Brekke, P. G. O. Freund, “p-Adic numbers in physics,” Physics Reports, vol. 233, no. 1, pp. 1–66, 1993. doi: 10.1016/0370-1573(93)90043-D.",
+      "report_sections": [
+        "Finite adelic design"
+      ],
+      "claims_supported": [
+        "Review precedent for p-adic methods in physics."
+      ],
+      "claims_not_supported": [
+        "Does not support cognitive or consciousness claims."
+      ]
+    },
+    {
+      "id": "R20",
+      "citation_key": "nielsen2010quantum",
+      "priority": "core",
+      "domain": "quantum_information",
+      "source_status": "peer_reviewed_or_standard_scholarly_source",
+      "type": "book",
+      "authors": [
+        "M. A. Nielsen",
+        "I. L. Chuang"
+      ],
+      "year": 2010,
+      "title": "Quantum Computation and Quantum Information, 10th Anniversary ed.",
+      "container": "",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "doi": "",
+      "url": "",
+      "publisher": "Cambridge University Press",
+      "ieee": "M. A. Nielsen, I. L. Chuang, Quantum Computation and Quantum Information, 10th Anniversary ed.. Cambridge University Press, 2010.",
+      "report_sections": [
+        "RAQIC design",
+        "Appendix C"
+      ],
+      "claims_supported": [
+        "Standard quantum state, circuit, measurement, and channel formalism."
+      ],
+      "claims_not_supported": [
+        "Does not support literal quantum cognition in OWs."
+      ]
+    },
+    {
+      "id": "R21",
+      "citation_key": "davies1970instruments",
+      "priority": "core",
+      "domain": "quantum_instruments",
+      "source_status": "peer_reviewed_or_standard_scholarly_source",
+      "type": "article-journal",
+      "authors": [
+        "E. B. Davies",
+        "J. T. Lewis"
+      ],
+      "year": 1970,
+      "title": "An operational approach to quantum probability",
+      "container": "Communications in Mathematical Physics",
+      "volume": "17",
+      "issue": "3",
+      "pages": "239–260",
+      "doi": "10.1007/BF01647093",
+      "url": "https://doi.org/10.1007/BF01647093",
+      "publisher": "",
+      "ieee": "E. B. Davies, J. T. Lewis, “An operational approach to quantum probability,” Communications in Mathematical Physics, vol. 17, no. 3, pp. 239–260, 1970. doi: 10.1007/BF01647093.",
+      "report_sections": [
+        "RAQIC design"
+      ],
+      "claims_supported": [
+        "Quantum instruments provide the correct formalism for measurement outcomes plus state updates."
+      ],
+      "claims_not_supported": [
+        "RAQIC is a finite project-specific construction."
+      ]
+    },
+    {
+      "id": "R22",
+      "citation_key": "kraus1983states",
+      "priority": "core",
+      "domain": "quantum_operations",
+      "source_status": "peer_reviewed_or_standard_scholarly_source",
+      "type": "book",
+      "authors": [
+        "K. Kraus"
+      ],
+      "year": 1983,
+      "title": "States, Effects, and Operations: Fundamental Notions of Quantum Theory",
+      "container": "",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "doi": "",
+      "url": "",
+      "publisher": "Springer",
+      "ieee": "K. Kraus, States, Effects, and Operations: Fundamental Notions of Quantum Theory. Springer, 1983.",
+      "report_sections": [
+        "RAQIC design",
+        "Appendix C"
+      ],
+      "claims_supported": [
+        "Kraus operators and completely positive maps ground open-system update language."
+      ],
+      "claims_not_supported": [
+        "Does not establish the project’s recursion or cognitive interpretation."
+      ]
+    },
+    {
+      "id": "R23",
+      "citation_key": "bergholm2005uniform",
+      "priority": "supplementary",
+      "domain": "quantum_state_preparation",
+      "source_status": "peer_reviewed_or_standard_scholarly_source",
+      "type": "article-journal",
+      "authors": [
+        "V. Bergholm",
+        "J. J. Vartiainen",
+        "M. Möttönen",
+        "M. M. Salomaa"
+      ],
+      "year": 2005,
+      "title": "Quantum circuits with uniformly controlled one-qubit gates",
+      "container": "Physical Review A",
+      "volume": "71",
+      "issue": "5",
+      "pages": "052330",
+      "doi": "10.1103/PhysRevA.71.052330",
+      "url": "https://doi.org/10.1103/PhysRevA.71.052330",
+      "publisher": "",
+      "ieee": "V. Bergholm, J. J. Vartiainen, M. Möttönen, M. M. Salomaa, “Quantum circuits with uniformly controlled one-qubit gates,” Physical Review A, vol. 71, no. 5, pp. 052330, 2005. doi: 10.1103/PhysRevA.71.052330.",
+      "report_sections": [
+        "RAQIC implementation",
+        "Appendix C"
+      ],
+      "claims_supported": [
+        "Uniformly controlled rotations support exact fixed-topology state-preparation design."
+      ],
+      "claims_not_supported": [
+        "Circuit validation does not establish quantum advantage."
+      ]
+    },
+    {
+      "id": "R24",
+      "citation_key": "jiang2016doublyrobust",
+      "priority": "core",
+      "domain": "off_policy_evaluation",
+      "source_status": "peer_reviewed_or_standard_scholarly_source",
+      "type": "article-journal",
+      "authors": [
+        "N. Jiang",
+        "L. Li"
+      ],
+      "year": 2016,
+      "title": "Doubly robust off-policy value evaluation for reinforcement learning",
+      "container": "Proceedings of Machine Learning Research",
+      "volume": "48",
+      "issue": "",
+      "pages": "652–661",
+      "doi": "",
+      "url": "https://proceedings.mlr.press/v48/jiang16.html",
+      "publisher": "",
+      "ieee": "N. Jiang, L. Li, “Doubly robust off-policy value evaluation for reinforcement learning,” Proceedings of Machine Learning Research, vol. 48, pp. 652–661, 2016.",
+      "report_sections": [
+        "CADC method",
+        "Appendix D"
+      ],
+      "claims_supported": [
+        "Doubly robust estimators combine outcome and propensity models and motivate cross-fitted factual augmentation."
+      ],
+      "claims_not_supported": [
+        "Phase 3 paired branches remain the primary action-identification evidence."
+      ]
+    },
+    {
+      "id": "R25",
+      "citation_key": "thomas2016dataefficient",
+      "priority": "supplementary",
+      "domain": "off_policy_evaluation",
+      "source_status": "peer_reviewed_or_standard_scholarly_source",
+      "type": "article-journal",
+      "authors": [
+        "P. S. Thomas",
+        "E. Brunskill"
+      ],
+      "year": 2016,
+      "title": "Data-efficient off-policy policy evaluation for reinforcement learning",
+      "container": "Proceedings of Machine Learning Research",
+      "volume": "48",
+      "issue": "",
+      "pages": "2139–2148",
+      "doi": "",
+      "url": "https://proceedings.mlr.press/v48/thomas16.html",
+      "publisher": "",
+      "ieee": "P. S. Thomas, E. Brunskill, “Data-efficient off-policy policy evaluation for reinforcement learning,” Proceedings of Machine Learning Research, vol. 48, pp. 2139–2148, 2016.",
+      "report_sections": [
+        "CADC method"
+      ],
+      "claims_supported": [
+        "Provides precedent for data-efficient policy evaluation and uncertainty-aware estimates."
+      ],
+      "claims_not_supported": [
+        "Not a drop-in proof for this simulator."
+      ]
+    },
+    {
+      "id": "R26",
+      "citation_key": "bellemare2017distributional",
+      "priority": "core",
+      "domain": "distributional_risk",
+      "source_status": "peer_reviewed_or_standard_scholarly_source",
+      "type": "article-journal",
+      "authors": [
+        "M. G. Bellemare",
+        "W. Dabney",
+        "R. Munos"
+      ],
+      "year": 2017,
+      "title": "A distributional perspective on reinforcement learning",
+      "container": "Proceedings of Machine Learning Research",
+      "volume": "70",
+      "issue": "",
+      "pages": "449–458",
+      "doi": "",
+      "url": "https://proceedings.mlr.press/v70/bellemare17a.html",
+      "publisher": "",
+      "ieee": "M. G. Bellemare, W. Dabney, R. Munos, “A distributional perspective on reinforcement learning,” Proceedings of Machine Learning Research, vol. 70, pp. 449–458, 2017.",
+      "report_sections": [
+        "CADC method",
+        "Results"
+      ],
+      "claims_supported": [
+        "Modeling outcome distributions supports risk-sensitive evaluation beyond a mean."
+      ],
+      "claims_not_supported": [
+        "OWL outcomes are simulator-specific."
+      ]
+    },
+    {
+      "id": "R27",
+      "citation_key": "dabney2018quantile",
+      "priority": "supplementary",
+      "domain": "distributional_risk",
+      "source_status": "peer_reviewed_or_standard_scholarly_source",
+      "type": "article-journal",
+      "authors": [
+        "W. Dabney",
+        "M. Rowland",
+        "M. G. Bellemare",
+        "R. Munos"
+      ],
+      "year": 2018,
+      "title": "Distributional reinforcement learning with quantile regression",
+      "container": "Proceedings of the AAAI Conference on Artificial Intelligence",
+      "volume": "32",
+      "issue": "1",
+      "pages": "",
+      "doi": "10.1609/aaai.v32i1.11791",
+      "url": "https://doi.org/10.1609/aaai.v32i1.11791",
+      "publisher": "",
+      "ieee": "W. Dabney, M. Rowland, M. G. Bellemare, R. Munos, “Distributional reinforcement learning with quantile regression,” Proceedings of the AAAI Conference on Artificial Intelligence, vol. 32, no. 1, 2018. doi: 10.1609/aaai.v32i1.11791.",
+      "report_sections": [
+        "CADC method"
+      ],
+      "claims_supported": [
+        "Quantile regression motivates monotone distributional heads and lower-tail summaries."
+      ],
+      "claims_not_supported": [
+        "Does not determine the project’s scalarization."
+      ]
+    },
+    {
+      "id": "R28",
+      "citation_key": "jacobs1991experts",
+      "priority": "core",
+      "domain": "mixture_of_experts",
+      "source_status": "peer_reviewed_or_standard_scholarly_source",
+      "type": "article-journal",
+      "authors": [
+        "R. A. Jacobs",
+        "M. I. Jordan",
+        "S. J. Nowlan",
+        "G. E. Hinton"
+      ],
+      "year": 1991,
+      "title": "Adaptive mixtures of local experts",
+      "container": "Neural Computation",
+      "volume": "3",
+      "issue": "1",
+      "pages": "79–87",
+      "doi": "10.1162/neco.1991.3.1.79",
+      "url": "https://doi.org/10.1162/neco.1991.3.1.79",
+      "publisher": "",
+      "ieee": "R. A. Jacobs, M. I. Jordan, S. J. Nowlan, G. E. Hinton, “Adaptive mixtures of local experts,” Neural Computation, vol. 3, no. 1, pp. 79–87, 1991. doi: 10.1162/neco.1991.3.1.79.",
+      "report_sections": [
+        "CADC method"
+      ],
+      "claims_supported": [
+        "Shared representations with specialized experts motivate action-family residual models."
+      ],
+      "claims_not_supported": [
+        "The Phase 4 expert architecture is project-specific."
+      ]
+    },
+    {
+      "id": "R29",
+      "citation_key": "burges2005ranknet",
+      "priority": "core",
+      "domain": "learning_to_rank",
+      "source_status": "peer_reviewed_or_standard_scholarly_source",
+      "type": "article-journal",
+      "authors": [
+        "C. Burges",
+        "T. Shaked",
+        "E. Renshaw",
+        "A. Lazier",
+        "M. Deeds",
+        "N. Hamilton",
+        "G. Hullender"
+      ],
+      "year": 2005,
+      "title": "Learning to rank using gradient descent",
+      "container": "Proceedings of the 22nd International Conference on Machine Learning",
+      "volume": "",
+      "issue": "",
+      "pages": "89–96",
+      "doi": "10.1145/1102351.1102363",
+      "url": "https://doi.org/10.1145/1102351.1102363",
+      "publisher": "",
+      "ieee": "C. Burges, T. Shaked, E. Renshaw, A. Lazier, M. Deeds, N. Hamilton, G. Hullender, “Learning to rank using gradient descent,” Proceedings of the 22nd International Conference on Machine Learning, pp. 89–96, 2005. doi: 10.1145/1102351.1102363.",
+      "report_sections": [
+        "CADC method"
+      ],
+      "claims_supported": [
+        "Pairwise ranking losses provide precedent for learning relative candidate preferences."
+      ],
+      "claims_not_supported": [
+        "Pairwise accuracy alone is insufficient without calibration/support."
+      ]
+    },
+    {
+      "id": "R30",
+      "citation_key": "cao2007listwise",
+      "priority": "supplementary",
+      "domain": "learning_to_rank",
+      "source_status": "peer_reviewed_or_standard_scholarly_source",
+      "type": "article-journal",
+      "authors": [
+        "Z. Cao",
+        "T. Qin",
+        "T.-Y. Liu",
+        "M.-F. Tsai",
+        "H. Li"
+      ],
+      "year": 2007,
+      "title": "Learning to rank: From pairwise approach to listwise approach",
+      "container": "Proceedings of the 24th International Conference on Machine Learning",
+      "volume": "",
+      "issue": "",
+      "pages": "129–136",
+      "doi": "10.1145/1273496.1273513",
+      "url": "https://doi.org/10.1145/1273496.1273513",
+      "publisher": "",
+      "ieee": "Z. Cao, T. Qin, T.-Y. Liu, M.-F. Tsai, H. Li, “Learning to rank: From pairwise approach to listwise approach,” Proceedings of the 24th International Conference on Machine Learning, pp. 129–136, 2007. doi: 10.1145/1273496.1273513.",
+      "report_sections": [
+        "CADC method"
+      ],
+      "claims_supported": [
+        "Listwise objectives motivate masked normalization over executable alternatives."
+      ],
+      "claims_not_supported": [
+        "The project’s action masks and losses are custom contracts."
+      ]
+    },
+    {
+      "id": "R31",
+      "citation_key": "fine1999competing",
+      "priority": "core",
+      "domain": "competing_risks",
+      "source_status": "peer_reviewed_or_standard_scholarly_source",
+      "type": "article-journal",
+      "authors": [
+        "J. P. Fine",
+        "R. J. Gray"
+      ],
+      "year": 1999,
+      "title": "A proportional hazards model for the subdistribution of a competing risk",
+      "container": "Journal of the American Statistical Association",
+      "volume": "94",
+      "issue": "446",
+      "pages": "496–509",
+      "doi": "10.1080/01621459.1999.10474144",
+      "url": "https://doi.org/10.1080/01621459.1999.10474144",
+      "publisher": "",
+      "ieee": "J. P. Fine, R. J. Gray, “A proportional hazards model for the subdistribution of a competing risk,” Journal of the American Statistical Association, vol. 94, no. 446, pp. 496–509, 1999. doi: 10.1080/01621459.1999.10474144.",
+      "report_sections": [
+        "CADC method",
+        "Results"
+      ],
+      "claims_supported": [
+        "Competing-risk methods motivate separating death/failure causes."
+      ],
+      "claims_not_supported": [
+        "The Phase 4 discrete head is not necessarily the Fine–Gray model."
+      ]
+    },
+    {
+      "id": "R32",
+      "citation_key": "lee2018deephit",
+      "priority": "supplementary",
+      "domain": "competing_risks",
+      "source_status": "peer_reviewed_or_standard_scholarly_source",
+      "type": "article-journal",
+      "authors": [
+        "C. Lee",
+        "W. Zame",
+        "J. Yoon",
+        "M. van der Schaar"
+      ],
+      "year": 2018,
+      "title": "DeepHit: A deep learning approach to survival analysis with competing risks",
+      "container": "Proceedings of the AAAI Conference on Artificial Intelligence",
+      "volume": "32",
+      "issue": "1",
+      "pages": "",
+      "doi": "10.1609/aaai.v32i1.11842",
+      "url": "https://doi.org/10.1609/aaai.v32i1.11842",
+      "publisher": "",
+      "ieee": "C. Lee, W. Zame, J. Yoon, M. van der Schaar, “DeepHit: A deep learning approach to survival analysis with competing risks,” Proceedings of the AAAI Conference on Artificial Intelligence, vol. 32, no. 1, 2018. doi: 10.1609/aaai.v32i1.11842.",
+      "report_sections": [
+        "CADC method"
+      ],
+      "claims_supported": [
+        "Neural discrete-time competing-risk heads provide architecture precedent."
+      ],
+      "claims_not_supported": [
+        "Survival semantics remain simulator-specific."
+      ]
+    },
+    {
+      "id": "R33",
+      "citation_key": "guo2017calibration",
+      "priority": "core",
+      "domain": "calibration",
+      "source_status": "peer_reviewed_or_standard_scholarly_source",
+      "type": "article-journal",
+      "authors": [
+        "C. Guo",
+        "G. Pleiss",
+        "Y. Sun",
+        "K. Q. Weinberger"
+      ],
+      "year": 2017,
+      "title": "On calibration of modern neural networks",
+      "container": "Proceedings of Machine Learning Research",
+      "volume": "70",
+      "issue": "",
+      "pages": "1321–1330",
+      "doi": "",
+      "url": "https://proceedings.mlr.press/v70/guo17a.html",
+      "publisher": "",
+      "ieee": "C. Guo, G. Pleiss, Y. Sun, K. Q. Weinberger, “On calibration of modern neural networks,” Proceedings of Machine Learning Research, vol. 70, pp. 1321–1330, 2017.",
+      "report_sections": [
+        "CADC method",
+        "Results"
+      ],
+      "claims_supported": [
+        "Temperature scaling and held-out calibration are standard reliability tools."
+      ],
+      "claims_not_supported": [
+        "Calibration does not correct unsupported extrapolation."
+      ]
+    },
+    {
+      "id": "R34",
+      "citation_key": "lakshminarayanan2017ensembles",
+      "priority": "core",
+      "domain": "uncertainty",
+      "source_status": "peer_reviewed_or_standard_scholarly_source",
+      "type": "article-journal",
+      "authors": [
+        "B. Lakshminarayanan",
+        "A. Pritzel",
+        "C. Blundell"
+      ],
+      "year": 2017,
+      "title": "Simple and scalable predictive uncertainty estimation using deep ensembles",
+      "container": "Advances in Neural Information Processing Systems",
+      "volume": "30",
+      "issue": "",
+      "pages": "",
+      "doi": "",
+      "url": "",
+      "publisher": "",
+      "ieee": "B. Lakshminarayanan, A. Pritzel, C. Blundell, “Simple and scalable predictive uncertainty estimation using deep ensembles,” Advances in Neural Information Processing Systems, vol. 30, 2017.",
+      "report_sections": [
+        "CADC method",
+        "Results"
+      ],
+      "claims_supported": [
+        "Ensemble disagreement provides practical epistemic-uncertainty evidence."
+      ],
+      "claims_not_supported": [
+        "Disagreement is only one support signal."
+      ]
+    },
+    {
+      "id": "R35",
+      "citation_key": "angelopoulos2023conformal",
+      "priority": "core",
+      "domain": "conformal_prediction",
+      "source_status": "peer_reviewed_or_standard_scholarly_source",
+      "type": "article-journal",
+      "authors": [
+        "A. N. Angelopoulos",
+        "S. Bates"
+      ],
+      "year": 2023,
+      "title": "Conformal prediction: A gentle introduction",
+      "container": "Foundations and Trends in Machine Learning",
+      "volume": "16",
+      "issue": "4",
+      "pages": "494–591",
+      "doi": "10.1561/2200000101",
+      "url": "https://doi.org/10.1561/2200000101",
+      "publisher": "",
+      "ieee": "A. N. Angelopoulos, S. Bates, “Conformal prediction: A gentle introduction,” Foundations and Trends in Machine Learning, vol. 16, no. 4, pp. 494–591, 2023. doi: 10.1561/2200000101.",
+      "report_sections": [
+        "CADC method",
+        "Results"
+      ],
+      "claims_supported": [
+        "Split/Mondrian conformal methods motivate finite-sample coverage and abstention."
+      ],
+      "claims_not_supported": [
+        "Coverage guarantees depend on assumptions and the implemented split."
+      ]
+    },
+    {
+      "id": "R36",
+      "citation_key": "chernozhukov2018dml",
+      "priority": "supplementary",
+      "domain": "cross_fitting",
+      "source_status": "peer_reviewed_or_standard_scholarly_source",
+      "type": "article-journal",
+      "authors": [
+        "V. Chernozhukov",
+        "D. Chetverikov",
+        "M. Demirer",
+        "E. Duflo",
+        "C. Hansen",
+        "W. Newey",
+        "J. Robins"
+      ],
+      "year": 2018,
+      "title": "Double/debiased machine learning for treatment and structural parameters",
+      "container": "The Econometrics Journal",
+      "volume": "21",
+      "issue": "1",
+      "pages": "C1–C68",
+      "doi": "10.1111/ectj.12097",
+      "url": "https://doi.org/10.1111/ectj.12097",
+      "publisher": "",
+      "ieee": "V. Chernozhukov, D. Chetverikov, M. Demirer, E. Duflo, C. Hansen, W. Newey, J. Robins, “Double/debiased machine learning for treatment and structural parameters,” The Econometrics Journal, vol. 21, no. 1, pp. C1–C68, 2018. doi: 10.1111/ectj.12097.",
+      "report_sections": [
+        "CADC method",
+        "Appendix D"
+      ],
+      "claims_supported": [
+        "Cross-fitting reduces nuisance-model overfitting bias in orthogonal estimation."
+      ],
+      "claims_not_supported": [
+        "Does not by itself identify simulator action effects."
+      ]
+    },
+    {
+      "id": "R37",
+      "citation_key": "klyubin2005empowerment",
+      "priority": "core",
+      "domain": "information_value",
+      "source_status": "peer_reviewed_or_standard_scholarly_source",
+      "type": "article-journal",
+      "authors": [
+        "A. S. Klyubin",
+        "D. Polani",
+        "C. L. Nehaniv"
+      ],
+      "year": 2005,
+      "title": "Empowerment: A universal agent-centric measure of control",
+      "container": "Proceedings of the 2005 IEEE Congress on Evolutionary Computation",
+      "volume": "1",
+      "issue": "",
+      "pages": "128–135",
+      "doi": "10.1109/CEC.2005.1554676",
+      "url": "https://doi.org/10.1109/CEC.2005.1554676",
+      "publisher": "",
+      "ieee": "A. S. Klyubin, D. Polani, C. L. Nehaniv, “Empowerment: A universal agent-centric measure of control,” Proceedings of the 2005 IEEE Congress on Evolutionary Computation, vol. 1, pp. 128–135, 2005. doi: 10.1109/CEC.2005.1554676.",
+      "report_sections": [
+        "CADC epistemic head",
+        "Discussion"
+      ],
+      "claims_supported": [
+        "Agent-centric information/control measures motivate control-relevant information value."
+      ],
+      "claims_not_supported": [
+        "The Phase 4 epistemic score is not empowerment itself."
+      ]
+    },
+    {
+      "id": "R38",
+      "citation_key": "nelson1995crn",
+      "priority": "core",
+      "domain": "common_random_numbers",
+      "source_status": "peer_reviewed_or_standard_scholarly_source",
+      "type": "article-journal",
+      "authors": [
+        "B. L. Nelson",
+        "F. J. Matejcik"
+      ],
+      "year": 1995,
+      "title": "Using common random numbers for indifference-zone selection and multiple comparisons in simulation",
+      "container": "Management Science",
+      "volume": "41",
+      "issue": "12",
+      "pages": "1935–1945",
+      "doi": "10.1287/mnsc.41.12.1935",
+      "url": "https://doi.org/10.1287/mnsc.41.12.1935",
+      "publisher": "",
+      "ieee": "B. L. Nelson, F. J. Matejcik, “Using common random numbers for indifference-zone selection and multiple comparisons in simulation,” Management Science, vol. 41, no. 12, pp. 1935–1945, 1995. doi: 10.1287/mnsc.41.12.1935.",
+      "report_sections": [
+        "Counterfactual method"
+      ],
+      "claims_supported": [
+        "Common random numbers reduce variance in paired simulation comparisons."
+      ],
+      "claims_not_supported": [
+        "CRN does not eliminate model bias or interaction effects."
+      ]
+    },
+    {
+      "id": "R39",
+      "citation_key": "mckay1979lhs",
+      "priority": "supplementary",
+      "domain": "experimental_design",
+      "source_status": "peer_reviewed_or_standard_scholarly_source",
+      "type": "article-journal",
+      "authors": [
+        "M. D. McKay",
+        "R. J. Beckman",
+        "W. J. Conover"
+      ],
+      "year": 1979,
+      "title": "A comparison of three methods for selecting values of input variables in the analysis of output from a computer code",
+      "container": "Technometrics",
+      "volume": "21",
+      "issue": "2",
+      "pages": "239–245",
+      "doi": "10.1080/00401706.1979.10489755",
+      "url": "https://doi.org/10.1080/00401706.1979.10489755",
+      "publisher": "",
+      "ieee": "M. D. McKay, R. J. Beckman, W. J. Conover, “A comparison of three methods for selecting values of input variables in the analysis of output from a computer code,” Technometrics, vol. 21, no. 2, pp. 239–245, 1979. doi: 10.1080/00401706.1979.10489755.",
+      "report_sections": [
+        "Experiment design",
+        "Appendix"
+      ],
+      "claims_supported": [
+        "Latin hypercube and stratified sampling motivate broad, controlled trait/parameter coverage."
+      ],
+      "claims_not_supported": [
+        "The final population design must match the actual manifest."
+      ]
+    },
+    {
+      "id": "R40",
+      "citation_key": "hurlbert1984pseudorep",
+      "priority": "core",
+      "domain": "pseudoreplication",
+      "source_status": "peer_reviewed_or_standard_scholarly_source",
+      "type": "article-journal",
+      "authors": [
+        "S. H. Hurlbert"
+      ],
+      "year": 1984,
+      "title": "Pseudoreplication and the design of ecological field experiments",
+      "container": "Ecological Monographs",
+      "volume": "54",
+      "issue": "2",
+      "pages": "187–211",
+      "doi": "10.2307/1942661",
+      "url": "https://doi.org/10.2307/1942661",
+      "publisher": "",
+      "ieee": "S. H. Hurlbert, “Pseudoreplication and the design of ecological field experiments,” Ecological Monographs, vol. 54, no. 2, pp. 187–211, 1984. doi: 10.2307/1942661.",
+      "report_sections": [
+        "Experiment design",
+        "Results"
+      ],
+      "claims_supported": [
+        "Repeated observations within one experimental unit do not create independent replicates."
+      ],
+      "claims_not_supported": [
+        "The simulator requires its own hierarchical analysis, not a literal field experiment."
+      ]
+    },
+    {
+      "id": "R41",
+      "citation_key": "benjamini1995fdr",
+      "priority": "core",
+      "domain": "multiple_testing",
+      "source_status": "peer_reviewed_or_standard_scholarly_source",
+      "type": "article-journal",
+      "authors": [
+        "Y. Benjamini",
+        "Y. Hochberg"
+      ],
+      "year": 1995,
+      "title": "Controlling the false discovery rate: A practical and powerful approach to multiple testing",
+      "container": "Journal of the Royal Statistical Society: Series B",
+      "volume": "57",
+      "issue": "1",
+      "pages": "289–300",
+      "doi": "10.1111/j.2517-6161.1995.tb02031.x",
+      "url": "https://doi.org/10.1111/j.2517-6161.1995.tb02031.x",
+      "publisher": "",
+      "ieee": "Y. Benjamini, Y. Hochberg, “Controlling the false discovery rate: A practical and powerful approach to multiple testing,” Journal of the Royal Statistical Society: Series B, vol. 57, no. 1, pp. 289–300, 1995. doi: 10.1111/j.2517-6161.1995.tb02031.x.",
+      "report_sections": [
+        "Experiment design",
+        "Results"
+      ],
+      "claims_supported": [
+        "FDR control supports multiplicity management for secondary analyses."
+      ],
+      "claims_not_supported": [
+        "Primary/secondary families must be predeclared."
+      ]
+    },
+    {
+      "id": "R42",
+      "citation_key": "rockafellar2000cvar",
+      "priority": "supplementary",
+      "domain": "risk",
+      "source_status": "peer_reviewed_or_standard_scholarly_source",
+      "type": "article-journal",
+      "authors": [
+        "R. T. Rockafellar",
+        "S. Uryasev"
+      ],
+      "year": 2000,
+      "title": "Optimization of conditional value-at-risk",
+      "container": "Journal of Risk",
+      "volume": "2",
+      "issue": "3",
+      "pages": "21–41",
+      "doi": "10.21314/JOR.2000.038",
+      "url": "https://doi.org/10.21314/JOR.2000.038",
+      "publisher": "",
+      "ieee": "R. T. Rockafellar, S. Uryasev, “Optimization of conditional value-at-risk,” Journal of Risk, vol. 2, no. 3, pp. 21–41, 2000. doi: 10.21314/JOR.2000.038.",
+      "report_sections": [
+        "CADC method",
+        "Results"
+      ],
+      "claims_supported": [
+        "CVaR provides a coherent lower-tail risk summary."
+      ],
+      "claims_not_supported": [
+        "The selected alpha and quantile approximation are project choices."
+      ]
+    },
+    {
+      "id": "R43",
+      "citation_key": "imbens2015causal",
+      "priority": "supplementary",
+      "domain": "causal_inference",
+      "source_status": "peer_reviewed_or_standard_scholarly_source",
+      "type": "book",
+      "authors": [
+        "G. W. Imbens",
+        "D. B. Rubin"
+      ],
+      "year": 2015,
+      "title": "Causal Inference for Statistics, Social, and Biomedical Sciences",
+      "container": "",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "doi": "",
+      "url": "",
+      "publisher": "Cambridge University Press",
+      "ieee": "G. W. Imbens, D. B. Rubin, Causal Inference for Statistics, Social, and Biomedical Sciences. Cambridge University Press, 2015.",
+      "report_sections": [
+        "Counterfactual method",
+        "Limitations"
+      ],
+      "claims_supported": [
+        "Potential-outcome language helps distinguish factual and counterfactual comparisons."
+      ],
+      "claims_not_supported": [
+        "The simulator’s branch intervention has model-specific assumptions."
+      ]
+    },
+    {
+      "id": "R44",
+      "citation_key": "keramati2014homeostatic",
+      "priority": "core",
+      "domain": "homeostatic_decision_value",
+      "source_status": "peer_reviewed_or_standard_scholarly_source",
+      "type": "article-journal",
+      "authors": [
+        "M. Keramati",
+        "B. Gutkin"
+      ],
+      "year": 2014,
+      "title": "Homeostatic reinforcement learning for integrating reward collection and physiological stability",
+      "container": "eLife",
+      "volume": "3",
+      "issue": "",
+      "pages": "e04811",
+      "doi": "10.7554/eLife.04811",
+      "url": "https://doi.org/10.7554/eLife.04811",
+      "publisher": "",
+      "ieee": "M. Keramati and B. Gutkin, “Homeostatic reinforcement learning for integrating reward collection and physiological stability,” eLife, vol. 3, art. e04811, 2014, doi: 10.7554/eLife.04811.",
+      "report_sections": [
+        "CADC method",
+        "Design",
+        "Discussion"
+      ],
+      "claims_supported": [
+        "Adaptive action value can be formulated in relation to physiological or homeostatic stability rather than immediate reward alone."
+      ],
+      "claims_not_supported": [
+        "The OWL homeostatic drive, setpoints, horizons, and scalarization remain project-specific."
+      ]
+    },
+    {
+      "id": "R45",
+      "citation_key": "koenker1978quantiles",
+      "priority": "supplementary",
+      "domain": "quantile_regression",
+      "source_status": "peer_reviewed_or_standard_scholarly_source",
+      "type": "article-journal",
+      "authors": [
+        "R. Koenker",
+        "G. Bassett, Jr."
+      ],
+      "year": 1978,
+      "title": "Regression quantiles",
+      "container": "Econometrica",
+      "volume": "46",
+      "issue": "1",
+      "pages": "33–50",
+      "doi": "10.2307/1913643",
+      "url": "https://doi.org/10.2307/1913643",
+      "publisher": "",
+      "ieee": "R. Koenker and G. Bassett, Jr., “Regression quantiles,” Econometrica, vol. 46, no. 1, pp. 33–50, 1978, doi: 10.2307/1913643.",
+      "report_sections": [
+        "CADC method",
+        "Results"
+      ],
+      "claims_supported": [
+        "Conditional quantile modeling supports distributional outcome and lower-tail analyses beyond a conditional mean."
+      ],
+      "claims_not_supported": [
+        "Quantile monotonicity and CVaR construction require explicit implementation and validation."
+      ]
+    },
+    {
+      "id": "R46",
+      "citation_key": "geifman2017selective",
+      "priority": "supplementary",
+      "domain": "selective_prediction",
+      "source_status": "peer_reviewed_or_standard_scholarly_source",
+      "type": "inproceedings",
+      "authors": [
+        "Y. Geifman",
+        "R. El-Yaniv"
+      ],
+      "year": 2017,
+      "title": "Selective classification for deep neural networks",
+      "container": "Advances in Neural Information Processing Systems 30",
+      "volume": "",
+      "issue": "",
+      "pages": "4878–4887",
+      "doi": "",
+      "url": "https://papers.neurips.cc/paper_files/paper/2017/hash/4a8423d5e91fda00bb7e46540e2b0cf1-Abstract.html",
+      "publisher": "NeurIPS",
+      "ieee": "Y. Geifman and R. El-Yaniv, “Selective classification for deep neural networks,” in Advances in Neural Information Processing Systems 30, 2017, pp. 4878–4887.",
+      "report_sections": [
+        "CADC method",
+        "Results",
+        "Limitations"
+      ],
+      "claims_supported": [
+        "A predictive system may trade coverage for lower supported risk by rejecting or abstaining on uncertain cases."
+      ],
+      "claims_not_supported": [
+        "The Phase 4 support rule must be validated for regression/ranking and cannot inherit classification guarantees automatically."
+      ]
+    },
+    {
+      "id": "R47",
+      "citation_key": "cameron2011multiway",
+      "priority": "core",
+      "domain": "clustered_inference",
+      "source_status": "peer_reviewed_or_standard_scholarly_source",
+      "type": "article-journal",
+      "authors": [
+        "A. C. Cameron",
+        "J. B. Gelbach",
+        "D. L. Miller"
+      ],
+      "year": 2011,
+      "title": "Robust inference with multiway clustering",
+      "container": "Journal of Business & Economic Statistics",
+      "volume": "29",
+      "issue": "2",
+      "pages": "238–249",
+      "doi": "10.1198/jbes.2010.07136",
+      "url": "https://doi.org/10.1198/jbes.2010.07136",
+      "publisher": "",
+      "ieee": "A. C. Cameron, J. B. Gelbach, and D. L. Miller, “Robust inference with multiway clustering,” Journal of Business & Economic Statistics, vol. 29, no. 2, pp. 238–249, 2011, doi: 10.1198/jbes.2010.07136.",
+      "report_sections": [
+        "Experiment design",
+        "Results"
+      ],
+      "claims_supported": [
+        "Inference can account for correlated observations within more than one clustering dimension."
+      ],
+      "claims_not_supported": [
+        "The final cluster dimensions and small-cluster corrections must follow the actual seed/world design."
+      ]
+    },
+    {
+      "id": "R48",
+      "citation_key": "gelman2007multilevel",
+      "priority": "supplementary",
+      "domain": "multilevel_models",
+      "source_status": "peer_reviewed_or_standard_scholarly_source",
+      "type": "book",
+      "authors": [
+        "A. Gelman",
+        "J. Hill"
+      ],
+      "year": 2007,
+      "title": "Data Analysis Using Regression and Multilevel/Hierarchical Models",
+      "container": "",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "doi": "10.1017/CBO9780511790942",
+      "url": "https://doi.org/10.1017/CBO9780511790942",
+      "publisher": "Cambridge University Press",
+      "ieee": "A. Gelman and J. Hill, Data Analysis Using Regression and Multilevel/Hierarchical Models. Cambridge, U.K.: Cambridge University Press, 2007, doi: 10.1017/CBO9780511790942.",
+      "report_sections": [
+        "Experiment design",
+        "Results",
+        "Appendix D"
+      ],
+      "claims_supported": [
+        "Hierarchical models are appropriate when observations are nested within agents, worlds, seeds, or time blocks."
+      ],
+      "claims_not_supported": [
+        "The final random-effects structure must be justified by the realized experiment and diagnostics."
+      ]
+    },
+    {
+      "id": "R49",
+      "citation_key": "leibfried2019empowerment",
+      "priority": "supplementary",
+      "domain": "epistemic_and_control_value",
+      "source_status": "peer_reviewed_or_standard_scholarly_source",
+      "type": "inproceedings",
+      "authors": [
+        "F. Leibfried",
+        "S. Pascual-Díaz",
+        "J. Grau-Moya"
+      ],
+      "year": 2019,
+      "title": "A unified Bellman optimality principle combining reward maximization and empowerment",
+      "container": "Advances in Neural Information Processing Systems 32",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "doi": "",
+      "url": "https://proceedings.neurips.cc/paper/2019/hash/13384ffc9d8bdb21c53c6f72d46f7866-Abstract.html",
+      "publisher": "NeurIPS",
+      "ieee": "F. Leibfried, S. Pascual-Díaz, and J. Grau-Moya, “A unified Bellman optimality principle combining reward maximization and empowerment,” in Advances in Neural Information Processing Systems 32, 2019.",
+      "report_sections": [
+        "CADC method",
+        "Discussion"
+      ],
+      "claims_supported": [
+        "Extrinsic outcome value and information-theoretic control can be treated as distinct but combinable objectives."
+      ],
+      "claims_not_supported": [
+        "The Phase 4 epistemic head is not the same as empowerment and should not be named as such."
+      ]
+    },
+    {
+      "id": "R50",
+      "citation_key": "shannon1948communication",
+      "priority": "supplementary",
+      "domain": "information_theory",
+      "source_status": "peer_reviewed_or_standard_scholarly_source",
+      "type": "article-journal",
+      "authors": [
+        "C. E. Shannon"
+      ],
+      "year": 1948,
+      "title": "A mathematical theory of communication",
+      "container": "Bell System Technical Journal",
+      "volume": "27",
+      "issue": "3–4",
+      "pages": "379–423, 623–656",
+      "doi": "10.1002/j.1538-7305.1948.tb01338.x",
+      "url": "https://doi.org/10.1002/j.1538-7305.1948.tb01338.x",
+      "publisher": "",
+      "ieee": "C. E. Shannon, “A mathematical theory of communication,” Bell System Technical Journal, vol. 27, no. 3, pp. 379–423, and no. 4, pp. 623–656, 1948.",
+      "report_sections": [
+        "Design",
+        "CADC method",
+        "Appendix C"
+      ],
+      "claims_supported": [
+        "Entropy and mutual information provide formal tools for uncertainty and information gain."
+      ],
+      "claims_not_supported": [
+        "Information-theoretic quantities alone do not establish cognitive competence or consciousness."
+      ]
+    }
+  ]
+}

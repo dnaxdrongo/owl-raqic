@@ -1,0 +1,30 @@
+world:
+  height: 100
+  width: 100
+  patch_size: 5
+  max_steps: 100
+  seed: 9007
+recording:
+  enabled: false
+visualization:
+  enabled: true
+  backend: pygame
+  fps: 30
+debug:
+  assert_invariants: false
+raqic:
+  enabled: true
+  mode: gpu_full
+  decision_policy: raqic
+  fallback_on_backend_error: false
+  full_gpu_strict: true
+  full_gpu_transfer_policy: persistent_mirror
+  full_gpu_execution_tier: persistent
+  full_gpu_visual_backend: vispy_gpu
+  full_gpu_render_every: 2
+  full_gpu_visual_event_capacity: 16384
+  full_gpu_visual_clutter_budget: 4096
+  full_gpu_visual_adaptive_lod: true
+  full_gpu_visual_max_slowdown_fraction: 0.12
+  full_gpu_phase_mode: canonical_device
+  full_gpu_fuse_scatter: true

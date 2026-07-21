@@ -1,0 +1,52 @@
+world:
+  height: 200
+  width: 200
+  patch_size: 5
+  max_steps: 5000
+  seed: 8083
+recording:
+  enabled: true
+  record_every: 25
+  zarr_path: runs/gpu_v08_production_mixed/run.zarr
+  metrics_path: results/gpu_v08_production_mixed/metrics.parquet
+visualization:
+  enabled: false
+  backend: none
+debug:
+  assert_invariants: true
+raqic:
+  enabled: true
+  mode: gpu_full
+  decision_policy: raqic
+  full_gpu_strict: true
+  strict_gpu: true
+  fallback_on_backend_error: false
+  full_gpu_no_silent_fallback: true
+  full_gpu_transfer_policy: persistent_mirror
+  full_gpu_execution_tier: graph
+  full_gpu_precision: mixed
+  gpu_precision: mixed
+  full_gpu_run_class: production
+  full_gpu_memory_policy: preallocate
+  full_gpu_memory_safety_fraction: 0.80
+  full_gpu_graph_mode: segments
+  full_gpu_graph_warmup_ticks: 3
+  full_gpu_graph_allow_fallback: true
+  full_gpu_stencil_backend: auto
+  full_gpu_fuse_scatter: true
+  full_gpu_phase_mode: canonical_device
+  full_gpu_metric_every: 5
+  full_gpu_checkpoint_every: 500
+  full_gpu_validation_every: 250
+  gpu_validate_qiskit: true
+  full_gpu_qiskit_strict: true
+  full_gpu_qiskit_allow_cpu_fallback: false
+  qiskit_gpu_method: statevector
+  qiskit_enable_cuStateVec: true
+  qiskit_runtime_parameter_bind_enable: true
+  qiskit_validation_max_qubits: 28
+  gpu_audit_limit: 16
+  gpu_all_cells_required: true
+  max_cells_per_tick: null
+  record_action_probabilities: false
+  record_measurement_records: true

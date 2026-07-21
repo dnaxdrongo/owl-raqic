@@ -1,0 +1,149 @@
+world:
+  height: 100
+  width: 100
+  seed: 777
+  boundary_mode: toroidal
+  patch_size: 5
+  max_steps: 1000
+actions:
+  beta: 3.0
+  stochastic: false
+  epsilon: 1e-08
+  enabled_actions:
+  - REST
+  - SENSE
+  - MOVE_N
+  - MOVE_S
+  - MOVE_E
+  - MOVE_W
+  - FEED
+  - COMMUNICATE
+  - INHIBIT
+  - INTEGRATE
+  - REPAIR
+  - REPRODUCE
+  - INGEST
+resources:
+  food_growth: 0.01
+  food_decay: 0.002
+  food_diffusion: 0.05
+  toxin_diffusion: 0.02
+  toxin_decay: 0.01
+  metabolism_base: 0.003
+  movement_cost: 0.01
+  feed_efficiency: 0.4
+  max_resource: 1.0
+integration:
+  weight_memory: 1.0
+  weight_flexibility: 0.8
+  weight_synchrony: 1.2
+  weight_coherence: 1.0
+  weight_cross_scale: 1.0
+  weight_resource: 0.6
+  weight_boundary: 0.7
+  weight_conflict: 1.5
+  entropy_target: 0.55
+  entropy_sigma: 0.22
+phase:
+  base_omega: 0.08
+  same_scale_coupling: 0.05
+  parent_coupling: 0.03
+  phase_noise_sigma: 0.005
+communication:
+  enabled: true
+  num_channels: 8
+  diffusion:
+  - 0.08
+  - 0.12
+  - 0.03
+  - 0.05
+  - 0.1
+  - 0.04
+  - 0.02
+  - 0.03
+  decay:
+  - 0.02
+  - 0.06
+  - 0.08
+  - 0.04
+  - 0.05
+  - 0.03
+  - 0.01
+  - 0.04
+  base_emit_cost: 0.005
+  trust_lr: 0.03
+  receptivity_lr: 0.01
+  relation_lr: 0.02
+  deception_penalty: 0.1
+topdown:
+  lambda_threshold: 0.1
+  lambda_action_bias: 0.2
+  max_parent_control: 0.25
+  apex_update_every: 10
+predation:
+  enabled: true
+  min_predation_trait: 0.6
+  resource_transfer: 0.7
+  resistance_weight: 1.0
+  memory_transfer: 0.05
+reproduction:
+  enabled: true
+  min_resource: 0.75
+  min_health: 0.7
+  min_boundary: 0.6
+  min_integration: 0.5
+  mutation_sigma: 0.03
+  channel_mutation_sigma: 0.04
+recording:
+  enabled: true
+  zarr_path: runs/run_001.zarr
+  metrics_path: results/metrics.parquet
+  record_every: 5
+  save_fields:
+  - integration
+  - resource
+  - health
+  - readout
+  - ow_type
+  - food
+  - signal
+visualization:
+  enabled: true
+  backend: pygame
+  fps: 30
+  scale: 6
+  color_by: integration
+debug:
+  assert_invariants: false
+  profile: false
+initialization:
+  population_density: 0.36
+  background_food: 0.02
+  food_patch_count: 6
+  food_patch_radius: 5
+  food_patch_intensity: 0.75
+  obstacle_density: 0.0
+  toxin_patch_count: 0
+  toxin_patch_radius: 4
+  toxin_patch_intensity: 0.25
+  initial_activation_mean: 0.1
+  initial_activation_sigma: 0.03
+  initial_memory_mean: 0.05
+  initial_memory_sigma: 0.02
+  initial_integration_mean: 0.1
+  initial_integration_sigma: 0.03
+  initial_resource_mean: 0.55
+  initial_resource_sigma: 0.1
+  initial_health_mean: 0.9
+  initial_health_sigma: 0.05
+  initial_boundary_mean: 0.8
+  initial_boundary_sigma: 0.05
+  initial_threshold_mean: 0.5
+  initial_threshold_sigma: 0.05
+  initial_trust: 1.0
+  trait_noise_sigma: 0.025
+  type_weights:
+    grazer: 0.45
+    cooperator: 0.2
+    proto_carnivore: 0.2
+    explorer: 0.15

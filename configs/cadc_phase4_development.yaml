@@ -1,0 +1,52 @@
+phase3_input:
+  immutable_engine_root: /workspace/owl_phase3_immutable_d17ef586
+  phase3_certificate: phase3_gate/phase3_certificate.json
+  phase25_certificate: phase3_gate/phase25_target_gpu_certificate.json
+  phase25_hardening_receipt: phase3_gate/phase25_hardening_receipt.json
+corpus:
+  development_seeds: [43001, 43002, 43003, 43004, 43005, 43006, 43007, 43008, 43009, 43010]
+  validation_seeds: [43101, 43102, 43103]
+  calibration_seeds: [43201, 43202, 43203]
+  reserved_phase5_seeds: [45001, 45002, 45003, 45004, 45005, 45006]
+  reserved_phase6_seeds: [46001, 46002, 46003, 46004, 46005, 46006, 46007, 46008, 46009, 46010, 46011, 46012]
+  source_ticks: [2, 5, 10, 15]
+  context_families: [balanced, resource_scarce, toxin_stress, social_dense, boundary_stress]
+  max_source_ticks_per_seed: 4
+  max_source_decisions_per_seed: 16
+  repeat_policy: 8
+  horizons: [1, 3, 5, 10]
+  family_horizons:
+    SENSE: [25]
+    COMMUNICATE: [25]
+    FLEE: [25]
+    PURSUE: [25]
+    REPAIR: [25]
+    INTEGRATE: [25]
+    REPRODUCE: [25]
+    SPLIT: [25]
+    MERGE: [25]
+  minimum_independent_seeds: 10
+  minimum_source_decisions: 400
+splits:
+  outer_folds: 5
+  inner_folds: 3
+models:
+  ensemble_members: 5
+  hidden_width: 192
+  depth: 3
+training:
+  epochs: 100
+  early_stopping_patience: 12
+  member_seeds: [44401, 44402, 44403, 44404, 44405]
+runtime:
+  target: h100
+  backend: cupy
+  precision: bf16
+  batch_size: 256
+  gradient_accumulation: 1
+  compile: true
+  cuda_graphs: false
+  max_device_bytes: 51539607552
+artifacts:
+  output_root: phase4_h100_development
+

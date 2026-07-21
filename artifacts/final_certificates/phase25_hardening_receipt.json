@@ -1,0 +1,17 @@
+{
+  "base_certified_source_sha256": "c48b19939583e8c63033f96a7bd147f6f11e7a67cb1a2e957d91922bdc55a15a",
+  "gates": {
+    "certifier_self_test": 0,
+    "changed_file_ruff": 0,
+    "launcher_bash_syntax": 0,
+    "pip_check": 0,
+    "targeted_pytest": 0
+  },
+  "hardened_source_sha256": "dd3b83d74a9e00aa1a206e83ccf8d1218e52c7b85014215838ba9f57810802fd",
+  "immutable_phase25_checkpoint": "/workspace/owl_immutable_checkpoints/phase25_20260719T090431Z_c48b19939583",
+  "passed": true,
+  "phase3_status": "working_tree_prepared_from_exact_certified_checkpoint",
+  "phase4_unlocked": false,
+  "schema_version": "owl.phase2.5.certifier-hardening.v1",
+  "scientific_acceptance_rerun": false
+}

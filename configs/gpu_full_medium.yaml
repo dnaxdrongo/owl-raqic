@@ -1,0 +1,24 @@
+world:
+  height: 50
+  width: 50
+  patch_size: 5
+  max_steps: 100
+  seed: 6063
+raqic:
+  enabled: true
+  mode: gpu_full
+  decision_policy: raqic
+  fallback_on_backend_error: false
+  full_gpu_strict: true
+  full_gpu_no_silent_fallback: true
+  gpu_precision: mixed
+  gpu_all_cells_required: true
+recording:
+  enabled: true
+  record_every: 10
+  metrics_path: results/gpu_full_medium/metrics.parquet
+  zarr_path: runs/gpu_full_medium/run.zarr
+visualization:
+  enabled: false
+debug:
+  assert_invariants: true
